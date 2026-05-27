@@ -506,3 +506,46 @@ a { text-decoration: none; color: inherit; }
   .section-title { font-size: 1.6rem; }
   .hero__title { font-size: 2.2rem; }
 }
+
+/* =====================================================
+   INTRO STATEMENT SECTION
+   ===================================================== */
+.intro-statement {
+  background: var(--dark);
+  padding: 5rem 0;
+}
+.intro-statement__inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+.intro-statement__hook {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+.intro-statement__drop {
+  font-family: var(--font-head);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: var(--orange);
+  margin-bottom: 2.5rem;
+}
+.intro-statement__body {
+  text-align: left;
+  color: #d4d0c8;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  border-left: 3px solid var(--orange);
+  padding-left: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+.intro-statement__body p + p {
+  margin-top: 1.25rem;
+}
+.intro-statement__body strong {
+  color: var(--white);
+}
