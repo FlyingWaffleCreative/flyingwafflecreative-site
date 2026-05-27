@@ -3,7 +3,16 @@
    Fonts: Playfair Display (headings) / Inter (body)
    ===================================================== */
 
+@keyframes waffleFlyIn {
+  0%   { transform: translateX(-120vw) rotate(-15deg) scale(0.7); opacity: 0; }
+  60%  { transform: translateX(18px) rotate(4deg) scale(1.05); opacity: 1; }
+  75%  { transform: translateX(-8px) rotate(-2deg) scale(0.98); }
+  88%  { transform: translateX(5px) rotate(1deg) scale(1.01); }
+  100% { transform: translateX(0) rotate(0deg) scale(1); opacity: 1; }
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { overflow-x: hidden; }
 
 :root {
   --orange:      #E8722A;
@@ -135,7 +144,7 @@ a { text-decoration: none; color: inherit; }
   justify-content: space-between;
   height: 280px;
 }
-.nav__logo img { height: 300px; width: auto; }
+.nav__logo img { height: 300px; width: auto; animation: waffleFlyIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) both; overflow: hidden; }
 .nav__links {
   display: flex;
   list-style: none;
