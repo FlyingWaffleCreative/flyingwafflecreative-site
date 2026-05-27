@@ -562,3 +562,33 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+
+/* About credentials sidebar */
+.about-credentials {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--card-cream);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--orange);
+}
+.about-credentials h4 {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.about-credentials ul {
+  list-style: none;
+  padding: 0;
+}
+.about-credentials ul li {
+  font-size: 0.95rem;
+  color: var(--dark);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #ddd9d2;
+}
+.about-credentials ul li:last-child {
+  border-bottom: none;
+}
