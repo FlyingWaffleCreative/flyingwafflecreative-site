@@ -152,10 +152,9 @@ a { text-decoration: none; color: inherit; }
 }
 .nav__logo img { height: 360px; width: auto; animation: waffleFlyIn 11s cubic-bezier(0.22, 1, 0.36, 1) both; overflow: hidden; }
 .nav__email-strip {
-  background: var(--dark);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(44,44,44,0.96);
   text-align: left;
-  padding: 0.6rem 2rem;
+  padding: 0 2rem 0.75rem;
 }
 .nav__email-strip a {
   color: rgba(255,255,255,0.75);
