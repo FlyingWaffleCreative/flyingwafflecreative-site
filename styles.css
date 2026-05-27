@@ -837,3 +837,89 @@ a { text-decoration: none; color: inherit; }
   .about-testimonials { grid-template-columns: 1fr; }
   .staying-sharp__inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }
+
+/* =====================================================
+   CONTACT PAGE
+   ===================================================== */
+.contact-page {
+  padding: 5rem 0 6rem;
+}
+.contact-page__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.contact-page__title {
+  font-family: var(--font-head);
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: var(--dark);
+}
+.contact-page__intro {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 2.5rem;
+}
+.contact-page__details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.contact-page__detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.contact-page__detail-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+.contact-page__detail-value {
+  font-size: 0.97rem;
+  color: var(--dark);
+  text-decoration: none;
+}
+a.contact-page__detail-value:hover { color: var(--orange); }
+.contact-form .form-group {
+  margin-bottom: 1.25rem;
+}
+.contact-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--dark);
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #ddd;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--dark);
+  background: #fff;
+  transition: border-color var(--transition);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.form-submit { margin-top: 0.5rem; }
+@media (max-width: 860px) {
+  .contact-page__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-page__title { font-size: 2rem; }
+}
