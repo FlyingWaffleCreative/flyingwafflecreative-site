@@ -267,6 +267,12 @@ a { text-decoration: none; color: inherit; }
   max-width: 900px;
   margin: 0 auto;
 }
+.services__grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 800px) {
+  .services__grid--three { grid-template-columns: 1fr; }
+}
 .service-card--large {
   padding: 2.5rem 2rem;
 }
