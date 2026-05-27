@@ -3,350 +3,246 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Flying Waffle Creative — Human content, freshly made. SEO, copywriting, content creation and social media management for iGaming and small businesses." />
-  <title>Flying Waffle Creative — Content that stacks up.</title>
+  <title>Flying Waffle Creative | iGaming Content &amp; Copywriting Services</title>
+  <meta name="description" content="Human-crafted iGaming content, copywriting, and social media management. Specialists in Ontario iGO and Alberta regulated markets. No AI. Just great work." />
+  <meta name="keywords" content="igaming content, igaming content services, copywriting igaming, iGaming SEO, iGaming social media" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Flying Waffle Creative | iGaming Content &amp; Copywriting Services" />
+  <meta property="og:description" content="Human-crafted iGaming content, copywriting, and social media management. Specialists in Ontario iGO and Alberta regulated markets. No AI. Just great work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flyingwafflecreative.com/" />
+  <meta property="og:image" content="logo.png" />
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Flying Waffle Creative",
+    "url": "https://flyingwafflecreative.com",
+    "logo": "https://flyingwafflecreative.com/logo.png",
+    "description": "Human-crafted iGaming content, copywriting, and social media management. Specialists in Ontario iGO and Alberta regulated markets.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "url": "https://flyingwafflecreative.com/contact.html"
+    },
+    "sameAs": []
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       NAVIGATION
-       ============================================================ -->
-  <header class="nav">
-    <div class="container">
-      <nav class="nav__inner" aria-label="Main navigation">
-        <a href="index.html" class="nav__logo" aria-label="Flying Waffle Creative home">
-          <span class="waffle-icon">🧇</span>
-          Flying Waffle Creative
-        </a>
-
-        <!-- Mobile toggle -->
-        <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <ul class="nav__links" id="nav-links" role="list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" class="btn btn--primary">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="index.html" class="nav__logo">
+        <img src="logo.png" alt="Flying Waffle Creative" />
+      </a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="nav__link active">Home</a></li>
+        <li><a href="services.html" class="nav__link">Services</a></li>
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <main>
-
-    <!-- ============================================================
-         HERO
-         ============================================================ -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="container">
-        <div class="hero__content">
-          <span class="hero__waffle" aria-hidden="true">🧇</span>
-          <p class="eyebrow">Flying Waffle Creative</p>
-          <h1 id="hero-heading">Content that <span class="accent">stacks up.</span></h1>
-          <p class="hero__sub">Made by humans. Never generated.</p>
-          <p class="hero__body">
-            Flying Waffle Creative produces sharp, strategic content that actually sounds like
-            something a person wrote — because it was. SEO, copy, content, social. All of it.
-            Done properly.
-          </p>
-          <div class="hero__cta">
-            <a href="contact.html" class="btn btn--primary">Let's get stacked&nbsp;→</a>
-            <a href="services.html" class="btn btn--outline">See our services</a>
-          </div>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <h1 class="hero__title">Flying Waffle Creative</h1>
+      <p class="hero__sub">Fresh content made from scratch.</p>
+      <p class="hero__body">Content that drives results. AIO copy that builds engagement. Social media communities that grow. All of it, made to order.</p>
+      <div class="hero__ctas">
+        <a href="services.html" class="btn btn--outline">Check out today's features →</a>
+        <a href="services.html" class="btn btn--primary">See services</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ============================================================
-         SERVICES
-         ============================================================ -->
-    <section class="section section--alt" aria-labelledby="services-heading">
-      <div class="container">
-        <header class="services__header">
-          <span class="eyebrow">What we make</span>
-          <h2 id="services-heading">Four services. One kitchen.</h2>
-          <p>Every offering is human-crafted, strategically led, and built to perform.</p>
-        </header>
-
-        <div class="services__grid">
-
-          <!-- The Grid — SEO -->
-          <article class="service-card">
-            <span class="service-card__icon" aria-hidden="true">🧇</span>
-            <p class="service-card__name">The Grid — SEO</p>
-            <h3>Structured. Intentional. Built to rank.</h3>
-            <p class="service-card__tagline">Architecture, not algorithms.</p>
-            <p>
-              Search isn't magic — it's architecture. We build content strategies and optimized
-              copy that put you in front of the right people, for the right reasons. No keyword
-              stuffing. No fluff. Just work that holds up.
-            </p>
-          </article>
-
-          <!-- The Pour — Copywriting -->
-          <article class="service-card">
-            <span class="service-card__icon" aria-hidden="true">🧇</span>
-            <p class="service-card__name">The Pour — Copywriting</p>
-            <h3>Words that flow. And convert.</h3>
-            <p class="service-card__tagline">Voice-matched. Purpose-built.</p>
-            <p>
-              From landing pages to long-form, we write copy that earns attention and drives
-              action. Voice-matched, purpose-built, and written by a human who actually read
-              the brief.
-            </p>
-          </article>
-
-          <!-- The Stack — Content Creation -->
-          <article class="service-card">
-            <span class="service-card__icon" aria-hidden="true">🧇</span>
-            <p class="service-card__name">The Stack — Content Creation</p>
-            <h3>Layered content that builds authority.</h3>
-            <p class="service-card__tagline">Compounds over time.</p>
-            <p>
-              Articles, guides, editorial, campaigns — we create content that compounds over
-              time. The kind readers trust and algorithms reward. Stacked high, made fresh.
-            </p>
-          </article>
-
-          <!-- The Spread — Social Media -->
-          <article class="service-card">
-            <span class="service-card__icon" aria-hidden="true">🧇</span>
-            <p class="service-card__name">The Spread — Social Media Management</p>
-            <h3>Reach that sticks.</h3>
-            <p class="service-card__tagline">Consistent. On-brand. Human.</p>
-            <p>
-              Consistent, on-brand social content that doesn't feel like it was written by a
-              robot at 2am. Strategy, copy, scheduling — handled. So you can focus on running
-              your business.
-            </p>
-          </article>
-
-        </div><!-- /.services__grid -->
-
-        <div style="text-align:center; margin-top:2.5rem;">
-          <a href="services.html" class="btn btn--outline">Full service details&nbsp;→</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         WHY FWC
-         ============================================================ -->
-    <section class="section" aria-labelledby="why-heading">
-      <div class="container">
-        <div class="why__inner">
-
-          <div class="why__text">
-            <span class="eyebrow">Why Flying Waffle Creative</span>
-            <h2 id="why-heading">No batter from a machine.</h2>
-            <p>
-              AI can produce volume. It can't produce voice. It can't read the room, understand
-              your audience, or bring genuine editorial judgment to your brand.
-            </p>
-            <p>
-              We can.
-            </p>
-            <p>
-              Flying Waffle Creative is built on the belief that great content is a craft. It
-              takes curiosity, care, and a real human on the other end of the keyboard. Every
-              brief gets read. Every piece gets written. Every client gets work they're proud
-              to publish.
-            </p>
-            <p style="font-weight:600; margin-top:1.25rem;">Fast. Accountable. Unmistakably human.</p>
-          </div>
-
-          <div class="why__pillars" aria-label="Our principles">
-            <div class="pillar">
-              <h4>Every brief, read.</h4>
-              <p>We don't skim. We understand your brand before we write a single word.</p>
-            </div>
-            <div class="pillar">
-              <h4>Every piece, written.</h4>
-              <p>By a human. With craft. No shortcuts, no generators, no hollow filler.</p>
-            </div>
-            <div class="pillar">
-              <h4>Every client, proud.</h4>
-              <p>If you wouldn't happily put your name on it, we haven't finished yet.</p>
-            </div>
-            <div class="pillar">
-              <h4>Genuinely fast.</h4>
-              <p>Quality content on a timeline that actually works for your business.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         WHO WE WORK WITH
-         ============================================================ -->
-    <section class="section section--alt" aria-labelledby="markets-heading">
-      <div class="container">
-        <header class="markets__header">
-          <span class="eyebrow">Who we work with</span>
-          <h2 id="markets-heading">We know your world.</h2>
-          <p>
-            Flying Waffle Creative works with brands and agencies who need content that performs
-            in complex, competitive spaces.
-          </p>
-        </header>
-
-        <div class="markets__grid">
-
-          <article class="market-card">
-            <span class="market-card__icon" aria-hidden="true">🎰</span>
-            <h3>iGaming & Regulated Markets</h3>
-            <p>
-              We have deep experience in the iGaming industry — including the Canadian regulated
-              market. <strong>Ontario's iGO framework. The emerging Alberta market.</strong> We
-              understand the compliance landscape, the audience, and what it takes to stand out
-              in a space where every operator sounds the same.
-            </p>
-          </article>
-
-          <article class="market-card">
-            <span class="market-card__icon" aria-hidden="true">🏪</span>
-            <h3>Small Businesses</h3>
-            <p>
-              We also work with <strong>small businesses</strong> who want big-agency quality
-              without the big-agency overhead. If you care about your content and want it done
-              right, we'll get along just fine.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         TESTIMONIALS
-         ============================================================ -->
-    <section class="section" aria-labelledby="testimonials-heading">
-      <div class="container">
-        <header class="testimonials__header">
-          <span class="eyebrow">What clients say</span>
-          <h2 id="testimonials-heading">Fresh from the kitchen.</h2>
-        </header>
-
-        <div class="testimonials__grid">
-
-          <blockquote class="testimonial-card">
-            <p>
-              Working with Flying Waffle Creative completely changed our content output. Human
-              voice, strategic thinking, and they actually understand our industry.
-            </p>
-            <footer class="testimonial-card__author">— Client Name, Company &bull; Testimonial placeholder</footer>
-          </blockquote>
-
-          <blockquote class="testimonial-card">
-            <p>
-              The SEO copy they produced drove real results within weeks. No fluff — just
-              work that holds up under scrutiny and actually ranks.
-            </p>
-            <footer class="testimonial-card__author">— Client Name, Company &bull; Testimonial placeholder</footer>
-          </blockquote>
-
-          <blockquote class="testimonial-card">
-            <p>
-              As a small business owner, I needed a team that got it immediately. FWC delivered
-              big-agency thinking at a price that made sense.
-            </p>
-            <footer class="testimonial-card__author">— Client Name, Company &bull; Testimonial placeholder</footer>
-          </blockquote>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         CTA BAND
-         ============================================================ -->
-    <section class="cta-band" aria-labelledby="cta-heading">
-      <div class="container">
-        <span class="eyebrow" style="color: var(--accent);">Ready when you are</span>
-        <h2 id="cta-heading">Order up.</h2>
-        <p>Ready for content that actually stacks up? Let's talk about what you need.</p>
-        <a href="contact.html" class="btn btn--primary">Get in touch&nbsp;→</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="footer" aria-label="Site footer">
+  <!-- SERVICES -->
+  <section class="services" id="services">
     <div class="container">
-      <div class="footer__inner">
+      <div class="section-header">
+        <h2 class="section-title">What we make</h2>
+        <p class="section-sub">Four services. One kitchen.</p>
+      </div>
+      <p class="services__intro">At Flying Waffle Creative, we craft iGaming content from casino reviews to game guides that are strategically led, carefully crafted, AIO-driven, and built to engage.</p>
+      <div class="services__grid">
 
-        <div class="footer__brand">
-          <a href="index.html" class="nav__logo" aria-label="Flying Waffle Creative home">
-            <span class="waffle-icon">🧇</span>
-            Flying Waffle Creative
-          </a>
-          <p>Human content. Freshly made.</p>
+        <div class="service-card">
+          <span class="service-card__icon">🧇</span>
+          <h3 class="service-card__title">AIO</h3>
+          <p class="service-card__sub">Search evolved. Your content should too.</p>
+          <p class="service-card__body">AI search doesn't reward stuffed keywords. It rewards authority, trust, and relevance. We're past keyword stuffing and moving on to credibility, community, and content people engage with.</p>
         </div>
 
-        <nav class="footer__nav" aria-label="Footer navigation">
-          <div class="footer__nav-col">
-            <h4>Pages</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer__nav-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="services.html#seo">The Grid — SEO</a></li>
-              <li><a href="services.html#copy">The Pour — Copywriting</a></li>
-              <li><a href="services.html#content">The Stack — Content</a></li>
-              <li><a href="services.html#social">The Spread — Social</a></li>
-            </ul>
-          </div>
-        </nav>
+        <div class="service-card">
+          <span class="service-card__icon">🧇</span>
+          <h3 class="service-card__title">Copywriting</h3>
+          <p class="service-card__sub">Words that flow. And convert.</p>
+          <p class="service-card__body">From landing pages to long-form, we write copy that earns attention and drives action. Made from your brief, matched to your voice, and built with enough care that it shows up in the work.</p>
+        </div>
 
-      </div><!-- /.footer__inner -->
+        <div class="service-card">
+          <span class="service-card__icon">🧇</span>
+          <h3 class="service-card__title">Content Creation</h3>
+          <p class="service-card__sub">Layered content that builds authority.</p>
+          <p class="service-card__body">Content that builds authority. Compounds over time. Articles, guides, editorial, campaigns – trust building that's earned. The kind readers trust, algorithms reward, and brands are proud to put their name on.</p>
+        </div>
 
-      <div class="footer__bottom">
-        <p>Flying Waffle Creative &mdash; Human content. Freshly made.</p>
-        <p>&copy; 2026 Flying Waffle Creative. All rights reserved.</p>
+        <div class="service-card">
+          <span class="service-card__icon">🧇</span>
+          <h3 class="service-card__title">Social Media Management</h3>
+          <p class="service-card__sub">Real, responsive, and rooted in your community.</p>
+          <p class="service-card__body">Social media that doesn't wait for a content calendar. We keep your brand in the conversation ~ locally relevant, consistently on-brand, and reactive enough to actually feel alive. Strategy and copy handled fresh, not scheduled six weeks out.</p>
+        </div>
+
       </div>
+      <div class="services__cta">
+        <a href="services.html" class="text-link">Full service details →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY FWC -->
+  <section class="why">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <h2 class="section-title">Why Flying Waffle Creative</h2>
+        <p class="section-sub">No batter from a machine.</p>
+      </div>
+      <p class="why__intro">AI can produce volume. It can't produce voice. It can't read the room, understand your audience, or bring genuine editorial judgment to your brand.<br /><br />We can.<br /><br />Flying Waffle Creative is built on the belief that great content is a craft. It takes curiosity, care, and a real human on the other end of the keyboard. Every brief gets read. Every piece gets written. Every client gets work they're proud to publish.</p>
+      <div class="why__cards">
+        <div class="why-card">
+          <h4 class="why-card__title">Every brief, read.</h4>
+          <p class="why-card__body">We don't skim. We understand your brand before we write a single word.</p>
+        </div>
+        <div class="why-card">
+          <h4 class="why-card__title">Every piece, written.</h4>
+          <p class="why-card__body">AI is a tool, not a ghostwriter. Every piece of content leaves here with a real editorial eye behind it - shaped, refined, and held to a standard worth publishing.</p>
+        </div>
+        <div class="why-card">
+          <h4 class="why-card__title">Genuine.</h4>
+          <p class="why-card__body">Good content partners are hard to find. We handpicked our clients — and you should be just as selective with us. Flying Waffle Creative works with brands and agencies who need content that performs in complex, competitive spaces. If that's you, we should talk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE WORK WITH -->
+  <section class="who">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <h2 class="section-title">Who we work with</h2>
+      </div>
+      <div class="who__grid">
+
+        <div class="who-card">
+          <span class="who-card__icon">🎰</span>
+          <h3 class="who-card__title">iGaming</h3>
+          <p class="who-card__body">Player-first approach. You know this space. So do we. Campaigns, affiliate SEO, copy, social — we've worked every corner of this industry. We know the audience because we are players. And any seasoned player knows the difference between someone who knows the game and someone who's just read the rules. Not a vertical we're learning. One we've been playing for twenty years.</p>
+        </div>
+
+        <div class="who-card">
+          <span class="who-card__icon">🍁</span>
+          <h3 class="who-card__title">iGaming Regulated Markets CA</h3>
+          <p class="who-card__body">Compliance isn't a creative constraint - it's the brief. Ontario's iGO framework. The emerging Alberta market. Responsible gambling messaging, regulated copy, compliant campaigns - content that meets the standard and still performs. In a space where one wrong word has real consequences, you need a content partner who gets it.</p>
+        </div>
+
+        <div class="who-card">
+          <span class="who-card__icon">🏪</span>
+          <h3 class="who-card__title">Small Businesses</h3>
+          <p class="who-card__body">Not everything happens in a casino. Restaurants, tourism, local business - community-rooted brands that need content with real personality. If you want content that feels genuinely rooted in your community — not templated, not scheduled months out - let's talk.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What clients say</h2>
+        <p class="section-sub">Fresh from the kitchen.</p>
+      </div>
+      <div class="testimonials__grid">
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__quote">"Working with Flying Waffle Creative completely changed our content output. Human voice, strategic thinking, and they actually understand our industry."</p>
+          <footer class="testimonial-card__attr">— Client Name, Company</footer>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__quote">"The SEO copy they produced drove real results within weeks. No fluff — just work that holds up under scrutiny and actually ranks."</p>
+          <footer class="testimonial-card__attr">— Client Name, Company</footer>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__quote">"As a small business owner, I needed a team that got it immediately. FWC delivered big-agency thinking at a price that made sense."</p>
+          <footer class="testimonial-card__attr">— Client Name, Company</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <h2 class="cta-band__title">Order up.</h2>
+      <p class="cta-band__body">Ready for iGaming content that actually stacks up? Let's talk.</p>
+      <a href="contact.html" class="btn btn--white">Get in touch →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="logo.png" alt="Flying Waffle Creative" class="footer__logo" />
+        <p class="footer__name">Flying Waffle Creative</p>
+        <p class="footer__tagline">Human content. Freshly made.</p>
+        <p class="footer__copy">© 2026 Flying Waffle Creative. All rights reserved.</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </footer>
 
-  <!-- ============================================================
-       JS — Mobile nav toggle
-       ============================================================ -->
   <script>
-    (function () {
-      const toggle = document.querySelector('.nav__toggle');
-      const links  = document.querySelector('.nav__links');
+    // Sticky nav shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 20);
+    });
 
-      if (toggle && links) {
-        toggle.addEventListener('click', function () {
-          const open = links.classList.toggle('open');
-          toggle.setAttribute('aria-expanded', open);
-        });
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('nav__links--open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
 
-        // Close on nav link click (mobile)
-        links.querySelectorAll('a').forEach(function (a) {
-          a.addEventListener('click', function () {
-            links.classList.remove('open');
-            toggle.setAttribute('aria-expanded', false);
-          });
-        });
-      }
-    })();
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
   </script>
-
 </body>
 </html>
