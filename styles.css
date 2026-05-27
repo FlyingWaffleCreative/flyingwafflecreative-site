@@ -308,6 +308,53 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =====================================================
+   SERVICE DETAIL (services page)
+   ===================================================== */
+.services-list { display: flex; flex-direction: column; gap: 0; }
+.service-detail {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  padding: 3.5rem 0;
+}
+.service-detail__meta { }
+.service-detail__icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.service-detail__label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+}
+.service-detail__meta h2 {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.service-detail__tagline {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.service-detail__body p { margin-bottom: 1rem; line-height: 1.8; }
+.service-detail__body ul {
+  margin: 0.5rem 0 1rem 1.25rem;
+  line-height: 1.9;
+  color: #555;
+}
+.service-divider {
+  border: none;
+  border-top: 1px solid var(--card-cream);
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .service-detail { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* =====================================================
    WHY FWC
    ===================================================== */
 .why {
