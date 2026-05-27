@@ -549,3 +549,16 @@ a { text-decoration: none; color: inherit; }
 .intro-statement__body strong {
   color: var(--white);
 }
+
+/* Testimonial attribution upgrade */
+.testimonial-card__attr strong {
+  display: block;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+.testimonial-card__attr span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
