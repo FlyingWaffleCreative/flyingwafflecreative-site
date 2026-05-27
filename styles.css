@@ -247,6 +247,16 @@ a { text-decoration: none; color: inherit; }
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
+.services__grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.service-card--large {
+  padding: 2.5rem 2rem;
+}
+.service-card--large .service-card__icon { font-size: 3rem; margin-bottom: 1rem; }
+.service-card--large .service-card__title { font-size: 1.6rem; margin-bottom: 0.5rem; }
 .service-card {
   background: var(--card-cream);
   border-radius: var(--radius);
