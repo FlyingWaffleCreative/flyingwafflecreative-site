@@ -154,8 +154,8 @@ a { text-decoration: none; color: inherit; }
 .nav__email-strip {
   background: var(--dark);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
-  padding: 0.6rem 1rem;
+  text-align: left;
+  padding: 0.6rem 2rem;
 }
 .nav__email-strip a {
   color: rgba(255,255,255,0.75);
