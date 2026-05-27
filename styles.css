@@ -133,9 +133,9 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 140px;
+  height: 200px;
 }
-.nav__logo img { height: 160px; width: auto; }
+.nav__logo img { height: 220px; width: auto; }
 .nav__links {
   display: flex;
   list-style: none;
@@ -451,7 +451,7 @@ a { text-decoration: none; color: inherit; }
   flex-wrap: wrap;
 }
 .footer__logo {
-  height: 108px;
+  height: 180px;
   width: auto;
   margin-bottom: 0.75rem;
 }
