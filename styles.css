@@ -148,17 +148,23 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 340px;
+  height: 170px;
 }
-.nav__logo img { height: 360px; width: auto; animation: waffleFlyIn 11s cubic-bezier(0.22, 1, 0.36, 1) both; overflow: hidden; }
+.nav__logo img { height: 180px; width: auto; animation: waffleFlyIn 11s cubic-bezier(0.22, 1, 0.36, 1) both; overflow: hidden; }
+.nav__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
 .nav__email-strip {
-  background: rgba(44,44,44,0.96);
-  text-align: left;
-  padding: 0 2rem 0.75rem;
+  background: transparent;
+  text-align: right;
+  padding: 0;
 }
 .nav__email-strip a {
-  color: rgba(255,255,255,0.75);
-  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-decoration: none;
