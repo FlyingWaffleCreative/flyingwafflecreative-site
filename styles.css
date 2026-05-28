@@ -150,17 +150,19 @@ a { text-decoration: none; color: inherit; }
   justify-content: space-between;
   height: 170px;
 }
-.nav__logo img { height: 180px; width: auto; animation: waffleFlyIn 11s cubic-bezier(0.22, 1, 0.36, 1) both; overflow: hidden; }
+.nav__logo img { height: 180px; width: auto; }
+.home-page .nav__logo img { animation: waffleFlyIn 11s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .nav__right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.4rem;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 .nav__email-strip {
   background: transparent;
   text-align: right;
-  padding: 0;
 }
 .nav__email-strip a {
   color: rgba(255,255,255,0.65);
