@@ -147,7 +147,7 @@ a { text-decoration: none; color: inherit; }
   justify-content: space-between;
   height: 68px;
 }
-.nav__logo img { height: 40px; width: auto; max-width: 200px; }
+.nav__logo img { height: 160px; width: auto; max-width: 400px; }
 .home-page .nav__logo img { animation: waffleFlyIn 2.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .nav__right {
   display: flex;
