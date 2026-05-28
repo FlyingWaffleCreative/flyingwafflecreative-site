@@ -145,7 +145,7 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 1000px;
+  height: 68px;
 }
 .nav__logo img { height: 40px; width: auto; max-width: 200px; }
 .home-page .nav__logo img { animation: waffleFlyIn 2.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
