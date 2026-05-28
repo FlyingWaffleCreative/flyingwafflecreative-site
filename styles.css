@@ -220,7 +220,7 @@ a { text-decoration: none; color: inherit; }
 .hero {
   background:
     linear-gradient(to right, rgba(28,20,15,0.92) 0%, rgba(28,20,15,0.7) 50%, rgba(28,20,15,0.25) 100%),
-    url('hero-dice.jpg') center center / cover no-repeat;
+    url('hero-waffle.jpg') center right / cover no-repeat;
   color: var(--white);
   padding: clamp(5rem, 12vw, 9rem) 0;
   position: relative;
