@@ -145,9 +145,9 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 560px;
+  height: 1000px;
 }
-.nav__logo img { height: 560px; width: auto; }
+.nav__logo img { height: 1000px; width: auto; }
 .home-page .nav__logo img { animation: waffleFlyIn 2.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .nav__right {
   display: flex;
@@ -177,7 +177,7 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
 }
 .nav__link {
-  color: rgba(255,255,255,0.85);
+  color: var(--cream);
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.03em;
@@ -193,7 +193,7 @@ a { text-decoration: none; color: inherit; }
   transition: width var(--transition);
 }
 .nav__link:hover,
-.nav__link.active { color: var(--white); }
+.nav__link.active { color: var(--orange); }
 .nav__link:hover::after,
 .nav__link.active::after { width: 100%; }
 
