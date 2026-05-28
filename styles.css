@@ -241,20 +241,20 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.1;
   margin-bottom: 0.75rem;
   letter-spacing: -0.01em;
-  color: #F5F2EE;
+  color: var(--cream);
 }
 .hero__sub {
   font-family: var(--font-head);
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-style: italic;
   margin-bottom: 1.25rem;
-  color: #F5F2EE;
+  color: var(--cream);
 }
 .hero__body {
   font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   line-height: 1.75;
   margin-bottom: 2.25rem;
-  color: #F5F2EE;
+  color: var(--cream);
   max-width: 560px;
 }
 .hero__ctas {
@@ -832,7 +832,7 @@ a.contact-page__detail-value:hover { color: var(--orange); }
 .contact-form textarea {
   width: 100%;
   padding: 0.85rem 1rem;
-  border: 1.5px solid #ddd;
+  border: 1.5px solid var(--card-cream);
   border-radius: var(--radius);
   font-family: var(--font-body);
   font-size: 0.95rem;
