@@ -769,6 +769,37 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =====================================================
+   CLIENTS STRIP
+   ===================================================== */
+.clients {
+  background: var(--dark);
+  padding: 4rem 0;
+}
+.clients .section-title { color: var(--cream); }
+.clients__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem 3rem;
+  margin-top: 2rem;
+}
+.client-logo {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
+  transition: color var(--transition);
+  cursor: default;
+}
+.client-logo span {
+  color: var(--orange);
+  font-weight: 400;
+}
+.client-logo:hover { color: var(--cream); }
+
+/* =====================================================
    BLOG ARTICLE
    ===================================================== */
 .blog-article {
