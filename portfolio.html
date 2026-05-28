@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Flying Waffle Creative</title>
+  <meta name="description" content="A sample of Flying Waffle Creative's writing work across iGaming, regulated Canadian markets, sports content, and tourism." />
+  <!-- Keep out of search index — this is a hidden portfolio page -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Portfolio-specific styles ── */
+    .portfolio-hero {
+      background: var(--dark);
+      padding: 6rem 0 4rem;
+      text-align: center;
+    }
+    .portfolio-hero__eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .portfolio-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .portfolio-hero__sub {
+      font-family: 'Inter', sans-serif;
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .portfolio-section {
+      padding: 4rem 0;
+    }
+    .portfolio-section:nth-child(even) {
+      background: var(--card-cream);
+    }
+
+    .portfolio-category-label {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      border-radius: 3px;
+      padding: 0.2rem 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .portfolio-section__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .portfolio-section__desc {
+      font-family: 'Inter', sans-serif;
+      color: #6b6b5f;
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pcard {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .pcard:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    }
+    /* Cards inside a cream section get the warm grey bg */
+    .portfolio-section:nth-child(even) .pcard {
+      background: #fff;
+    }
+
+    .pcard__type {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.6rem;
+    }
+    .pcard__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+    .pcard__excerpt {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: #6b6b5f;
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .pcard__link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--orange);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap 0.2s ease;
+    }
+    .pcard__link:hover { gap: 0.55rem; }
+    .pcard__link::after { content: "→"; }
+
+    .portfolio-cta {
+      background: var(--dark);
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .portfolio-cta__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .portfolio-cta__sub {
+      font-family: 'Inter', sans-serif;
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV (no portfolio link here — page is hidden from menu) -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="index.html" class="nav__logo">
+        <img src="logo-white-text.png" alt="Flying Waffle Creative" />
+      </a>
+      <div class="nav__right">
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="blog.html" class="nav__link">Blog</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <div class="nav__email-strip">
+          <a href="mailto:lara@flyingwafflecreative.com">lara@flyingwafflecreative.com</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="portfolio-hero">
+    <div class="container">
+      <p class="portfolio-hero__eyebrow">Selected Work</p>
+      <h1 class="portfolio-hero__title">What We've Built</h1>
+      <p class="portfolio-hero__sub">A curated look at the content, reviews, and editorial writing Flying Waffle Creative has produced across regulated iGaming markets, sports, and tourism.</p>
+    </div>
+  </section>
+
+  <!-- ── SECTION 1: Casino Reviews — Regulated Ontario ── -->
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="portfolio-category-label">Casino Reviews · Regulated Ontario</span>
+      <h2 class="portfolio-section__title">iGO Casino Reviews</h2>
+      <p class="portfolio-section__desc">In-depth, hand-tested reviews of Ontario's regulated online casinos — written for Casino.ca's Canadian audience.</p>
+
+      <div class="portfolio-grid">
+
+        <a class="pcard" href="https://www.casino.ca/regions/ontario/firevegas/" target="_blank" rel="noopener">
+          <span class="pcard__type">Casino Review · Ontario iGO</span>
+          <h3 class="pcard__title">FireVegas Ontario Casino Review</h3>
+          <p class="pcard__excerpt">"FireVegas Ontario makes a solid first impression with a clean, modern site that's easy to navigate on desktop and mobile. Operated by TWHG and licensed by the AGCO with oversight from iGaming Ontario, it offers over 1,400 regulated games from 70+ providers."</p>
+          <span class="pcard__link">Read on Casino.ca</span>
+        </a>
+
+        <a class="pcard" href="https://www.casino.ca/regions/ontario/partycasino/" target="_blank" rel="noopener">
+          <span class="pcard__type">Casino Review · Ontario iGO</span>
+          <h3 class="pcard__title">PartyCasino Ontario Review</h3>
+          <p class="pcard__excerpt">"Its games library is growing at a steadfast rate, now 5,000+ casino games deep — a count that surpasses hot Ontario casinos like Tooniebet and Casino Days, with plenty of game surprises and exclusives."</p>
+          <span class="pcard__link">Read on Casino.ca</span>
+        </a>
+
+        <a class="pcard" href="https://www.casino.ca/reviews/boho-casino/" target="_blank" rel="noopener">
+          <span class="pcard__type">Casino Review · Canada</span>
+          <h3 class="pcard__title">Boho Casino Review</h3>
+          <p class="pcard__excerpt">"Boho Casino presents a feather-light bohemian aesthetic, although the experience feels more like a large-scale, action-packed casino than a laid-back retreat… Boho has created a serious vibe within Canada's crowded online casino market."</p>
+          <span class="pcard__link">Read on Casino.ca</span>
+        </a>
+
+        <a class="pcard" href="https://www.casino.ca/regions/ontario/" target="_blank" rel="noopener">
+          <span class="pcard__type">Regional Guide · Ontario</span>
+          <h3 class="pcard__title">Ontario Online Casino Hub</h3>
+          <p class="pcard__excerpt">Comprehensive regional landing page covering the full Ontario iGO-regulated market — top casinos, licensing, payment methods, and player guides for Ontario gamblers.</p>
+          <span class="pcard__link">View on Casino.ca</span>
+        </a>
+
+        <a class="pcard" href="https://www.casino.ca/regions/alberta/" target="_blank" rel="noopener">
+          <span class="pcard__type">Regional Guide · Alberta</span>
+          <h3 class="pcard__title">Alberta Online Casino Hub</h3>
+          <p class="pcard__excerpt">Regional page covering Alberta's emerging regulated market — an increasingly important Canadian jurisdiction for licensed online gaming operators.</p>
+          <span class="pcard__link">View on Casino.ca</span>
+        </a>
+
+        <a class="pcard" href="https://www.casino.ca/payments/apple-pay/" target="_blank" rel="noopener">
+          <span class="pcard__type">Payment Guide · Canada</span>
+          <h3 class="pcard__title">Apple Pay at Canadian Casinos</h3>
+          <p class="pcard__excerpt">A payment method guide covering Apple Pay's use across Canadian regulated online casinos — covering compatibility, limits, and the top-rated sites that accept it.</p>
+          <span class="pcard__link">View on Casino.ca</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 2: Sports Content ── -->
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="portfolio-category-label">Sports Content · LeoVegas</span>
+      <h2 class="portfolio-section__title">Sports Editorial</h2>
+      <p class="portfolio-section__desc">Editorial-style sports content produced for LeoVegas Canada's blog — combining genuine sports culture with a Canadian lens.</p>
+
+      <div class="portfolio-grid">
+
+        <a class="pcard" href="https://www.leovegas.com/en-ca/blog/sports/nhl/canadian-nhl-arenas" target="_blank" rel="noopener">
+          <span class="pcard__type">Sports Editorial · NHL</span>
+          <h3 class="pcard__title">Canadian NHL Arenas: A Fan's Guide</h3>
+          <p class="pcard__excerpt">A deep-dive editorial on every NHL arena in Canada — from Rogers Place in Edmonton to the Bell Centre in Montreal — covering capacity, history, and what makes each venue special for fans.</p>
+          <span class="pcard__link">Read on LeoVegas</span>
+        </a>
+
+        <a class="pcard" href="https://www.leovegas.com/en-ca/blog/sports/nhl/canadian-nhl-teams/vancouver-canucks" target="_blank" rel="noopener">
+          <span class="pcard__type">Team Feature · NHL</span>
+          <h3 class="pcard__title">Vancouver Canucks: The Legacy</h3>
+          <p class="pcard__excerpt">A team-history feature tracing the Canucks from their 1970 expansion roots through playoff heartbreaks, dynasty chases, and the passionate West Coast fan culture that keeps the faith season after season.</p>
+          <span class="pcard__link">Read on LeoVegas</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: Tourism ── -->
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="portfolio-category-label">Tourism &amp; Local · Tourism Delta</span>
+      <h2 class="portfolio-section__title">Destination &amp; Community Content</h2>
+      <p class="portfolio-section__desc">Community-first editorial for Tourism Delta's We Love Delta platform — written with warmth and a genuine sense of place.</p>
+
+      <div class="portfolio-grid">
+
+        <a class="pcard" href="https://tourismdelta.com/we-love-delta/" target="_blank" rel="noopener">
+          <span class="pcard__type">Destination Editorial · Delta BC</span>
+          <h3 class="pcard__title">We Love Delta</h3>
+          <p class="pcard__excerpt">"From Southlands' Saturday markets to the Ladner Village Market — one of western Canada's largest open-air markets — we showcase what's grown locally, by locals, and infuse it with our signature community spirit. We love where we live."</p>
+          <span class="pcard__link">Explore on TourismDelta.com</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="portfolio-cta">
+    <div class="container">
+      <h2 class="portfolio-cta__title">Like what you see?</h2>
+      <p class="portfolio-cta__sub">Let's talk about what we can create for your brand.</p>
+      <a href="contact.html" class="btn btn--primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER (same as other pages) -->
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <img src="logo-white-text.png" alt="Flying Waffle Creative" class="footer__logo" />
+        <p class="footer__tagline">Human content for a noisy world.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="footer__copy">© 2025 Flying Waffle Creative. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll behaviour (same as other pages)
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+    });
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('nav__links--open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+  </script>
+
+</body>
+</html>
