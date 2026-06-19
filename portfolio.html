@@ -14,6 +14,33 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
+    /* ── Social image gallery ── */
+    .social-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .social-gallery__img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .social-gallery__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--orange);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+    .social-gallery__link:hover { gap: 0.55rem; }
+    .social-gallery__link::after { content: "→"; }
+
     /* ── Portfolio-specific styles ── */
     .portfolio-hero {
       background: var(--dark);
@@ -328,16 +355,11 @@
       <h2 class="portfolio-section__title">Social Media Management</h2>
       <p class="portfolio-section__desc">Community and engagement driven content for Tourism Delta social channels, @exploredeltabc.</p>
 
-      <div class="portfolio-grid">
-
-        <a class="pcard" href="https://tourismdelta.com/we-love-delta/" target="_blank" rel="noopener">
-          <span class="pcard__type">Destination Editorial · Delta BC</span>
-          <h3 class="pcard__title">We Love Delta</h3>
-          <p class="pcard__excerpt">"From Southlands' Saturday markets to the Ladner Village Market, one of western Canada's largest open-air markets, we showcase what's grown locally, by locals, and infuse it with our signature community spirit. We love where we live."</p>
-          <span class="pcard__link">Explore on TourismDelta.com</span>
-        </a>
-
+      <div class="social-gallery">
+        <img class="social-gallery__img" src="delta-social-1.jpg" alt="Your own way starts here — Tourism Delta social graphic" />
+        <img class="social-gallery__img" src="delta-social-2.jpg" alt="Fresh sips, farm-side — Tourism Delta social graphic" />
       </div>
+      <a class="social-gallery__link" href="https://tourismdelta.com/we-love-delta/" target="_blank" rel="noopener">View We Love Delta on TourismDelta.com</a>
     </div>
   </section>
 
