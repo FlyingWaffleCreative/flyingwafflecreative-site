@@ -14,6 +14,138 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
+    /* ── Stats bar ── */
+    .stats-bar {
+      background: var(--orange);
+      padding: 1.25rem 0;
+    }
+    .stats-bar__inner {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .stats-bar__item {
+      text-align: center;
+      color: #fff;
+    }
+    .stats-bar__num {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .stats-bar__label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* ── Logo ticker ── */
+    .logo-strip {
+      background: var(--card-cream);
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .logo-strip__label {
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #9E9E8F;
+      margin-bottom: 1.5rem;
+    }
+    .logo-ticker {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+    .logo-ticker__track {
+      display: flex;
+      align-items: center;
+      gap: 3.5rem;
+      width: max-content;
+      animation: ticker-scroll 28s linear infinite;
+    }
+    .logo-ticker__track:hover { animation-play-state: paused; }
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .logo-ticker__item {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .logo-ticker__item img {
+      height: 28px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.55);
+      transition: filter 0.2s ease;
+    }
+    .logo-ticker__item img:hover { filter: grayscale(0%) opacity(1); }
+    /* Text fallback for logos not yet uploaded */
+    .logo-ticker__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #9E9E8F;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+    .logo-ticker__text:hover { color: var(--orange); }
+
+    /* ── Visual card (image + text) ── */
+    .pcard--visual {
+      padding: 0;
+      overflow: hidden;
+    }
+    .pcard--visual .pcard__img-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--card-cream);
+    }
+    .pcard--visual .pcard__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .pcard--visual:hover .pcard__img-wrap img {
+      transform: scale(1.04);
+    }
+    .pcard--visual .pcard__body {
+      padding: 1.4rem 1.6rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    /* Placeholder when image not yet added */
+    .pcard__img-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #EDEAE4 0%, #ddd9d2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: #9E9E8F;
+      letter-spacing: 0.05em;
+    }
+
     /* ── Social image gallery ── */
     .social-gallery {
       display: grid;
@@ -224,6 +356,56 @@
     </div>
   </section>
 
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__inner">
+        <div class="stats-bar__item">
+          <span class="stats-bar__num">3+</span>
+          <span class="stats-bar__label">Canadian Markets</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__num">iGO</span>
+          <span class="stats-bar__label">Ontario Regulated</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__num">AGCO</span>
+          <span class="stats-bar__label">Licensed Content</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__num">100%</span>
+          <span class="stats-bar__label">Human Written</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENT LOGO TICKER -->
+  <!--
+    TO ADD LOGOS: drop image files into this folder and update the src= below.
+    Recommended filenames: logo-casinoca.png, logo-leovegas.png, logo-tourismdelta.png
+    Ideal size: ~200px wide × 60px tall, transparent background (PNG).
+    Until logos are uploaded, text labels are shown as fallback.
+  -->
+  <div class="logo-strip">
+    <p class="logo-strip__label">As seen on &amp; written for</p>
+    <div class="logo-ticker">
+      <div class="logo-ticker__track">
+        <!-- SET 1 -->
+        <div class="logo-ticker__item"><span class="logo-ticker__text">Casino.ca</span></div>
+        <div class="logo-ticker__item"><span class="logo-ticker__text">LeoVegas</span></div>
+        <div class="logo-ticker__item"><span class="logo-ticker__text">Tourism Delta</span></div>
+        <!-- ADD MORE HERE e.g.: -->
+        <!-- <div class="logo-ticker__item"><img src="logo-example.png" alt="Example" /></div> -->
+
+        <!-- SET 2 (duplicate for seamless loop) -->
+        <div class="logo-ticker__item"><span class="logo-ticker__text">Casino.ca</span></div>
+        <div class="logo-ticker__item"><span class="logo-ticker__text">LeoVegas</span></div>
+        <div class="logo-ticker__item"><span class="logo-ticker__text">Tourism Delta</span></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ── SECTION 1: Casino Reviews — Regulated Ontario ── -->
   <section class="portfolio-section">
     <div class="container">
@@ -280,6 +462,57 @@
           <h3 class="pcard__title">Apple Pay at Canadian Casinos</h3>
           <p class="pcard__excerpt">A payment method guide covering Apple Pay's use across Canadian regulated online casinos, including compatibility, limits, and the top-rated sites that accept it.</p>
           <span class="pcard__link">View on Casino.ca</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 1b: Slot Reviews (image cards) ── -->
+  <section class="portfolio-section">
+    <div class="container">
+      <span class="portfolio-category-label">Slot Reviews · iGaming</span>
+      <h2 class="portfolio-section__title">Slot Reviews</h2>
+      <p class="portfolio-section__desc">Hand-tested slot reviews — covering RTP, volatility, bonus mechanics, and real gameplay impressions. No AI, no guesswork.</p>
+
+      <!--
+        TO ADD SLOT IMAGES:
+        1. Drop your screenshot/banner images into this folder
+        2. Replace the placeholder divs below with:
+           <div class="pcard__img-wrap"><img src="your-image.jpg" alt="Slot name" /></div>
+        3. Remove the pcard__img-placeholder div
+        Recommended image size: 800×450px (16:9)
+      -->
+      <div class="portfolio-grid">
+
+        <a class="pcard pcard--visual" href="#" target="_blank" rel="noopener">
+          <div class="pcard__img-placeholder">Image coming soon</div>
+          <div class="pcard__body">
+            <span class="pcard__type">Slot Review</span>
+            <h3 class="pcard__title">Slot Review — Coming Soon</h3>
+            <p class="pcard__excerpt">Drop your slot review images and links here. Each card supports a featured image, publication label, and excerpt.</p>
+            <span class="pcard__link">Read Review</span>
+          </div>
+        </a>
+
+        <a class="pcard pcard--visual" href="#" target="_blank" rel="noopener">
+          <div class="pcard__img-placeholder">Image coming soon</div>
+          <div class="pcard__body">
+            <span class="pcard__type">Slot Review</span>
+            <h3 class="pcard__title">Slot Review — Coming Soon</h3>
+            <p class="pcard__excerpt">Drop your slot review images and links here. Each card supports a featured image, publication label, and excerpt.</p>
+            <span class="pcard__link">Read Review</span>
+          </div>
+        </a>
+
+        <a class="pcard pcard--visual" href="#" target="_blank" rel="noopener">
+          <div class="pcard__img-placeholder">Image coming soon</div>
+          <div class="pcard__body">
+            <span class="pcard__type">Slot Review</span>
+            <h3 class="pcard__title">Slot Review — Coming Soon</h3>
+            <p class="pcard__excerpt">Drop your slot review images and links here. Each card supports a featured image, publication label, and excerpt.</p>
+            <span class="pcard__link">Read Review</span>
+          </div>
         </a>
 
       </div>
