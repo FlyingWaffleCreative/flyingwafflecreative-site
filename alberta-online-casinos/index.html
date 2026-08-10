@@ -831,6 +831,108 @@
       main { padding: 1.5rem 1rem; }
     }
 
+    /* ══ SHOUTOUT BOX COMPONENT ═══════════════════════════════════════
+       Reusable callout. Variants: --method, --warning, --hot
+       Usage: <div class="shoutout-box shoutout-box--method">
+                <div class="shoutout-box__label">🔍 How We Pick</div>
+                <div class="shoutout-box__body"><p>...</p></div>
+              </div>
+    ══════════════════════════════════════════════════════════════════ */
+
+    .shoutout-box {
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      margin: 2rem 0;
+      /* default: editorial green */
+      background: #eaf5ee;
+      border: 1.5px solid #a8d5b8;
+      border-left: 5px solid var(--accent);
+    }
+
+    /* ── methodology / "how we pick" ─────────────────────────────── */
+    .shoutout-box--method {
+      background: #f0f4ff;
+      border-color: #b4c8f0;
+      border-left-color: #2a5bbf;
+    }
+
+    /* ── warning / disclaimer ─────────────────────────────────────── */
+    .shoutout-box--warning {
+      background: #fff8e6;
+      border-color: #f0d080;
+      border-left-color: var(--gold);
+    }
+
+    /* ── hot take / strong opinion ───────────────────────────────── */
+    .shoutout-box--hot {
+      background: #fff2ef;
+      border-color: #f0b8aa;
+      border-left-color: var(--red);
+    }
+
+    .shoutout-box__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.68rem;
+      font-weight: bold;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .shoutout-box--method   .shoutout-box__label { color: #1d4e9f; }
+    .shoutout-box--warning  .shoutout-box__label { color: #7a5a00; }
+    .shoutout-box--hot      .shoutout-box__label { color: var(--red); }
+
+    .shoutout-box__body {
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.78;
+      color: var(--text);
+    }
+
+    .shoutout-box__body p { margin-bottom: 0.55rem; }
+    .shoutout-box__body p:last-child { margin-bottom: 0; }
+    .shoutout-box__body strong { color: var(--accent-dark); }
+    .shoutout-box--method  .shoutout-box__body strong { color: #1d4e9f; }
+    .shoutout-box--warning .shoutout-box__body strong { color: #6b4f00; }
+
+    /* ══ BYLINE ══════════════════════════════════════════════════════ */
+    .page-byline {
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .byline-sep { color: var(--border); }
+
+    .byline-updated {
+      background: var(--accent-dark);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+    }
+
+    .byline-expert strong { color: var(--accent-dark); }
+
+    /* ══ PAGE INTRO ══════════════════════════════════════════════════ */
+    .page-intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+    }
+
     /* ══ UTILITY ═══════════════════════════════════════════════════ */
     .text-center { text-align: center; }
     .text-small { font-size: 0.85rem; color: var(--text-muted); font-family: Arial, sans-serif; }
@@ -875,9 +977,8 @@
 <!-- ════ HERO ════════════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">Updated August 2026 · Expert Reviewed</div>
-    <h1>Best Online Casinos in <em>Alberta</em> — Top 5 Ranked for 2026</h1>
-    <p class="hero-sub">Alberta's regulated iGaming market launched July 13, 2026. We've tested every major platform so you don't have to. Here are the five best licensed Alberta online casinos — ranked by game selection, bonus value, payout speed, and mobile experience.</p>
+    <h1>Alberta Online Casinos <em>2026</em></h1>
+    <p class="hero-sub">Find your best AB casino</p>
     <div class="hero-stats">
       <div class="hero-stat"><strong>5</strong><span>Top Picks</span></div>
       <div class="hero-stat"><strong>18+</strong><span>Legal Age</span></div>
@@ -904,6 +1005,35 @@
 
 <!-- ════ MAIN CONTENT ════════════════════════════════════════════════ -->
 <main>
+
+  <!-- ════ BYLINE ════════════════════════════════════════════════ -->
+  <div class="page-byline">
+    <span class="byline-updated">Updated August 2026</span>
+    <span class="byline-sep">·</span>
+    <span class="byline-expert">Fact-checked by <strong>Lara Wilson</strong>, Casino.ca Expert</span>
+  </div>
+
+  <!-- ════ INTRO ════════════════════════════════════════════════════ -->
+  <div class="page-intro">
+    <p>We're players first — before we rank a single site, we've deposited real money, chased real payouts, and tested real customer support at 1&nbsp;AM when our Interac fails and the reels get stuck during a Huff&nbsp;'n'&nbsp;Puff bonus. Alberta's iGaming market only opened this year, and it's flooded with operators claiming to be “Alberta's best.” Let us show you who's earned your first deposit.</p>
+  </div>
+
+  <!-- ════ SHOUTOUT BOX — HOW WE PICK ═════════════════════════════ -->
+  <!--
+    COMPONENT: shoutout-box
+    Reuse this pattern anywhere on the page. Swap the --method modifier
+    for --warning (disclaimers), --hot (strong opinions), or drop the
+    modifier entirely for the default editorial green.
+  -->
+  <div class="shoutout-box shoutout-box--method">
+    <div class="shoutout-box__label">🔍 How We Pick</div>
+    <div class="shoutout-box__body">
+      <p>We only recommend platforms that carry <strong>AiGC's stamp of approval</strong> — which means independently audited game fairness, licensed operations, and player protections in place.
+      <!-- Note: AiGC = Alberta iGaming Corporation, Alberta's equivalent of Ontario's AGCO. Swap to AGCO if repurposing this page for Ontario. -->
+      </p>
+      <p>From there, we dig into what matters when you're playing for real: <strong>how fast withdrawals actually land</strong> (vs. what the FAQ page declares), whether <strong>one wallet covers both slots and sportsbook</strong>, and how deep the game library runs beyond Alberta's top 20 slots.</p>
+    </div>
+  </div>
 
   <!-- Trust bar -->
   <div class="trust-bar">
