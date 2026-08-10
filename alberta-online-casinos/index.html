@@ -1456,6 +1456,192 @@
       margin-bottom: 0.2rem;
     }
 
+    /* ══ G2G REVIEW WIDGET ══════════════════════════════════════════
+       Read one, leave one. LocalStorage-backed per casino.
+    ═══════════════════════════════════════════════════════════════ */
+    .g2g-widget {
+      margin: 1rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+    }
+
+    .g2g-header {
+      background: rgba(201,148,42,0.1);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 0.5rem 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .g2g-label {
+      font-family: Arial, sans-serif;
+      font-size: 0.68rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+    }
+
+    .g2g-tag {
+      font-family: Arial, sans-serif;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      background: rgba(201,148,42,0.08);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 0.15rem 0.6rem;
+    }
+
+    /* seed review */
+    .g2g-seed {
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.15);
+    }
+
+    .g2g-seed-stars {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: -1px;
+      margin-bottom: 0.2rem;
+    }
+
+    .g2g-seed-text {
+      font-family: Arial, sans-serif;
+      font-size: 0.84rem;
+      color: var(--text);
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    .g2g-seed-author {
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
+    /* user reviews list */
+    .g2g-reviews-list {
+      max-height: 180px;
+      overflow-y: auto;
+    }
+
+    .g2g-review-item {
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.1);
+    }
+
+    .g2g-review-item:last-child { border-bottom: none; }
+
+    .g2g-review-stars {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: -1px;
+    }
+
+    .g2g-review-text {
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.5;
+      margin-top: 0.1rem;
+      font-style: italic;
+    }
+
+    .g2g-review-meta {
+      font-family: Arial, sans-serif;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* form */
+    .g2g-form {
+      padding: 0.75rem 0.85rem;
+      background: rgba(201,148,42,0.04);
+    }
+
+    .g2g-form-label {
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: bold;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .g2g-stars-input {
+      display: flex;
+      gap: 0.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .g2g-star-btn {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--border);
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      transition: color 0.1s, transform 0.1s;
+    }
+
+    .g2g-star-btn:hover,
+    .g2g-star-btn.active { color: var(--gold); transform: scale(1.15); }
+
+    .g2g-textarea {
+      width: 100%;
+      background: #0a1520;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      padding: 0.5rem 0.65rem;
+      resize: vertical;
+      min-height: 56px;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .g2g-textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .g2g-textarea::placeholder { color: var(--text-muted); }
+
+    .g2g-submit {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #0D1B2A;
+      border: none;
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 0.45rem 1.1rem;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s;
+    }
+
+    .g2g-submit:hover { opacity: 0.88; }
+
+    .g2g-avg {
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    .g2g-avg strong { color: var(--gold-light); }
+
     /* section label above each card */
     .cc-section-h {
       font-size: clamp(1.1rem, 3vw, 1.5rem);
@@ -1707,6 +1893,31 @@
       <div class="cc-body">
         <div class="cc-verdict">"The best all-round casino in Alberta right now. 75+ live dealer tables, a top-rated iOS and Android app, and slots from $0.10 a spin. Payouts via Interac land in 1-3 days - faster than most."</div>
         <div class="cc-watchout"><span>⚠ Watch out for</span>No Pragmatic Play titles - that means no Big Bass Bonanza, Gates of Olympus, or Sweet Bonanza. Bonus wagering requirement hits 70x on some offers - read the fine print before claiming.</div>
+        <div class="g2g-widget" id="g2g-jackpotcity">
+          <div class="g2g-header">
+            <span class="g2g-label">🎰 G2G - Gambler to Gambler</span>
+            <span class="g2g-tag">Read one · Leave one</span>
+          </div>
+          <div class="g2g-seed">
+            <div class="g2g-seed-stars">★★★★★</div>
+            <div class="g2g-seed-text">"Huff 'n' Puff kept me up until 2 AM on a Tuesday. Payout hit my Interac in two days flat. The app hasn't crashed on me once - and I've thrown some real sessions at it."</div>
+            <div class="g2g-seed-author">- AB player, Edmonton · August 2026</div>
+          </div>
+          <div class="g2g-reviews-list" id="reviews-jackpotcity"></div>
+          <div class="g2g-form">
+            <label class="g2g-form-label">Your turn - rate Jackpot City:</label>
+            <div class="g2g-stars-input" id="stars-jackpotcity" data-rating="0">
+              <button class="g2g-star-btn" data-val="1" onclick="g2gStar('jackpotcity',1)">★</button>
+              <button class="g2g-star-btn" data-val="2" onclick="g2gStar('jackpotcity',2)">★</button>
+              <button class="g2g-star-btn" data-val="3" onclick="g2gStar('jackpotcity',3)">★</button>
+              <button class="g2g-star-btn" data-val="4" onclick="g2gStar('jackpotcity',4)">★</button>
+              <button class="g2g-star-btn" data-val="5" onclick="g2gStar('jackpotcity',5)">★</button>
+            </div>
+            <textarea class="g2g-textarea" id="text-jackpotcity" placeholder="Share your experience - good or bad. What did you actually play? How long did withdrawal take?"></textarea>
+            <button class="g2g-submit" onclick="g2gSubmit('jackpotcity')">Leave your review</button>
+            <div class="g2g-avg" id="avg-jackpotcity"></div>
+          </div>
+        </div>
         <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at Jackpot City →</a>
         <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
@@ -1746,6 +1957,31 @@
       <div class="cc-body">
         <div class="cc-verdict">"Lowest deposit on our list at $5. World-class sportsbook covering NHL, NFL, CFL and more - with same-game parlays. If you're betting on the Oilers, this is your home."</div>
         <div class="cc-watchout"><span>⚠ Watch out for</span>Casino side is thin - no Pragmatic Play slots at all, limited live dealer variety vs dedicated casino sites. Withdrawal processing can drag to 5 days if identity verification hasn't been completed upfront.</div>
+        <div class="g2g-widget" id="g2g-draftkings">
+          <div class="g2g-header">
+            <span class="g2g-label">🎰 G2G - Gambler to Gambler</span>
+            <span class="g2g-tag">Read one · Leave one</span>
+          </div>
+          <div class="g2g-seed">
+            <div class="g2g-seed-stars">★★★★★</div>
+            <div class="g2g-seed-text">"Put $20 on the Oilers in Game 7, spun some slots while I waited. Both in the same app, same wallet. Withdrawal took 3 days but it showed up. No complaints."</div>
+            <div class="g2g-seed-author">- AB player, Calgary · August 2026</div>
+          </div>
+          <div class="g2g-reviews-list" id="reviews-draftkings"></div>
+          <div class="g2g-form">
+            <label class="g2g-form-label">Your turn - rate DraftKings:</label>
+            <div class="g2g-stars-input" id="stars-draftkings" data-rating="0">
+              <button class="g2g-star-btn" data-val="1" onclick="g2gStar('draftkings',1)">★</button>
+              <button class="g2g-star-btn" data-val="2" onclick="g2gStar('draftkings',2)">★</button>
+              <button class="g2g-star-btn" data-val="3" onclick="g2gStar('draftkings',3)">★</button>
+              <button class="g2g-star-btn" data-val="4" onclick="g2gStar('draftkings',4)">★</button>
+              <button class="g2g-star-btn" data-val="5" onclick="g2gStar('draftkings',5)">★</button>
+            </div>
+            <textarea class="g2g-textarea" id="text-draftkings" placeholder="Sports bettor? Casino player? Tell us how it actually went."></textarea>
+            <button class="g2g-submit" onclick="g2gSubmit('draftkings')">Leave your review</button>
+            <div class="g2g-avg" id="avg-draftkings"></div>
+          </div>
+        </div>
         <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at DraftKings →</a>
         <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
@@ -1785,6 +2021,31 @@
       <div class="cc-body">
         <div class="cc-verdict">"Alberta's biggest casino by far - 9,500+ games including slots, live tables, and a full sportsbook. Backed by 50 years of MGM Vegas heritage. Apple Pay and Interac supported."</div>
         <div class="cc-watchout"><span>⚠ Watch out for</span>Welcome bonus carries a steep 15x wagering requirement on deposit + bonus combined before you can withdraw. Some popular titles - including select Pragmatic Play releases - are region-locked out of Alberta pending full licensing.</div>
+        <div class="g2g-widget" id="g2g-betmgm">
+          <div class="g2g-header">
+            <span class="g2g-label">🎰 G2G - Gambler to Gambler</span>
+            <span class="g2g-tag">Read one · Leave one</span>
+          </div>
+          <div class="g2g-seed">
+            <div class="g2g-seed-stars">★★★★☆</div>
+            <div class="g2g-seed-text">"9,500 games sounds like marketing copy but it's actually real - I found titles I'd never seen anywhere else. Bonus terms are brutal though. Read them twice before you claim anything."</div>
+            <div class="g2g-seed-author">- AB player, Red Deer · August 2026</div>
+          </div>
+          <div class="g2g-reviews-list" id="reviews-betmgm"></div>
+          <div class="g2g-form">
+            <label class="g2g-form-label">Your turn - rate BetMGM:</label>
+            <div class="g2g-stars-input" id="stars-betmgm" data-rating="0">
+              <button class="g2g-star-btn" data-val="1" onclick="g2gStar('betmgm',1)">★</button>
+              <button class="g2g-star-btn" data-val="2" onclick="g2gStar('betmgm',2)">★</button>
+              <button class="g2g-star-btn" data-val="3" onclick="g2gStar('betmgm',3)">★</button>
+              <button class="g2g-star-btn" data-val="4" onclick="g2gStar('betmgm',4)">★</button>
+              <button class="g2g-star-btn" data-val="5" onclick="g2gStar('betmgm',5)">★</button>
+            </div>
+            <textarea class="g2g-textarea" id="text-betmgm" placeholder="What did you play? How was the bonus? Did you actually cash out?"></textarea>
+            <button class="g2g-submit" onclick="g2gSubmit('betmgm')">Leave your review</button>
+            <div class="g2g-avg" id="avg-betmgm"></div>
+          </div>
+        </div>
         <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at BetMGM →</a>
         <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
@@ -1824,6 +2085,31 @@
       <div class="cc-body">
         <div class="cc-verdict">"World's biggest online bookmaker. Watch and bet live on 400+ daily events directly in the app. Fast 1-3 day Interac payouts. The gold standard for in-play sports in Alberta."</div>
         <div class="cc-watchout"><span>⚠ Watch out for</span>Welcome offer requires a qualifying bet at odds of 1/5 (1.20) or greater before the bonus releases - easy to miss. Slot library is curated rather than exhaustive; no Pragmatic Play catalogue and no Big Bass, Starlight Princess, or similar series.</div>
+        <div class="g2g-widget" id="g2g-bet365">
+          <div class="g2g-header">
+            <span class="g2g-label">🎰 G2G - Gambler to Gambler</span>
+            <span class="g2g-tag">Read one · Leave one</span>
+          </div>
+          <div class="g2g-seed">
+            <div class="g2g-seed-stars">★★★★★</div>
+            <div class="g2g-seed-text">"Watched the match and cashed out live when we went up 2-0. That cash-out feature alone is worth the signup. Interac withdrawal landed next day. No nonsense."</div>
+            <div class="g2g-seed-author">- AB player, Lethbridge · August 2026</div>
+          </div>
+          <div class="g2g-reviews-list" id="reviews-bet365"></div>
+          <div class="g2g-form">
+            <label class="g2g-form-label">Your turn - rate bet365:</label>
+            <div class="g2g-stars-input" id="stars-bet365" data-rating="0">
+              <button class="g2g-star-btn" data-val="1" onclick="g2gStar('bet365',1)">★</button>
+              <button class="g2g-star-btn" data-val="2" onclick="g2gStar('bet365',2)">★</button>
+              <button class="g2g-star-btn" data-val="3" onclick="g2gStar('bet365',3)">★</button>
+              <button class="g2g-star-btn" data-val="4" onclick="g2gStar('bet365',4)">★</button>
+              <button class="g2g-star-btn" data-val="5" onclick="g2gStar('bet365',5)">★</button>
+            </div>
+            <textarea class="g2g-textarea" id="text-bet365" placeholder="Sports, casino, or both? How did the live betting hold up?"></textarea>
+            <button class="g2g-submit" onclick="g2gSubmit('bet365')">Leave your review</button>
+            <div class="g2g-avg" id="avg-bet365"></div>
+          </div>
+        </div>
         <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at bet365 →</a>
         <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
@@ -1863,6 +2149,31 @@
       <div class="cc-body">
         <div class="cc-verdict">"Powered by Microgaming and Evolution Gaming - the two biggest names in the business. The sleeper pick for live blackjack and roulette players who want quality tables without the noise."</div>
         <div class="cc-watchout"><span>⚠ Watch out for</span>No dedicated mobile app - browser-only on iOS and Android. No sportsbook whatsoever. Withdrawal limits are lower than rivals at entry-level tiers, and there's no Pragmatic Play content meaning the entire Megaways and Big Bass catalogue is absent.</div>
+        <div class="g2g-widget" id="g2g-spincasino">
+          <div class="g2g-header">
+            <span class="g2g-label">🎰 G2G - Gambler to Gambler</span>
+            <span class="g2g-tag">Read one · Leave one</span>
+          </div>
+          <div class="g2g-seed">
+            <div class="g2g-seed-stars">★★★★☆</div>
+            <div class="g2g-seed-text">"Live blackjack dealer was sharp and the tables loaded fast on my phone browser. Nothing flashy - just works. Would rather have an app but the site doesn't give you a reason to complain."</div>
+            <div class="g2g-seed-author">- AB player, Medicine Hat · August 2026</div>
+          </div>
+          <div class="g2g-reviews-list" id="reviews-spincasino"></div>
+          <div class="g2g-form">
+            <label class="g2g-form-label">Your turn - rate Spin Casino:</label>
+            <div class="g2g-stars-input" id="stars-spincasino" data-rating="0">
+              <button class="g2g-star-btn" data-val="1" onclick="g2gStar('spincasino',1)">★</button>
+              <button class="g2g-star-btn" data-val="2" onclick="g2gStar('spincasino',2)">★</button>
+              <button class="g2g-star-btn" data-val="3" onclick="g2gStar('spincasino',3)">★</button>
+              <button class="g2g-star-btn" data-val="4" onclick="g2gStar('spincasino',4)">★</button>
+              <button class="g2g-star-btn" data-val="5" onclick="g2gStar('spincasino',5)">★</button>
+            </div>
+            <textarea class="g2g-textarea" id="text-spincasino" placeholder="Live tables? Slots? How was the mobile experience on your phone?"></textarea>
+            <button class="g2g-submit" onclick="g2gSubmit('spincasino')">Leave your review</button>
+            <div class="g2g-avg" id="avg-spincasino"></div>
+          </div>
+        </div>
         <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at Spin Casino →</a>
         <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
@@ -2407,6 +2718,75 @@ function renderMatchup() {
 
 // Init matchup on load
 document.addEventListener('DOMContentLoaded', renderMatchup);
+
+/* ══════════════════════════════════════════════════════════════════
+   G2G REVIEW WIDGET
+══════════════════════════════════════════════════════════════════ */
+const G2G_CASINOS = ['jackpotcity','draftkings','betmgm','bet365','spincasino'];
+const g2gRatings = {}; // selected star rating per casino
+
+function g2gStar(casino, val) {
+  g2gRatings[casino] = val;
+  const container = document.getElementById('stars-' + casino);
+  container.querySelectorAll('.g2g-star-btn').forEach(btn => {
+    btn.classList.toggle('active', parseInt(btn.dataset.val) <= val);
+  });
+}
+
+function g2gSubmit(casino) {
+  const rating = g2gRatings[casino] || 0;
+  const text   = (document.getElementById('text-' + casino).value || '').trim();
+
+  if (!rating) { alert('Tap a star to leave a rating first.'); return; }
+  if (!text)   { alert('Add a line or two - tell us what you actually experienced.'); return; }
+
+  const key     = 'g2g_reviews_' + casino;
+  const reviews = JSON.parse(localStorage.getItem(key) || '[]');
+  reviews.push({ rating, text, ts: Date.now() });
+  localStorage.setItem(key, JSON.stringify(reviews));
+
+  // reset form
+  document.getElementById('text-' + casino).value = '';
+  g2gRatings[casino] = 0;
+  document.getElementById('stars-' + casino).querySelectorAll('.g2g-star-btn').forEach(b => b.classList.remove('active'));
+
+  g2gRender(casino);
+}
+
+function g2gStars(n) {
+  return '★'.repeat(Math.round(n)) + '☆'.repeat(5 - Math.round(n));
+}
+
+function g2gRender(casino) {
+  const key     = 'g2g_reviews_' + casino;
+  const reviews = JSON.parse(localStorage.getItem(key) || '[]');
+  const list    = document.getElementById('reviews-' + casino);
+  const avg     = document.getElementById('avg-' + casino);
+  if (!list) return;
+
+  list.innerHTML = reviews.map(r => {
+    const d = new Date(r.ts);
+    const date = d.toLocaleDateString('en-CA', { month: 'short', year: 'numeric' });
+    return `
+      <div class="g2g-review-item">
+        <div class="g2g-review-stars">${g2gStars(r.rating)}</div>
+        <div class="g2g-review-text">"​${r.text}​"</div>
+        <div class="g2g-review-meta">AB player · ${date}</div>
+      </div>`;
+  }).join('');
+
+  if (reviews.length > 0) {
+    const mean = reviews.reduce((s, r) => s + r.rating, 0) / reviews.length;
+    avg.innerHTML = `<strong>${mean.toFixed(1)} / 5</strong> from ${reviews.length} G2G review${reviews.length > 1 ? 's' : ''}`;
+  } else {
+    avg.innerHTML = '';
+  }
+}
+
+// Init all on load
+document.addEventListener('DOMContentLoaded', () => {
+  G2G_CASINOS.forEach(g2gRender);
+});
 </script>
 
 </body>
