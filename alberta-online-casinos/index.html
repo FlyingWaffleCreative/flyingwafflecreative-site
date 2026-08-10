@@ -151,7 +151,17 @@
       font-size: 1rem;
     }
 
-    a { color: var(--green); text-decoration: none; }
+    /* Subtle Wheat Beige page container highlight */
+    main::before {
+      content: '';
+      display: block;
+      height: 4px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--green-pasture) 40%, var(--blue-mist) 70%, var(--yellow) 100%);
+      border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+
+    a { color: #3a7abf; text-decoration: none; }
     a:hover { color: var(--red); text-decoration: underline; }
 
     img { max-width: 100%; display: block; }
@@ -159,6 +169,7 @@
     /* ══ HEADER ════════════════════════════════════════════════════ */
     header {
       background: var(--green);
+      border-bottom: 3px solid var(--green-pasture);
       padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
@@ -208,22 +219,24 @@
 
     /* ══ HERO ══════════════════════════════════════════════════════ */
     .hero {
-      background: linear-gradient(160deg, var(--green) 0%, var(--green-light) 100%);
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 28px,
+          rgba(136,170,66,0.07) 28px,
+          rgba(136,170,66,0.07) 30px
+        ),
+        linear-gradient(160deg, #0e2210 0%, var(--green) 45%, var(--green-light) 100%);
       color: #fff;
-      padding: 2.5rem 1.25rem 2rem;
+      padding: 2.5rem 1.25rem 2.25rem;
       text-align: center;
       position: relative;
       overflow: hidden;
-      border-bottom: 3px solid var(--green-pasture);
+      border-bottom: 4px solid var(--green-pasture);
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('hero-cowboy.png') center/cover no-repeat;
-      opacity: 0.06;
-    }
+    /* cowboy image removed */
 
     .hero-inner {
       position: relative;
@@ -296,7 +309,7 @@
       transition: all 0.2s;
     }
 
-    .quick-jump a:hover { background: var(--red); border-color: var(--red); color: #fff; }
+    .quick-jump a:hover { background: var(--green-pasture); border-color: var(--green-pasture); color: #fff; }
 
     /* ══ MAIN LAYOUT ═══════════════════════════════════════════════ */
     main {
@@ -314,6 +327,19 @@
       font-family: var(--font-display);
       border-bottom: 2px solid var(--green-pasture);
       padding-bottom: 0.4rem;
+    }
+
+    /* Pasture Green dot accent before section h2 */
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: var(--red);
+      border-radius: 50%;
+      margin-right: 0.6rem;
+      vertical-align: middle;
+      margin-bottom: 2px;
     }
 
     h3 {
@@ -342,7 +368,7 @@
     .byline-sep { color: var(--border); }
 
     .byline-updated {
-      background: var(--green);
+      background: var(--red);
       color: #fff;
       font-size: 0.68rem;
       font-weight: 700;
@@ -423,7 +449,7 @@
 
     .cta-small:hover { background: #7a1518; text-decoration: none; color: #fff; }
 
-    .scroll-hint { font-family: var(--font-body); font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-bottom: 1.5rem; }
+    .scroll-hint { font-family: var(--font-body); font-size: 0.75rem; color: var(--green-pasture); text-align: center; margin-bottom: 1.5rem; font-weight: 600; }
 
     /* ══ COMPACT CASINO CARD ═══════════════════════════════════════ */
     .cc-card {
@@ -438,6 +464,9 @@
     }
 
     .cc-card:hover { box-shadow: var(--shadow-red); transform: translateY(-2px); }
+
+    /* #1 card gets Barn Red top accent */
+    #jackpot-city .cc-card { border-top-color: var(--red); }
 
     .cc-header {
       background: var(--green);
@@ -475,7 +504,7 @@
     .cc-fact { padding: 0.7rem 0.85rem; border-right: 1px solid var(--border); text-align: center; }
     .cc-fact:last-child { border-right: none; }
     .cc-fact-label { font-family: var(--font-body); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.2rem; }
-    .cc-fact-value { font-family: var(--font-body); font-size: 0.92rem; font-weight: 700; color: var(--green); }
+    .cc-fact-value { font-family: var(--font-body); font-size: 0.92rem; font-weight: 700; color: var(--green); display: inline-block; }
 
     .cc-body { padding: 1rem 1.25rem 1.25rem; }
 
@@ -556,7 +585,7 @@
     .g2g-avg strong { color: var(--green); }
 
     /* ══ INFO BOXES ════════════════════════════════════════════════ */
-    .info-box { background: var(--yellow-dim); border: 1px solid rgba(136,170,66,0.4); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .info-box { background: var(--yellow-dim); border: 1px solid rgba(249,232,168,0.8); border-left: 4px solid var(--green-pasture); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
     .info-box.warning { background: var(--red-dim); border-color: rgba(162,30,34,0.3); }
     .info-box h4 { font-family: var(--font-body); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green); margin-bottom: 0.5rem; font-weight: 700; }
     .info-box.warning h4 { color: var(--red); }
@@ -564,7 +593,8 @@
 
     /* ══ DEFINITION BLOCKS ═════════════════════════════════════════ */
     .def-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-    .def-card { background: var(--card); border: 1px solid var(--border); border-top: 2px solid var(--green-pasture); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+    .def-card { background: var(--card); border: 1px solid var(--border); border-top: 2px solid var(--green-pasture); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); transition: transform 0.2s; }
+    .def-card:hover { transform: translateY(-2px); }
     .def-card .def-icon { font-size: 2rem; margin-bottom: 0.5rem; }
     .def-card h4 { font-size: 1rem; font-family: var(--font-display); color: var(--green); margin-bottom: 0.5rem; }
     .def-card p { font-family: var(--font-body); font-size: 0.84rem; color: var(--text-muted); margin: 0; }
@@ -645,7 +675,7 @@
     .matchup-verdict strong { color: var(--green); }
 
     /* ══ FOOTER ════════════════════════════════════════════════════ */
-    footer { background: var(--green); color: rgba(255,255,255,0.7); padding: 2rem 1.5rem; text-align: center; font-family: var(--font-body); font-size: 0.8rem; line-height: 1.7; }
+    footer { background: var(--green); border-top: 4px solid var(--green-pasture); color: rgba(255,255,255,0.7); padding: 2rem 1.5rem; text-align: center; font-family: var(--font-body); font-size: 0.8rem; line-height: 1.7; }
     footer strong { color: var(--yellow); }
     .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
     .footer-links a { color: var(--yellow); }
