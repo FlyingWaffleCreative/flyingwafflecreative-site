@@ -116,20 +116,25 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:          #F0F2F0;
-      --bg-alt:      #E8EBE8;
-      --text:        #1E2228;
-      --text-muted:  #5A6370;
-      --accent:      #2D7A4F;
-      --accent-light:#52B788;
-      --accent-dark: #1C4A2E;
+      /* — iGaming Alberta: Midnight Alberta brand — */
+      --bg:          #0D1B2A;
+      --bg-alt:      #112236;
+      --text:        #E8E4DC;
+      --text-muted:  #7A8FA8;
+      --accent:      #C9942A;
+      --accent-light:#E8B84B;
+      --accent-dark: #a87822;
       --gold:        #C9942A;
-      --gold-light:  #F5E6C0;
-      --card:        #FFFFFF;
-      --border:      #D0D8D4;
-      --red:         #C0392B;
+      --gold-light:  #E8B84B;
+      --gold-dim:    rgba(201,148,42,0.15);
+      --card:        #152741;
+      --border:      #1E3554;
+      --border-gold: rgba(201,148,42,0.4);
+      --red:         #E05252;
+      --green-win:   #2ECC71;
       --radius:      12px;
-      --shadow:      0 2px 16px rgba(0,0,0,0.08);
+      --shadow:      0 4px 24px rgba(0,0,0,0.35);
+      --shadow-gold: 0 0 20px rgba(201,148,42,0.25);
     }
 
     body {
@@ -140,14 +145,15 @@
       font-size: 1rem;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a { color: var(--accent-light); text-decoration: none; }
+    a:hover { color: var(--gold-light); text-decoration: underline; }
 
     img { max-width: 100%; display: block; }
 
     /* ══ HEADER ════════════════════════════════════════════════════ */
     header {
-      background: var(--accent-dark);
+      background: #080f18;
+      border-bottom: 1px solid var(--border-gold);
       padding: 1rem 1.5rem;
       display: flex;
       align-items: center;
@@ -188,8 +194,9 @@
     }
 
     .header-badge {
-      background: var(--gold);
-      color: #fff;
+      background: transparent;
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
       font-size: 0.7rem;
       font-family: Arial, sans-serif;
       font-weight: bold;
@@ -201,12 +208,21 @@
 
     /* ══ HERO ══════════════════════════════════════════════════════ */
     .hero {
-      background: linear-gradient(135deg, var(--accent-dark) 0%, #264d38 60%, #1a3d2b 100%);
+      background: linear-gradient(160deg, #060e18 0%, #0d1f38 50%, #0a1628 100%);
       color: #fff;
-      padding: 1.4rem 1.25rem 1.25rem;
+      padding: 2.5rem 1.25rem 2rem;
       text-align: center;
       position: relative;
       overflow: hidden;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,148,42,0.12) 0%, transparent 70%);
+      pointer-events: none;
     }
 
     .hero::before {
@@ -245,13 +261,14 @@
     }
 
     .hero h1 em {
-      color: var(--accent-light);
+      color: var(--gold-light);
       font-style: normal;
+      text-shadow: 0 0 30px rgba(232,184,75,0.4);
     }
 
     .hero-sub {
       font-size: 0.9rem;
-      color: #cde8da;
+      color: #a0b8cc;
       max-width: 580px;
       margin: 0 auto 0.85rem;
       font-family: Arial, sans-serif;
@@ -274,21 +291,22 @@
 
     .hero-stat strong {
       font-size: 0.95rem;
-      color: var(--accent-light);
+      color: var(--gold-light);
       font-family: Arial, sans-serif;
       font-weight: bold;
     }
 
     .hero-stat span {
       font-size: 0.82rem;
-      color: #aac8b8;
+      color: #5a7a90;
       font-family: Arial, sans-serif;
     }
 
     /* ══ QUICK JUMP ════════════════════════════════════════════════ */
     .quick-jump {
-      background: var(--accent);
-      padding: 0.85rem 1.5rem;
+      background: #080f18;
+      border-bottom: 1px solid var(--border);
+      padding: 0.7rem 1.5rem;
       overflow-x: auto;
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
@@ -303,18 +321,19 @@
 
     .quick-jump a {
       display: inline-block;
-      background: rgba(255,255,255,0.15);
-      color: #fff;
+      background: rgba(201,148,42,0.1);
+      border: 1px solid rgba(201,148,42,0.25);
+      color: var(--text-muted);
       font-family: Arial, sans-serif;
       font-size: 0.78rem;
       font-weight: bold;
-      padding: 0.4rem 0.9rem;
+      padding: 0.35rem 0.85rem;
       border-radius: 20px;
       text-decoration: none;
-      transition: background 0.2s;
+      transition: all 0.2s;
     }
 
-    .quick-jump a:hover { background: rgba(255,255,255,0.3); }
+    .quick-jump a:hover { background: rgba(201,148,42,0.25); color: var(--gold-light); border-color: var(--gold); }
 
     /* ══ MAIN LAYOUT ═══════════════════════════════════════════════ */
     main {
@@ -327,16 +346,16 @@
 
     h2 {
       font-size: clamp(1.35rem, 3.5vw, 1.75rem);
-      color: var(--accent-dark);
+      color: var(--gold-light);
       margin-bottom: 0.75rem;
       font-family: 'Georgia', serif;
-      border-bottom: 3px solid var(--accent-light);
+      border-bottom: 2px solid var(--border-gold);
       padding-bottom: 0.4rem;
     }
 
     h3 {
       font-size: 1.15rem;
-      color: var(--accent-dark);
+      color: var(--gold-light);
       margin: 1.25rem 0 0.5rem;
       font-family: 'Georgia', serif;
     }
@@ -348,16 +367,16 @@
 
     /* ══ TRUST BAR ═════════════════════════════════════════════════ */
     .trust-bar {
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
+      padding: 1rem 1.5rem;
       display: flex;
       gap: 1.5rem;
       flex-wrap: wrap;
       align-items: center;
       margin-bottom: 2rem;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-gold);
     }
 
     .trust-item {
@@ -374,7 +393,7 @@
     }
 
     .trust-item strong {
-      color: var(--text);
+      color: var(--gold-light);
     }
 
     /* ══ COMPARISON TABLE ══════════════════════════════════════════ */
@@ -393,11 +412,13 @@
       font-family: Arial, sans-serif;
       font-size: 0.86rem;
       min-width: 560px;
+      color: var(--text);
     }
 
     .table-wrap thead {
-      background: var(--accent-dark);
-      color: #fff;
+      background: #080f18;
+      color: var(--gold-light);
+      border-bottom: 2px solid var(--border-gold);
     }
 
     .table-wrap thead th {
@@ -409,12 +430,13 @@
     }
 
     .table-wrap tbody tr:nth-child(even) { background: var(--bg-alt); }
-    .table-wrap tbody tr:hover { background: #dceee4; }
+    .table-wrap tbody tr:hover { background: rgba(201,148,42,0.08); }
 
     .table-wrap tbody td {
       padding: 0.8rem 1rem;
       border-bottom: 1px solid var(--border);
       vertical-align: middle;
+      color: var(--text);
     }
 
     .rank-badge {
@@ -426,7 +448,7 @@
       border-radius: 50%;
       font-weight: bold;
       font-size: 0.85rem;
-      background: var(--border);
+      background: var(--border-gold);
       color: var(--text);
     }
 
@@ -436,24 +458,25 @@
 
     .casino-name-cell {
       font-weight: bold;
-      color: var(--accent-dark);
+      color: var(--gold-light);
     }
 
-    .stars { color: var(--gold); letter-spacing: -1px; }
+    .stars { color: var(--gold-light); letter-spacing: -1px; font-size: 1.05rem; }
 
     .cta-small {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #0D1B2A;
       font-size: 0.78rem;
       font-weight: bold;
       padding: 0.4rem 0.9rem;
       border-radius: 6px;
       text-decoration: none;
       white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(201,148,42,0.3);
     }
 
-    .cta-small:hover { background: var(--accent-dark); text-decoration: none; }
+    .cta-small:hover { opacity: 0.9; text-decoration: none; }
 
     .scroll-hint {
       font-family: Arial, sans-serif;
@@ -466,15 +489,21 @@
     /* ══ CASINO CARDS ══════════════════════════════════════════════ */
     .casino-card {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       margin-bottom: 2rem;
       overflow: hidden;
+      transition: box-shadow 0.25s;
+    }
+
+    .casino-card:hover {
+      box-shadow: var(--shadow-gold);
     }
 
     .casino-card-header {
-      background: var(--accent-dark);
+      background: linear-gradient(135deg, #080f18 0%, #0f1e30 100%);
+      border-bottom: 1px solid var(--border-gold);
       color: #fff;
       padding: 1.25rem 1.5rem;
       display: flex;
@@ -487,12 +516,12 @@
       font-size: 2.5rem;
       font-weight: bold;
       line-height: 1;
-      color: var(--accent-light);
+      color: var(--border);
       flex-shrink: 0;
       font-family: Arial, sans-serif;
     }
 
-    .casino-rank-number.is-gold { color: var(--gold); }
+    .casino-rank-number.is-gold { color: var(--gold-light); text-shadow: 0 0 16px rgba(232,184,75,0.5); }
 
     .casino-header-info { flex: 1; min-width: 200px; }
 
@@ -504,7 +533,7 @@
     }
 
     .casino-tagline {
-      color: var(--accent-light);
+      color: var(--text-muted);
       font-family: Arial, sans-serif;
       font-size: 0.85rem;
     }
@@ -524,7 +553,7 @@
 
     .rating-label {
       font-size: 0.7rem;
-      color: #aac8b8;
+      color: var(--text-muted);
       font-family: Arial, sans-serif;
     }
 
@@ -540,7 +569,7 @@
     }
 
     .meta-item {
-      background: var(--bg);
+      background: #0d1b2a;
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 0.6rem 0.85rem;
@@ -552,14 +581,14 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--text-muted);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.15rem;
     }
 
     .meta-value {
       font-family: Arial, sans-serif;
       font-size: 0.9rem;
       font-weight: bold;
-      color: var(--text);
+      color: var(--gold-light);
     }
 
     .casino-pros-cons {
@@ -579,13 +608,13 @@
     }
 
     .pros-box {
-      background: #eaf5ee;
-      border: 1px solid #b2d8be;
+      background: rgba(46,204,113,0.07);
+      border: 1px solid rgba(46,204,113,0.25);
     }
 
     .cons-box {
-      background: #fdf0ee;
-      border: 1px solid #e8c2bb;
+      background: rgba(224,82,82,0.07);
+      border: 1px solid rgba(224,82,82,0.25);
     }
 
     .pros-box h4, .cons-box h4 {
@@ -597,7 +626,7 @@
       margin-bottom: 0.5rem;
     }
 
-    .pros-box h4 { color: var(--accent); }
+    .pros-box h4 { color: var(--green-win); }
     .cons-box h4 { color: var(--red); }
 
     .pros-box ul, .cons-box ul {
@@ -609,7 +638,7 @@
     }
 
     .casino-verdict {
-      background: var(--gold-light);
+      background: var(--gold-dim);
       border-left: 4px solid var(--gold);
       padding: 0.85rem 1rem;
       border-radius: 0 8px 8px 0;
@@ -618,27 +647,29 @@
       font-size: 0.88rem;
     }
 
-    .casino-verdict strong { color: var(--accent-dark); }
+    .casino-verdict strong { color: var(--gold-light); }
 
     .cta-button {
       display: block;
       width: 100%;
-      background: var(--accent);
-      color: #fff;
+      background: linear-gradient(135deg, #a87822 0%, var(--gold) 50%, var(--gold-light) 100%);
+      color: #0D1B2A;
       text-align: center;
       font-family: Arial, sans-serif;
       font-size: 1rem;
       font-weight: bold;
-      padding: 0.95rem;
+      padding: 1rem;
       border-radius: 8px;
       text-decoration: none;
-      transition: background 0.2s;
-      letter-spacing: 0.02em;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 16px rgba(201,148,42,0.4);
+      text-transform: uppercase;
     }
 
-    .cta-button:hover { background: var(--accent-dark); text-decoration: none; }
-    .cta-button.gold-cta { background: var(--gold); }
-    .cta-button.gold-cta:hover { background: #a87822; }
+    .cta-button:hover { opacity: 0.92; box-shadow: 0 6px 24px rgba(201,148,42,0.6); transform: translateY(-1px); text-decoration: none; }
+    .cta-button.gold-cta { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); }
+    .cta-button.gold-cta:hover { opacity: 0.9; }
 
     .disclaimer-micro {
       font-family: Arial, sans-serif;
@@ -650,16 +681,16 @@
 
     /* ══ INFO BOXES ════════════════════════════════════════════════ */
     .info-box {
-      background: #e8f3ec;
-      border: 1px solid #b2d8be;
+      background: rgba(201,148,42,0.06);
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius);
       padding: 1.25rem 1.5rem;
       margin: 1.5rem 0;
     }
 
     .info-box.warning {
-      background: #fff8e6;
-      border-color: #f0d080;
+      background: rgba(224,82,82,0.07);
+      border-color: rgba(224,82,82,0.3);
     }
 
     .info-box h4 {
@@ -667,11 +698,11 @@
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--accent-dark);
+      color: var(--gold-light);
       margin-bottom: 0.5rem;
     }
 
-    .info-box.warning h4 { color: #8a6a00; }
+    .info-box.warning h4 { color: var(--red); }
     .info-box p { font-size: 0.9rem; color: var(--text); margin-bottom: 0; }
 
     /* ══ DEFINITION BLOCKS ═════════════════════════════════════════ */
@@ -684,7 +715,7 @@
 
     .def-card {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius);
       padding: 1.25rem;
       box-shadow: var(--shadow);
@@ -694,7 +725,7 @@
     .def-card h4 {
       font-size: 1rem;
       font-family: 'Georgia', serif;
-      color: var(--accent-dark);
+      color: var(--gold-light);
       margin-bottom: 0.5rem;
     }
 
@@ -708,7 +739,7 @@
     /* ══ FAQ ════════════════════════════════════════════════════════ */
     .faq-item {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius);
       margin-bottom: 0.75rem;
       box-shadow: var(--shadow);
@@ -724,7 +755,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
-      color: var(--accent-dark);
+      color: var(--gold-light);
     }
 
     .faq-q::after {
@@ -732,7 +763,7 @@
       font-size: 1.4rem;
       line-height: 1;
       flex-shrink: 0;
-      color: var(--accent);
+      color: var(--gold);
     }
 
     details[open] .faq-q::after { content: '﹣'; }
@@ -748,32 +779,32 @@
     /* ══ EXPERT BIO ════════════════════════════════════════════════ */
     .expert-bio {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-gold);
       border-radius: var(--radius);
       padding: 1.5rem;
       display: flex;
       gap: 1.25rem;
       align-items: flex-start;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-gold);
     }
 
     .expert-avatar {
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 2rem;
       flex-shrink: 0;
-      color: #fff;
+      color: #0D1B2A;
     }
 
     .expert-info h4 {
       font-family: 'Georgia', serif;
       font-size: 1.1rem;
-      color: var(--accent-dark);
+      color: var(--gold-light);
       margin-bottom: 0.2rem;
     }
 
@@ -793,8 +824,9 @@
 
     /* ══ FOOTER ════════════════════════════════════════════════════ */
     footer {
-      background: var(--accent-dark);
-      color: #aac8b8;
+      background: #060c14;
+      border-top: 1px solid var(--border-gold);
+      color: var(--text-muted);
       padding: 2rem 1.5rem;
       text-align: center;
       font-family: Arial, sans-serif;
@@ -812,11 +844,12 @@
       margin: 0.75rem 0;
     }
 
-    .footer-links a { color: var(--accent-light); }
+    .footer-links a { color: var(--gold-light); }
 
     .responsible-gaming-bar {
-      background: var(--gold);
-      color: #fff;
+      background: #090e16;
+      border-bottom: 1px solid var(--border-gold);
+      color: var(--text-muted);
       text-align: center;
       padding: 0.6rem 1rem;
       font-family: Arial, sans-serif;
@@ -849,23 +882,23 @@
       padding: 1.4rem 1.6rem;
       margin: 2rem 0;
       /* default: editorial green */
-      background: #eaf5ee;
-      border: 1.5px solid #a8d5b8;
-      border-left: 5px solid var(--accent);
+      background: var(--gold-dim);
+      border: 1.5px solid var(--border-gold);
+      border-left: 5px solid var(--gold);
     }
 
     /* ── methodology / "how we pick" ─────────────────────────────── */
     .shoutout-box--method {
-      background: #f0f4ff;
-      border-color: #b4c8f0;
-      border-left-color: #2a5bbf;
+      background: rgba(0,180,166,0.07);
+      border-color: rgba(0,180,166,0.3);
+      border-left-color: #00B4A6;
     }
 
     /* ── warning / disclaimer ─────────────────────────────────────── */
     .shoutout-box--warning {
-      background: #fff8e6;
-      border-color: #f0d080;
-      border-left-color: var(--gold);
+      background: rgba(224,82,82,0.07);
+      border-color: rgba(224,82,82,0.3);
+      border-left-color: var(--red);
     }
 
     /* ── hot take / strong opinion ───────────────────────────────── */
@@ -884,12 +917,12 @@
       font-weight: bold;
       letter-spacing: 0.11em;
       text-transform: uppercase;
-      color: var(--accent-dark);
+      color: var(--gold-light);
       margin-bottom: 0.6rem;
     }
 
-    .shoutout-box--method   .shoutout-box__label { color: #1d4e9f; }
-    .shoutout-box--warning  .shoutout-box__label { color: #7a5a00; }
+    .shoutout-box--method   .shoutout-box__label { color: #00B4A6; }
+    .shoutout-box--warning  .shoutout-box__label { color: var(--red); }
     .shoutout-box--hot      .shoutout-box__label { color: var(--red); }
 
     .shoutout-box__body {
@@ -902,8 +935,8 @@
     .shoutout-box__body p { margin-bottom: 0.55rem; }
     .shoutout-box__body p:last-child { margin-bottom: 0; }
     .shoutout-box__body strong { color: var(--accent-dark); }
-    .shoutout-box--method  .shoutout-box__body strong { color: #1d4e9f; }
-    .shoutout-box--warning .shoutout-box__body strong { color: #6b4f00; }
+    .shoutout-box--method  .shoutout-box__body strong { color: #00B4A6; }
+    .shoutout-box--warning .shoutout-box__body strong { color: var(--red); }
 
     /* ══ BYLINE ══════════════════════════════════════════════════════ */
     .page-byline {
@@ -914,14 +947,15 @@
       align-items: center;
       gap: 0.5rem;
       flex-wrap: wrap;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .byline-sep { color: var(--border); }
 
     .byline-updated {
-      background: var(--accent-dark);
-      color: #fff;
+      background: var(--gold-dim);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
       font-size: 0.68rem;
       font-weight: bold;
       letter-spacing: 0.06em;
@@ -929,7 +963,7 @@
       border-radius: 12px;
     }
 
-    .byline-expert strong { color: var(--accent-dark); }
+    .byline-expert strong { color: var(--gold-light); }
 
     /* ══ PAGE INTRO ══════════════════════════════════════════════════ */
     .page-intro {
@@ -941,9 +975,9 @@
     /* ══ CASINO FINDER TOOL ═══════════════════════════════════════════════ */
     .finder-tool {
       background: var(--card);
-      border: 1.5px solid var(--border);
+      border: 1.5px solid var(--border-gold);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-gold);
       overflow: hidden;
     }
 
@@ -967,7 +1001,7 @@
     .finder-q {
       font-family: 'Georgia', serif;
       font-size: 1.2rem;
-      color: var(--accent-dark);
+      color: var(--gold-light);
       margin-bottom: 1.25rem;
       line-height: 1.35;
     }
@@ -983,7 +1017,7 @@
     }
 
     .finder-btn {
-      background: var(--bg);
+      background: #0d1b2a;
       border: 1.5px solid var(--border);
       border-radius: 10px;
       padding: 0.85rem 1rem;
@@ -997,20 +1031,21 @@
     }
 
     .finder-btn:hover {
-      border-color: var(--accent);
-      background: #eaf5ee;
-      color: var(--accent-dark);
+      border-color: var(--gold);
+      background: var(--gold-dim);
+      color: var(--gold-light);
     }
 
     .finder-btn.selected {
-      border-color: var(--accent);
-      background: var(--accent);
-      color: #fff;
+      border-color: var(--gold);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #0D1B2A;
+      font-weight: bold;
     }
 
     .finder-progress {
       height: 4px;
-      background: var(--border);
+      background: var(--border-gold);
     }
 
     .finder-progress-fill {
@@ -1031,7 +1066,7 @@
     .finder-result-title {
       font-family: 'Georgia', serif;
       font-size: 1.4rem;
-      color: var(--accent-dark);
+      color: var(--gold-light);
       margin-bottom: 0.4rem;
     }
 
@@ -1057,8 +1092,8 @@
 
     .finder-cta {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: #0D1B2A;
       font-family: Arial, sans-serif;
       font-weight: bold;
       font-size: 0.95rem;
@@ -1068,9 +1103,9 @@
       margin-bottom: 0.5rem;
     }
 
-    .finder-cta:hover { background: var(--accent-dark); text-decoration: none; }
-    .finder-cta.gold { background: var(--gold); }
-    .finder-cta.gold:hover { background: #a87822; }
+    .finder-cta:hover { opacity: 0.9; text-decoration: none; }
+    .finder-cta.gold { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); }
+    .finder-cta.gold:hover { opacity: 0.9; }
 
     .finder-reset-btn {
       display: block;
@@ -1109,11 +1144,11 @@
     .matchup-select {
       width: 100%;
       padding: 0.7rem 1rem;
-      border: 1.5px solid var(--border);
+      border: 1.5px solid var(--border-gold);
       border-radius: 8px;
       font-family: Arial, sans-serif;
       font-size: 0.95rem;
-      background: var(--card);
+      background: #0d1b2a;
       color: var(--text);
       cursor: pointer;
       appearance: auto;
@@ -1121,7 +1156,7 @@
 
     .matchup-select:focus {
       outline: none;
-      border-color: var(--accent);
+      border-color: var(--gold);
     }
 
     .matchup-vs {
@@ -1148,11 +1183,13 @@
       font-family: Arial, sans-serif;
       font-size: 0.88rem;
       min-width: 420px;
+      color: var(--text);
     }
 
     .matchup-table thead {
-      background: var(--accent-dark);
-      color: #fff;
+      background: #080f18;
+      color: var(--gold-light);
+      border-bottom: 2px solid var(--border-gold);
     }
 
     .matchup-table thead th {
@@ -1195,18 +1232,18 @@
     }
 
     .matchup-cell.winner {
-      color: var(--accent-dark);
+      color: var(--gold-light);
       font-weight: bold;
     }
 
     .matchup-cell.winner::after {
       content: ' ✓';
-      color: var(--accent);
+      color: var(--gold);
       font-size: 0.8rem;
     }
 
     .matchup-verdict {
-      background: var(--gold-light);
+      background: var(--gold-dim);
       border-left: 4px solid var(--gold);
       border-radius: 0 8px 8px 0;
       padding: 1rem 1.25rem;
@@ -1216,7 +1253,7 @@
       color: var(--text);
     }
 
-    .matchup-verdict strong { color: var(--accent-dark); }
+    .matchup-verdict strong { color: var(--gold-light); }
 
     /* ══ UTILITY ═══════════════════════════════════════════════════ */
     .text-center { text-align: center; }
