@@ -176,12 +176,15 @@
       line-height: 1.2;
     }
 
-    .site-brand .brand-sub {
+    .brand-svg { flex-shrink: 0; }
+
+    .site-brand .brand-tagline {
       color: var(--accent-light);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-family: Arial, sans-serif;
       font-weight: normal;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      opacity: 0.85;
     }
 
     .header-badge {
@@ -200,7 +203,7 @@
     .hero {
       background: linear-gradient(135deg, var(--accent-dark) 0%, #264d38 60%, #1a3d2b 100%);
       color: #fff;
-      padding: 3rem 1.5rem 2.5rem;
+      padding: 1.4rem 1.25rem 1.25rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -235,9 +238,9 @@
     }
 
     .hero h1 {
-      font-size: clamp(1.75rem, 5vw, 2.75rem);
+      font-size: clamp(1.4rem, 5vw, 2.4rem);
       line-height: 1.2;
-      margin-bottom: 1rem;
+      margin-bottom: 0.35rem;
       font-family: 'Georgia', serif;
     }
 
@@ -247,35 +250,37 @@
     }
 
     .hero-sub {
-      font-size: 1.05rem;
+      font-size: 0.9rem;
       color: #cde8da;
       max-width: 580px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 0.85rem;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .hero-stats {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      align-items: center;
+      gap: 0.5rem 1.25rem;
       flex-wrap: wrap;
-      margin-top: 0.5rem;
     }
 
     .hero-stat {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
 
     .hero-stat strong {
-      display: block;
-      font-size: 1.5rem;
+      font-size: 0.95rem;
       color: var(--accent-light);
       font-family: Arial, sans-serif;
+      font-weight: bold;
     }
 
     .hero-stat span {
-      font-size: 0.75rem;
+      font-size: 0.82rem;
       color: #aac8b8;
       font-family: Arial, sans-serif;
     }
@@ -1244,14 +1249,24 @@
 
 <!-- ════ HEADER ═════════════════════════════════════════════════════ -->
 <header>
-  <a class="site-brand" href="https://flyingwafflecreative.com">
-    <span class="brand-icon">🍁</span>
+  <a class="site-brand" href="/">
+    <svg class="brand-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <polygon points="22,4 33,26 11,26" fill="#52B788"/>
+      <polygon points="12,10 22,26 2,26" fill="#3a9a6a" opacity="0.85"/>
+      <polygon points="32,12 44,28 20,28" fill="#3a9a6a" opacity="0.8"/>
+      <polygon points="22,4 25.5,13 18.5,13" fill="#ffffff" opacity="0.9"/>
+      <polygon points="12,10 14.5,16.5 9.5,16.5" fill="#ffffff" opacity="0.7"/>
+      <polygon points="32,12 34.5,18 29.5,18" fill="#ffffff" opacity="0.7"/>
+      <circle cx="22" cy="35" r="7" fill="#1C4A2E" stroke="#52B788" stroke-width="1.5"/>
+      <circle cx="22" cy="35" r="5" fill="none" stroke="#52B788" stroke-width="0.75" stroke-dasharray="2.5 1.5"/>
+      <polygon points="22,30.5 24.5,35 22,39.5 19.5,35" fill="#52B788"/>
+    </svg>
     <div>
       <div class="brand-text">iGaming Alberta</div>
-      <div class="brand-sub">by Flying Waffle Creative</div>
+      <div class="brand-tagline">Alberta's Casino Guide</div>
     </div>
   </a>
-  <div class="header-badge">✅ Regulated Market — Live Since July 13, 2026</div>
+  <div class="header-badge">✅ Live Since July 13, 2026</div>
 </header>
 
 <!-- ════ HERO ════════════════════════════════════════════════════════ -->
@@ -1271,7 +1286,6 @@
 <!-- ════ QUICK JUMP ══════════════════════════════════════════════════ -->
 <nav class="quick-jump" aria-label="Jump to section">
   <div class="quick-jump-inner">
-    <a href="#top5-table">📊 Compare All 5</a>
     <a href="#jackpot-city">#1 Jackpot City</a>
     <a href="#draftkings">#2 DraftKings</a>
     <a href="#betmgm">#3 BetMGM</a>
@@ -1279,8 +1293,7 @@
     <a href="#spin-casino">#5 Spin Casino</a>
     <a href="#casino-finder">🧠 Find My Casino</a>
     <a href="#matchup">⚖️ Compare Two</a>
-    <a href="#alberta-guide">Alberta Guide</a>
-    <a href="#glossary">Glossary</a>
+    <a href="#alberta-guide">AB Guide</a>
     <a href="#faq">FAQ</a>
   </div>
 </nav>
@@ -1292,7 +1305,7 @@
   <div class="page-byline">
     <span class="byline-updated">Updated August 2026</span>
     <span class="byline-sep">·</span>
-    <span class="byline-expert">Fact-checked by <strong>Lara Wilson</strong>, Casino.ca Expert</span>
+    <span class="byline-expert">Fact-checked by <a href="https://www.casino.ca" rel="noopener" target="_blank"><strong>Lara Wilson</strong></a>, Casino.ca Expert</span>
   </div>
 
   <!-- ════ INTRO ════════════════════════════════════════════════════ -->
@@ -2015,14 +2028,6 @@
     <h2>Our Review Methodology</h2>
     <p>Every casino listed on this page was independently evaluated using a five-factor scoring model. No operator influences our rankings through advertising or affiliate fees — our placement decisions are made editorially.</p>
 
-    <div class="casino-meta-grid">
-      <div class="meta-item"><div class="meta-label">Game Library</div><div class="meta-value">20% weight</div></div>
-      <div class="meta-item"><div class="meta-label">Bonus Value</div><div class="meta-value">20% weight</div></div>
-      <div class="meta-item"><div class="meta-label">Payout Speed</div><div class="meta-value">20% weight</div></div>
-      <div class="meta-item"><div class="meta-label">Mobile Experience</div><div class="meta-value">20% weight</div></div>
-      <div class="meta-item"><div class="meta-label">Customer Support</div><div class="meta-value">20% weight</div></div>
-    </div>
-
     <p class="text-small mt-1">All scores verified as of August 2026. Ratings are updated following significant platform changes or regulatory actions. Last updated: August 10, 2026.</p>
   </section>
 
@@ -2030,17 +2035,17 @@
 
 <!-- ════ FOOTER ═══════════════════════════════════════════════════════ -->
 <footer>
-  <strong>iGaming Alberta</strong> — by <a href="https://flyingwafflecreative.com">Flying Waffle Creative</a>
+  <strong>iGaming Alberta</strong> — Alberta's independent online casino guide
   <div class="footer-links">
-    <a href="https://flyingwafflecreative.com">Home</a>
-    <a href="https://flyingwafflecreative.com/about">About</a>
-    <a href="https://flyingwafflecreative.com/contact">Contact</a>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
     <a href="https://www.abigaming.ca/players/registered-igaming-sites/" rel="noopener" target="_blank">AiGC Operator Directory</a>
     <a href="tel:18005224700">Problem Gambling Helpline</a>
   </div>
   <p>This page contains affiliate links. If you click through and register, Flying Waffle Creative may earn a commission at no cost to you. Our editorial rankings are independent of commercial relationships.</p>
   <p style="margin-top:0.75rem;">🍁 Content is Canada-specific and Alberta-regulated market focused. All operators listed are registered with the Alberta iGaming Corporation (AiGC). 18+ only. Gamble responsibly.</p>
-  <p style="margin-top:0.75rem; font-size:0.72rem; color:#7a9e8a;">© 2026 Flying Waffle Creative · FlyingWaffleCreative.com · Alberta, Canada</p>
+  <p style="margin-top:0.75rem; font-size:0.72rem; color:#7a9e8a;">© 2026 iGaming Alberta · igamingalberta.ca · Alberta, Canada</p>
 </footer>
 
 <script>
