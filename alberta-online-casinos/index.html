@@ -1255,6 +1255,176 @@
 
     .matchup-verdict strong { color: var(--gold-light); }
 
+
+    /* ══ COMPACT CASINO CARD ═══════════════════════════════════════
+       Three-fact layout: rank · name · score · 3 pills · best feature · CTA
+    ══════════════════════════════════════════════════════════════════ */
+
+    .cc-card {
+      background: var(--card);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.2s;
+    }
+
+    .cc-card:hover {
+      box-shadow: var(--shadow-gold);
+      transform: translateY(-2px);
+    }
+
+    /* header strip */
+    .cc-header {
+      background: linear-gradient(120deg, #060d18 0%, #0f1e32 100%);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cc-rank {
+      font-family: Arial, sans-serif;
+      font-size: 1.75rem;
+      font-weight: 900;
+      line-height: 1;
+      min-width: 2.2rem;
+    }
+
+    .cc-rank.gold  { color: var(--gold-light); text-shadow: 0 0 14px rgba(232,184,75,0.5); }
+    .cc-rank.silver{ color: #C0C0C0; }
+    .cc-rank.bronze{ color: #CD7F32; }
+    .cc-rank.plain { color: var(--border); }
+
+    .cc-name-wrap { flex: 1; min-width: 140px; }
+
+    .cc-name {
+      font-family: 'Georgia', serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin: 0 0 0.15rem;
+      line-height: 1.2;
+    }
+
+    .cc-best {
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--gold-light);
+      letter-spacing: 0.03em;
+    }
+
+    .cc-score-wrap {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .cc-score {
+      font-family: Arial, sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .cc-stars {
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: -1px;
+    }
+
+    /* three facts row */
+    .cc-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cc-fact {
+      padding: 0.7rem 0.85rem;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .cc-fact:last-child { border-right: none; }
+
+    .cc-fact-label {
+      font-family: Arial, sans-serif;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .cc-fact-value {
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      font-weight: bold;
+      color: var(--gold-light);
+    }
+
+    /* body */
+    .cc-body {
+      padding: 1rem 1.25rem 1.25rem;
+    }
+
+    .cc-verdict {
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--border-gold);
+      padding-left: 0.85rem;
+    }
+
+    .cc-cta {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #a87822 0%, var(--gold) 50%, var(--gold-light) 100%);
+      color: #0D1B2A;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 900;
+      padding: 0.85rem;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 14px rgba(201,148,42,0.4);
+      transition: all 0.2s;
+    }
+
+    .cc-cta:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(201,148,42,0.55);
+      text-decoration: none;
+      color: #0D1B2A;
+    }
+
+    .cc-disclaimer {
+      font-family: Arial, sans-serif;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    /* section label above each card */
+    .cc-section-h {
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+      font-family: 'Georgia', serif;
+      border-bottom: 2px solid var(--border-gold);
+      padding-bottom: 0.35rem;
+    }
+
     /* ══ UTILITY ═══════════════════════════════════════════════════ */
     .text-center { text-align: center; }
     .text-small { font-size: 0.85rem; color: var(--text-muted); font-family: Arial, sans-serif; }
@@ -1464,329 +1634,185 @@
 
   <!-- ════ CASINO #1: JACKPOT CITY ════════════════════════════════ -->
   <section id="jackpot-city">
-    <h2>🏆 #1 — Jackpot City Alberta</h2>
-
-    <div class="casino-card">
-      <div class="casino-card-header">
-        <div class="casino-rank-number is-gold">#1</div>
-        <div class="casino-header-info">
-          <h3>Jackpot City Casino Alberta</h3>
-          <div class="casino-tagline">Best overall casino for Alberta players — top-rated mobile app, 1,500+ games, 75+ live dealer tables</div>
+    <h2 class="cc-section-h">🏆 #1 — Jackpot City Alberta</h2>
+    <div class="cc-card">
+      <div class="cc-header">
+        <div class="cc-rank gold">#1</div>
+        <div class="cc-name-wrap">
+          <div class="cc-name">Jackpot City</div>
+          <div class="cc-best">⭐ Best for: Mobile Play &amp; Slots</div>
         </div>
-        <div class="casino-card-rating">
-          <div class="rating-score">4.9</div>
-          <div class="rating-label">/ 5.0 Expert Score</div>
-          <div class="stars" style="font-size:1.1rem;">★★★★★</div>
+        <div class="cc-score-wrap">
+          <div class="cc-score">4.9</div>
+          <div class="cc-stars">★★★★★</div>
         </div>
       </div>
-
-      <div class="casino-card-body">
-        <div class="casino-meta-grid">
-          <div class="meta-item"><div class="meta-label">Games</div><div class="meta-value">1,500+</div></div>
-          <div class="meta-item"><div class="meta-label">Live Tables</div><div class="meta-value">75+</div></div>
-          <div class="meta-item"><div class="meta-label">Min. Deposit</div><div class="meta-value">$10 CAD</div></div>
-          <div class="meta-item"><div class="meta-label">Payout Speed</div><div class="meta-value">1–3 days</div></div>
-          <div class="meta-item"><div class="meta-label">Min. Bet (Slots)</div><div class="meta-value">$0.10</div></div>
-          <div class="meta-item"><div class="meta-label">Mobile App</div><div class="meta-value">iOS + Android</div></div>
-          <div class="meta-item"><div class="meta-label">Support</div><div class="meta-value">24/7 Live Chat</div></div>
-          <div class="meta-item"><div class="meta-label">Licence</div><div class="meta-value">AiGC (Alberta)</div></div>
+      <div class="cc-facts">
+        <div class="cc-fact">
+          <div class="cc-fact-label">Games</div>
+          <div class="cc-fact-value">1,500+</div>
         </div>
-
-        <p>Jackpot City is the clear standout for Alberta players who want a traditional online casino experience done right. Its dedicated iOS and Android apps are among the best in the Canadian market — fully mirroring the desktop experience with no feature cuts. Wagers on most slots start from just $0.10, making it accessible whether you're a casual spinner or a high-roller chasing progressive jackpots.</p>
-
-        <p>The live dealer section is particularly impressive — 75+ real-money tables including classic blackjack, roulette variants, baccarat, and game-show style titles like Lightning Roulette. Payouts arrive within 1–3 business days via Interac, which is fast for the Canadian market.</p>
-
-        <div class="casino-pros-cons">
-          <div class="pros-box">
-            <h4>✅ Pros</h4>
-            <ul>
-              <li>Best-in-class iOS and Android app</li>
-              <li>75+ live dealer tables</li>
-              <li>Low $0.10 minimum slot bets</li>
-              <li>Interac deposits and withdrawals</li>
-              <li>24/7 live chat support</li>
-              <li>Proven Ontario track record</li>
-            </ul>
-          </div>
-          <div class="cons-box">
-            <h4>❌ Cons</h4>
-            <ul>
-              <li>No integrated sportsbook</li>
-              <li>Smaller library than BetMGM</li>
-              <li>Bonus terms require careful reading</li>
-            </ul>
-          </div>
+        <div class="cc-fact">
+          <div class="cc-fact-label">Payout</div>
+          <div class="cc-fact-value">1–3 days</div>
         </div>
-
-        <div class="casino-verdict">
-          <strong>Expert Verdict (Lara Wilson):</strong> "Jackpot City earns the top spot because it delivers on every core metric — game variety, mobile quality, payout reliability, and support. It's the casino I recommend to Alberta friends who want a dependable home for their gambling dollar. The app is genuinely excellent."
+        <div class="cc-fact">
+          <div class="cc-fact-label">Min. Deposit</div>
+          <div class="cc-fact-value">$10</div>
         </div>
-
-        <a class="cta-button gold-cta" href="#" rel="nofollow noopener" onclick="return false;">Visit Jackpot City Alberta →</a>
-        <p class="disclaimer-micro">18+ only. Terms and wagering requirements apply. Gamble responsibly.</p>
+      </div>
+      <div class="cc-body">
+        <div class="cc-verdict">"The best all-round casino in Alberta right now. 75+ live dealer tables, a top-rated iOS and Android app, and slots from $0.10 a spin. Payouts via Interac land in 1–3 days — faster than most."</div>
+        <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at Jackpot City →</a>
+        <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
     </div>
   </section>
 
   <!-- ════ CASINO #2: DRAFTKINGS ═══════════════════════════════════ -->
   <section id="draftkings">
-    <h2>#2 — DraftKings Alberta</h2>
-
-    <div class="casino-card">
-      <div class="casino-card-header">
-        <div class="casino-rank-number">#2</div>
-        <div class="casino-header-info">
-          <h3>DraftKings Alberta</h3>
-          <div class="casino-tagline">Best for sports bettors who also love casino — seamless sports + casino under one roof</div>
+    <h2 class="cc-section-h">#2 — DraftKings Alberta</h2>
+    <div class="cc-card">
+      <div class="cc-header">
+        <div class="cc-rank silver">#2</div>
+        <div class="cc-name-wrap">
+          <div class="cc-name">DraftKings</div>
+          <div class="cc-best">⭐ Best for: Sports Betting + Casino</div>
         </div>
-        <div class="casino-card-rating">
-          <div class="rating-score">4.8</div>
-          <div class="rating-label">/ 5.0 Expert Score</div>
-          <div class="stars" style="font-size:1.1rem;">★★★★★</div>
+        <div class="cc-score-wrap">
+          <div class="cc-score">4.8</div>
+          <div class="cc-stars">★★★★★</div>
         </div>
       </div>
-
-      <div class="casino-card-body">
-        <div class="casino-meta-grid">
-          <div class="meta-item"><div class="meta-label">Casino Games</div><div class="meta-value">500+</div></div>
-          <div class="meta-item"><div class="meta-label">Sportsbook</div><div class="meta-value">Yes — Full</div></div>
-          <div class="meta-item"><div class="meta-label">Min. Deposit</div><div class="meta-value">$5 CAD</div></div>
-          <div class="meta-item"><div class="meta-label">Payout Speed</div><div class="meta-value">1–5 days</div></div>
-          <div class="meta-item"><div class="meta-label">Same-Game Parlay</div><div class="meta-value">Yes</div></div>
-          <div class="meta-item"><div class="meta-label">Mobile App</div><div class="meta-value">Top-Rated</div></div>
-          <div class="meta-item"><div class="meta-label">DFS (Daily Fantasy)</div><div class="meta-value">Yes</div></div>
-          <div class="meta-item"><div class="meta-label">Licence</div><div class="meta-value">AiGC (Alberta)</div></div>
+      <div class="cc-facts">
+        <div class="cc-fact">
+          <div class="cc-fact-label">Games</div>
+          <div class="cc-fact-value">500+</div>
         </div>
-
-        <p>DraftKings has built its name on sports betting — and in Alberta, it's the sports-first choice for a reason. The sportsbook covers NHL, NFL, NBA, CFL, MLB, Premier League, and dozens of other markets with sharp odds and an intuitive live betting interface. The Alberta launch is particularly significant: DraftKings is one of the few platforms with both a full sportsbook and a growing casino suite live from Day 1.</p>
-
-        <p>The $5 minimum deposit is the lowest on our list, making DraftKings accessible to recreational bettors who don't want to commit large amounts upfront. The app is consistently rated among the best in North American sports betting.</p>
-
-        <div class="casino-pros-cons">
-          <div class="pros-box">
-            <h4>✅ Pros</h4>
-            <ul>
-              <li>Lowest minimum deposit ($5)</li>
-              <li>Market-leading sportsbook</li>
-              <li>Same-game parlays available</li>
-              <li>Daily Fantasy Sports included</li>
-              <li>Excellent live betting interface</li>
-              <li>Strong brand trust in Canada</li>
-            </ul>
-          </div>
-          <div class="cons-box">
-            <h4>❌ Cons</h4>
-            <ul>
-              <li>Casino library smaller than rivals</li>
-              <li>Fewer live dealer options</li>
-              <li>Bonus structure complex</li>
-            </ul>
-          </div>
+        <div class="cc-fact">
+          <div class="cc-fact-label">Min. Deposit</div>
+          <div class="cc-fact-value">$5</div>
         </div>
-
-        <div class="casino-verdict">
-          <strong>Expert Verdict (Lara Wilson):</strong> "If you're an Oilers or Flames fan who also wants to play some blackjack between periods, DraftKings is the natural home. The sportsbook is genuinely world-class. The casino side is catching up fast."
+        <div class="cc-fact">
+          <div class="cc-fact-label">Sportsbook</div>
+          <div class="cc-fact-value">Full ✓</div>
         </div>
-
-        <a class="cta-button" href="#" rel="nofollow noopener" onclick="return false;">Visit DraftKings Alberta →</a>
-        <p class="disclaimer-micro">18+ only. Terms and wagering requirements apply. Gamble responsibly.</p>
+      </div>
+      <div class="cc-body">
+        <div class="cc-verdict">"Lowest deposit on our list at $5. World-class sportsbook covering NHL, NFL, CFL and more — with same-game parlays. If you're betting on the Oilers, this is your home."</div>
+        <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at DraftKings →</a>
+        <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
     </div>
   </section>
 
   <!-- ════ CASINO #3: BETMGM ════════════════════════════════════════ -->
   <section id="betmgm">
-    <h2>#3 — BetMGM Alberta</h2>
-
-    <div class="casino-card">
-      <div class="casino-card-header">
-        <div class="casino-rank-number">#3</div>
-        <div class="casino-header-info">
-          <h3>BetMGM Alberta</h3>
-          <div class="casino-tagline">Largest game library in Alberta — 9,500+ games, integrated sportsbook, Vegas heritage</div>
+    <h2 class="cc-section-h">#3 — BetMGM Alberta</h2>
+    <div class="cc-card">
+      <div class="cc-header">
+        <div class="cc-rank bronze">#3</div>
+        <div class="cc-name-wrap">
+          <div class="cc-name">BetMGM</div>
+          <div class="cc-best">⭐ Best for: Biggest Game Library</div>
         </div>
-        <div class="casino-card-rating">
-          <div class="rating-score">4.8</div>
-          <div class="rating-label">/ 5.0 Expert Score</div>
-          <div class="stars" style="font-size:1.1rem;">★★★★★</div>
+        <div class="cc-score-wrap">
+          <div class="cc-score">4.8</div>
+          <div class="cc-stars">★★★★★</div>
         </div>
       </div>
-
-      <div class="casino-card-body">
-        <div class="casino-meta-grid">
-          <div class="meta-item"><div class="meta-label">Games</div><div class="meta-value">9,500+</div></div>
-          <div class="meta-item"><div class="meta-label">Sportsbook</div><div class="meta-value">Yes — Built-in</div></div>
-          <div class="meta-item"><div class="meta-label">Min. Deposit</div><div class="meta-value">$10 CAD</div></div>
-          <div class="meta-item"><div class="meta-label">Payout Speed</div><div class="meta-value">2–5 days</div></div>
-          <div class="meta-item"><div class="meta-label">Payment Methods</div><div class="meta-value">Interac, Apple Pay</div></div>
-          <div class="meta-item"><div class="meta-label">Mobile App</div><div class="meta-value">iOS + Android</div></div>
-          <div class="meta-item"><div class="meta-label">Vegas Heritage</div><div class="meta-value">50+ years</div></div>
-          <div class="meta-item"><div class="meta-label">Licence</div><div class="meta-value">AiGC (Alberta)</div></div>
+      <div class="cc-facts">
+        <div class="cc-fact">
+          <div class="cc-fact-label">Games</div>
+          <div class="cc-fact-value">9,500+</div>
         </div>
-
-        <p>BetMGM brings the biggest game library in the Alberta regulated market: 9,500+ slots, table games, and live dealer titles from dozens of top-tier software providers including Evolution, NetEnt, and IGT. If variety is your priority, nothing comes close. The platform is backed by MGM Resorts' 50+ year Vegas brand — which translates to deeply polished UX and high-trust operator reputation.</p>
-
-        <p>The integrated sportsbook covers all major leagues and lets you move funds between casino and sports in seconds. Apple Pay support is a convenience win for iPhone users. The main drawback is payout speed — 2–5 days is slower than Jackpot City, though it's still within industry norms.</p>
-
-        <div class="casino-pros-cons">
-          <div class="pros-box">
-            <h4>✅ Pros</h4>
-            <ul>
-              <li>Largest AB game library (9,500+)</li>
-              <li>Full integrated sportsbook</li>
-              <li>Apple Pay support</li>
-              <li>Trusted MGM brand</li>
-              <li>Interac e-Transfer</li>
-              <li>Strong loyalty/rewards program</li>
-            </ul>
-          </div>
-          <div class="cons-box">
-            <h4>❌ Cons</h4>
-            <ul>
-              <li>Payouts slower (2–5 days)</li>
-              <li>Interface can feel overwhelming</li>
-              <li>Higher wagering requirements</li>
-            </ul>
-          </div>
+        <div class="cc-fact">
+          <div class="cc-fact-label">Payout</div>
+          <div class="cc-fact-value">2–5 days</div>
         </div>
-
-        <div class="casino-verdict">
-          <strong>Expert Verdict (Lara Wilson):</strong> "BetMGM is the power-user casino. If you want maximum game selection and a sportsbook in the same wallet, it's hard to beat. The slower payouts are a trade-off I'd accept for access to 9,500 titles and the MGM loyalty ecosystem."
+        <div class="cc-fact">
+          <div class="cc-fact-label">Min. Deposit</div>
+          <div class="cc-fact-value">$10</div>
         </div>
-
-        <a class="cta-button" href="#" rel="nofollow noopener" onclick="return false;">Visit BetMGM Alberta →</a>
-        <p class="disclaimer-micro">18+ only. Terms and wagering requirements apply. Gamble responsibly.</p>
+      </div>
+      <div class="cc-body">
+        <div class="cc-verdict">"Alberta's biggest casino by far — 9,500+ games including slots, live tables, and a full sportsbook. Backed by 50 years of MGM Vegas heritage. Apple Pay and Interac supported."</div>
+        <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at BetMGM →</a>
+        <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
     </div>
   </section>
 
   <!-- ════ CASINO #4: BET365 ════════════════════════════════════════ -->
   <section id="bet365">
-    <h2>#4 — bet365 Alberta</h2>
-
-    <div class="casino-card">
-      <div class="casino-card-header">
-        <div class="casino-rank-number">#4</div>
-        <div class="casino-header-info">
-          <h3>bet365 Alberta</h3>
-          <div class="casino-tagline">Global powerhouse — live sports streaming, in-play betting, and a trusted casino suite</div>
+    <h2 class="cc-section-h">#4 — bet365 Alberta</h2>
+    <div class="cc-card">
+      <div class="cc-header">
+        <div class="cc-rank plain">#4</div>
+        <div class="cc-name-wrap">
+          <div class="cc-name">bet365</div>
+          <div class="cc-best">⭐ Best for: Live Sports Streaming</div>
         </div>
-        <div class="casino-card-rating">
-          <div class="rating-score">4.7</div>
-          <div class="rating-label">/ 5.0 Expert Score</div>
-          <div class="stars" style="font-size:1.1rem;">★★★★½</div>
+        <div class="cc-score-wrap">
+          <div class="cc-score">4.7</div>
+          <div class="cc-stars">★★★★½</div>
         </div>
       </div>
-
-      <div class="casino-card-body">
-        <div class="casino-meta-grid">
-          <div class="meta-item"><div class="meta-label">Live Events</div><div class="meta-value">400+ daily</div></div>
-          <div class="meta-item"><div class="meta-label">Live Streaming</div><div class="meta-value">Yes — In-App</div></div>
-          <div class="meta-item"><div class="meta-label">Min. Deposit</div><div class="meta-value">$10 CAD</div></div>
-          <div class="meta-item"><div class="meta-label">Payout Speed</div><div class="meta-value">1–3 days</div></div>
-          <div class="meta-item"><div class="meta-label">In-Play Betting</div><div class="meta-value">Yes — Market Leader</div></div>
-          <div class="meta-item"><div class="meta-label">Mobile App</div><div class="meta-value">Excellent</div></div>
-          <div class="meta-item"><div class="meta-label">Casino Games</div><div class="meta-value">500+</div></div>
-          <div class="meta-item"><div class="meta-label">Licence</div><div class="meta-value">AiGC (Alberta)</div></div>
+      <div class="cc-facts">
+        <div class="cc-fact">
+          <div class="cc-fact-label">Live Events</div>
+          <div class="cc-fact-value">400+ / day</div>
         </div>
-
-        <p>bet365 is the world's largest online gambling company — and it shows. The in-play sportsbook is industry-defining: 400+ live events per day with real-time odds and live streaming for eligible events directly inside the app. For sports bettors who want to watch and wager simultaneously, nothing touches bet365.</p>
-
-        <p>The casino suite isn't the largest, but it's curated well: top slots, a solid live casino section, and fast Interac payouts (1–3 days). The global brand trust is a major factor for new Alberta players deciding where to deposit for the first time.</p>
-
-        <div class="casino-pros-cons">
-          <div class="pros-box">
-            <h4>✅ Pros</h4>
-            <ul>
-              <li>Best live in-play sportsbook globally</li>
-              <li>Live event streaming in-app</li>
-              <li>1–3 day Interac payouts</li>
-              <li>World's most trusted brand</li>
-              <li>Strong cash-out features</li>
-              <li>Reliable across all devices</li>
-            </ul>
-          </div>
-          <div class="cons-box">
-            <h4>❌ Cons</h4>
-            <ul>
-              <li>Casino library smaller than BetMGM</li>
-              <li>Welcome bonus can be tricky</li>
-              <li>UI is information-dense</li>
-            </ul>
-          </div>
+        <div class="cc-fact">
+          <div class="cc-fact-label">Payout</div>
+          <div class="cc-fact-value">1–3 days</div>
         </div>
-
-        <div class="casino-verdict">
-          <strong>Expert Verdict (Lara Wilson):</strong> "bet365 is where I'd send any serious sports bettor. The live streaming and in-play market depth is genuinely unmatched. The casino is solid but secondary. If sports is your primary interest, bet365 should be your first Alberta account."
+        <div class="cc-fact">
+          <div class="cc-fact-label">Streaming</div>
+          <div class="cc-fact-value">In-App ✓</div>
         </div>
-
-        <a class="cta-button" href="#" rel="nofollow noopener" onclick="return false;">Visit bet365 Alberta →</a>
-        <p class="disclaimer-micro">18+ only. Terms and wagering requirements apply. Gamble responsibly.</p>
+      </div>
+      <div class="cc-body">
+        <div class="cc-verdict">"World's biggest online bookmaker. Watch and bet live on 400+ daily events directly in the app. Fast 1–3 day Interac payouts. The gold standard for in-play sports in Alberta."</div>
+        <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at bet365 →</a>
+        <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
     </div>
   </section>
 
   <!-- ════ CASINO #5: SPIN CASINO ═══════════════════════════════════ -->
   <section id="spin-casino">
-    <h2>#5 — Spin Casino Alberta</h2>
-
-    <div class="casino-card">
-      <div class="casino-card-header">
-        <div class="casino-rank-number">#5</div>
-        <div class="casino-header-info">
-          <h3>Spin Casino Alberta</h3>
-          <div class="casino-tagline">Best for live dealer fans — immersive tables, clean mobile UX, Canadian-friendly banking</div>
+    <h2 class="cc-section-h">#5 — Spin Casino Alberta</h2>
+    <div class="cc-card">
+      <div class="cc-header">
+        <div class="cc-rank plain">#5</div>
+        <div class="cc-name-wrap">
+          <div class="cc-name">Spin Casino</div>
+          <div class="cc-best">⭐ Best for: Live Dealer Tables</div>
         </div>
-        <div class="casino-card-rating">
-          <div class="rating-score">4.6</div>
-          <div class="rating-label">/ 5.0 Expert Score</div>
-          <div class="stars" style="font-size:1.1rem;">★★★★½</div>
+        <div class="cc-score-wrap">
+          <div class="cc-score">4.6</div>
+          <div class="cc-stars">★★★★½</div>
         </div>
       </div>
-
-      <div class="casino-card-body">
-        <div class="casino-meta-grid">
-          <div class="meta-item"><div class="meta-label">Games</div><div class="meta-value">700+</div></div>
-          <div class="meta-item"><div class="meta-label">Live Casino</div><div class="meta-value">Strong Focus</div></div>
-          <div class="meta-item"><div class="meta-label">Min. Deposit</div><div class="meta-value">$10 CAD</div></div>
-          <div class="meta-item"><div class="meta-label">Payout Speed</div><div class="meta-value">2–5 days</div></div>
-          <div class="meta-item"><div class="meta-label">Software</div><div class="meta-value">Microgaming / Evolution</div></div>
-          <div class="meta-item"><div class="meta-label">Mobile</div><div class="meta-value">Optimized (no app)</div></div>
-          <div class="meta-item"><div class="meta-label">Interac</div><div class="meta-value">Yes</div></div>
-          <div class="meta-item"><div class="meta-label">Licence</div><div class="meta-value">AiGC (Alberta)</div></div>
+      <div class="cc-facts">
+        <div class="cc-fact">
+          <div class="cc-fact-label">Games</div>
+          <div class="cc-fact-value">700+</div>
         </div>
-
-        <p>Spin Casino rounds out our top five with a strong focus on live dealer gaming and a curated 700+ game library powered by Microgaming — one of the most respected names in iGaming software. The live casino section features dozens of Evolution Gaming tables, making it a genuine contender for table game enthusiasts who want real dealers, real cards, and real stakes.</p>
-
-        <p>The mobile browser experience is smooth and well-optimized. While Spin Casino lacks a dedicated app, the responsive site performs well on both iOS and Android. Interac banking is supported for both deposits and withdrawals.</p>
-
-        <div class="casino-pros-cons">
-          <div class="pros-box">
-            <h4>✅ Pros</h4>
-            <ul>
-              <li>Excellent live dealer selection</li>
-              <li>Microgaming + Evolution software</li>
-              <li>Clean, uncluttered interface</li>
-              <li>Interac deposits/withdrawals</li>
-              <li>Good VIP/loyalty program</li>
-            </ul>
-          </div>
-          <div class="cons-box">
-            <h4>❌ Cons</h4>
-            <ul>
-              <li>No dedicated mobile app</li>
-              <li>No sportsbook</li>
-              <li>Slower payout speed</li>
-            </ul>
-          </div>
+        <div class="cc-fact">
+          <div class="cc-fact-label">Payout</div>
+          <div class="cc-fact-value">2–5 days</div>
         </div>
-
-        <div class="casino-verdict">
-          <strong>Expert Verdict (Lara Wilson):</strong> "Spin Casino is a sleeper pick. It doesn't have BetMGM's sheer volume or DraftKings' sports depth, but for live blackjack and roulette players, the table quality is excellent. A solid fifth option for the AB market."
+        <div class="cc-fact">
+          <div class="cc-fact-label">Live Casino</div>
+          <div class="cc-fact-value">Evolution ✓</div>
         </div>
-
-        <a class="cta-button" href="#" rel="nofollow noopener" onclick="return false;">Visit Spin Casino Alberta →</a>
-        <p class="disclaimer-micro">18+ only. Terms and wagering requirements apply. Gamble responsibly.</p>
+      </div>
+      <div class="cc-body">
+        <div class="cc-verdict">"Powered by Microgaming and Evolution Gaming — the two biggest names in the business. The sleeper pick for live blackjack and roulette players who want quality tables without the noise."</div>
+        <a class="cc-cta" href="#" rel="nofollow noopener" onclick="return false;">Play at Spin Casino →</a>
+        <p class="cc-disclaimer">18+ · AiGC Licensed · Terms apply · Gamble responsibly</p>
       </div>
     </div>
   </section>
