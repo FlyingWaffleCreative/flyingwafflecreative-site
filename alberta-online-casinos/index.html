@@ -933,6 +933,286 @@
       margin-bottom: 0.5rem;
     }
 
+    /* ══ CASINO FINDER TOOL ═══════════════════════════════════════════════ */
+    .finder-tool {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .finder-step {
+      display: none;
+      padding: 2rem 1.75rem 1.5rem;
+    }
+
+    .finder-step.active { display: block; }
+
+    .finder-step-label {
+      font-family: Arial, sans-serif;
+      font-size: 0.7rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .finder-q {
+      font-family: 'Georgia', serif;
+      font-size: 1.2rem;
+      color: var(--accent-dark);
+      margin-bottom: 1.25rem;
+      line-height: 1.35;
+    }
+
+    .finder-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem;
+    }
+
+    @media (max-width: 480px) {
+      .finder-options { grid-template-columns: 1fr; }
+    }
+
+    .finder-btn {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s;
+      line-height: 1.4;
+    }
+
+    .finder-btn:hover {
+      border-color: var(--accent);
+      background: #eaf5ee;
+      color: var(--accent-dark);
+    }
+
+    .finder-btn.selected {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .finder-progress {
+      height: 4px;
+      background: var(--border);
+    }
+
+    .finder-progress-fill {
+      height: 100%;
+      background: var(--accent);
+      transition: width 0.4s ease;
+    }
+
+    .finder-result-inner {
+      text-align: center;
+    }
+
+    .finder-result-emoji {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .finder-result-title {
+      font-family: 'Georgia', serif;
+      font-size: 1.4rem;
+      color: var(--accent-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .finder-result-why {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.65;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .finder-result-runners {
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .finder-result-runners strong { color: var(--text); }
+
+    .finder-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 0.95rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .finder-cta:hover { background: var(--accent-dark); text-decoration: none; }
+    .finder-cta.gold { background: var(--gold); }
+    .finder-cta.gold:hover { background: #a87822; }
+
+    .finder-reset-btn {
+      display: block;
+      margin: 1.25rem auto 0;
+      background: none;
+      border: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* ══ CASINO MATCHUP TOOL ══════════════════════════════════════════════ */
+    .matchup-selectors {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .matchup-select-wrap { flex: 1; min-width: 160px; }
+
+    .matchup-label {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .matchup-select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      appearance: auto;
+    }
+
+    .matchup-select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .matchup-vs {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 1rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      padding-top: 1.4rem;
+    }
+
+    .matchup-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+    }
+
+    .matchup-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      min-width: 420px;
+    }
+
+    .matchup-table thead {
+      background: var(--accent-dark);
+      color: #fff;
+    }
+
+    .matchup-table thead th {
+      padding: 0.85rem 1.1rem;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .matchup-table thead th:first-child {
+      text-align: left;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #aac8b8;
+      width: 38%;
+    }
+
+    .matchup-table tbody td {
+      padding: 0.75rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .matchup-table tbody td:first-child {
+      font-size: 0.78rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      background: var(--bg);
+    }
+
+    .matchup-table tbody tr:hover td { background: #dceee4; }
+    .matchup-table tbody tr:hover td:first-child { background: #cde5d8; }
+
+    .matchup-cell {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .matchup-cell.winner {
+      color: var(--accent-dark);
+      font-weight: bold;
+    }
+
+    .matchup-cell.winner::after {
+      content: ' ✓';
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    .matchup-verdict {
+      background: var(--gold-light);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .matchup-verdict strong { color: var(--accent-dark); }
+
     /* ══ UTILITY ═══════════════════════════════════════════════════ */
     .text-center { text-align: center; }
     .text-small { font-size: 0.85rem; color: var(--text-muted); font-family: Arial, sans-serif; }
@@ -997,6 +1277,8 @@
     <a href="#betmgm">#3 BetMGM</a>
     <a href="#bet365">#4 bet365</a>
     <a href="#spin-casino">#5 Spin Casino</a>
+    <a href="#casino-finder">🧠 Find My Casino</a>
+    <a href="#matchup">⚖️ Compare Two</a>
     <a href="#alberta-guide">Alberta Guide</a>
     <a href="#glossary">Glossary</a>
     <a href="#faq">FAQ</a>
@@ -1639,6 +1921,96 @@
   </section>
 
   <!-- ════ METHODOLOGY ═════════════════════════════════════════════ -->
+  <!-- ════ CASINO FINDER TOOL ════════════════════════════════════════════ -->
+  <section id="casino-finder">
+    <h2>🧠 Find Your Casino — 3 Quick Questions</h2>
+    <p>Answer three questions and we'll tell you which Alberta casino fits best. No signup, no email, just a straight answer.</p>
+
+    <div class="finder-tool" id="finderTool">
+
+      <!-- Step 1 -->
+      <div class="finder-step active" data-step="1">
+        <div class="finder-step-label">Question 1 of 3</div>
+        <div class="finder-q">What do you mainly want to do?</div>
+        <div class="finder-options">
+          <button class="finder-btn" data-key="play" data-val="slots" onclick="finderPick(this)">🎰 Play slots &amp; casino games</button>
+          <button class="finder-btn" data-key="play" data-val="sports" onclick="finderPick(this)">⚽ Bet on sports</button>
+          <button class="finder-btn" data-key="play" data-val="both" onclick="finderPick(this)">🎲 Both — casino + sports</button>
+          <button class="finder-btn" data-key="play" data-val="live" onclick="finderPick(this)">🃏 Live dealer tables</button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="finder-step" data-step="2">
+        <div class="finder-step-label">Question 2 of 3</div>
+        <div class="finder-q">How do you usually play?</div>
+        <div class="finder-options">
+          <button class="finder-btn" data-key="device" data-val="mobile" onclick="finderPick(this)">📱 Mostly on my phone</button>
+          <button class="finder-btn" data-key="device" data-val="desktop" onclick="finderPick(this)">💻 Desktop / laptop</button>
+          <button class="finder-btn" data-key="device" data-val="both" onclick="finderPick(this)">🔀 Mix of both</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="finder-step" data-step="3">
+        <div class="finder-step-label">Question 3 of 3</div>
+        <div class="finder-q">What's your typical first deposit?</div>
+        <div class="finder-options">
+          <button class="finder-btn" data-key="deposit" data-val="low" onclick="finderPick(this)">💵 Under $20 — keep it casual</button>
+          <button class="finder-btn" data-key="deposit" data-val="mid" onclick="finderPick(this)">💵 $20–$100 — proper session</button>
+          <button class="finder-btn" data-key="deposit" data-val="high" onclick="finderPick(this)">💵 $100+ — I'm here to play</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="finder-step" data-step="result" id="finderResult">
+        <div class="finder-result-inner" id="finderResultInner"></div>
+        <button class="finder-reset-btn" onclick="finderReset()">↩ Start over</button>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="finder-progress" id="finderProgress">
+        <div class="finder-progress-fill" id="finderProgressFill" style="width:0%"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ CASINO MATCHUP TOOL ═══════════════════════════════════════════ -->
+  <section id="matchup">
+    <h2>⚖️ Casino Matchup — Compare Any Two</h2>
+    <p>Pick two casinos and see how they stack up head-to-head across every category that actually matters.</p>
+
+    <div class="matchup-selectors">
+      <div class="matchup-select-wrap">
+        <label class="matchup-label">Casino A</label>
+        <select class="matchup-select" id="matchupA" onchange="renderMatchup()">
+          <option value="jackpotcity">Jackpot City</option>
+          <option value="draftkings">DraftKings</option>
+          <option value="betmgm">BetMGM</option>
+          <option value="bet365">bet365</option>
+          <option value="spincasino">Spin Casino</option>
+        </select>
+      </div>
+      <div class="matchup-vs">🥊 VS</div>
+      <div class="matchup-select-wrap">
+        <label class="matchup-label">Casino B</label>
+        <select class="matchup-select" id="matchupB" onchange="renderMatchup()">
+          <option value="jackpotcity">Jackpot City</option>
+          <option value="draftkings" selected>DraftKings</option>
+          <option value="betmgm">BetMGM</option>
+          <option value="bet365">bet365</option>
+          <option value="spincasino">Spin Casino</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="matchup-table-wrap" id="matchupTable"></div>
+
+    <div class="matchup-verdict" id="matchupVerdict"></div>
+
+  </section>
+
   <section id="methodology">
     <h2>Our Review Methodology</h2>
     <p>Every casino listed on this page was independently evaluated using a five-factor scoring model. No operator influences our rankings through advertising or affiliate fees — our placement decisions are made editorially.</p>
@@ -1670,6 +2042,252 @@
   <p style="margin-top:0.75rem;">🍁 Content is Canada-specific and Alberta-regulated market focused. All operators listed are registered with the Alberta iGaming Corporation (AiGC). 18+ only. Gamble responsibly.</p>
   <p style="margin-top:0.75rem; font-size:0.72rem; color:#7a9e8a;">© 2026 Flying Waffle Creative · FlyingWaffleCreative.com · Alberta, Canada</p>
 </footer>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════
+   CASINO DATA
+══════════════════════════════════════════════════════════════════ */
+const CASINOS = {
+  jackpotcity: {
+    name: 'Jackpot City',
+    score: '4.9 / 5',
+    games: '1,500+',
+    sportsbook: 'No',
+    minDeposit: '$10',
+    payout: '1–3 days',
+    minBet: '$0.10',
+    mobile: 'iOS + Android App',
+    liveDealer: '75+ tables',
+    support: '24/7 Live Chat',
+    anchor: '#jackpot-city',
+    emoji: '🏆',
+    tags: ['slots', 'live', 'mobile'],
+    verdict: 'The go-to for slots and live dealer. Best app in Alberta.',
+    runnerUp: 'Also consider <strong>Spin Casino</strong> for a curated live dealer experience.',
+  },
+  draftkings: {
+    name: 'DraftKings',
+    score: '4.8 / 5',
+    games: '500+',
+    sportsbook: 'Yes — Full',
+    minDeposit: '$5',
+    payout: '1–5 days',
+    minBet: 'Varies',
+    mobile: 'Top-rated App',
+    liveDealer: 'Limited',
+    support: 'Live Chat',
+    anchor: '#draftkings',
+    emoji: '⚽',
+    tags: ['sports', 'both', 'mobile', 'low'],
+    verdict: 'Best sportsbook in Alberta. Lowest deposit. Great for Oilers fans.',
+    runnerUp: 'Also consider <strong>bet365</strong> for in-play live streaming.',
+  },
+  betmgm: {
+    name: 'BetMGM',
+    score: '4.8 / 5',
+    games: '9,500+',
+    sportsbook: 'Yes — Built-in',
+    minDeposit: '$10',
+    payout: '2–5 days',
+    minBet: '$0.20',
+    mobile: 'iOS + Android App',
+    liveDealer: 'Yes',
+    support: '24/7 Live Chat',
+    anchor: '#betmgm',
+    emoji: '🎲',
+    tags: ['slots', 'both', 'high', 'desktop'],
+    verdict: 'Biggest library in Alberta. Best if you want it all under one roof.',
+    runnerUp: 'Also consider <strong>Jackpot City</strong> if fast payouts matter more.',
+  },
+  bet365: {
+    name: 'bet365',
+    score: '4.7 / 5',
+    games: '500+',
+    sportsbook: 'Yes — World-class',
+    minDeposit: '$10',
+    payout: '1–3 days',
+    minBet: '$0.10',
+    mobile: 'Excellent App',
+    liveDealer: 'Yes',
+    support: 'Live Chat + Email',
+    anchor: '#bet365',
+    emoji: '📺',
+    tags: ['sports', 'both', 'mid', 'high'],
+    verdict: 'Unmatched for live in-play sports + streaming. Trusted globally.',
+    runnerUp: 'Also consider <strong>DraftKings</strong> if you want same-game parlays.',
+  },
+  spincasino: {
+    name: 'Spin Casino',
+    score: '4.6 / 5',
+    games: '700+',
+    sportsbook: 'No',
+    minDeposit: '$10',
+    payout: '2–5 days',
+    minBet: '$0.10',
+    mobile: 'Mobile-Optimized',
+    liveDealer: 'Strong Focus',
+    support: 'Live Chat',
+    anchor: '#spin-casino',
+    emoji: '🎰',
+    tags: ['live', 'slots', 'mid'],
+    verdict: 'Best live dealer tables for the money. Clean, no-fuss experience.',
+    runnerUp: 'Also consider <strong>Jackpot City</strong> for a dedicated mobile app.',
+  },
+};
+
+/* ══════════════════════════════════════════════════════════════════
+   CASINO FINDER
+══════════════════════════════════════════════════════════════════ */
+const finderAnswers = {};
+let finderCurrentStep = 1;
+const FINDER_STEPS = 3;
+
+function finderPick(btn) {
+  // Mark selected within this step
+  btn.closest('.finder-options').querySelectorAll('.finder-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+
+  const key = btn.dataset.key;
+  const val = btn.dataset.val;
+  finderAnswers[key] = val;
+
+  // Short pause then advance
+  setTimeout(() => {
+    if (finderCurrentStep < FINDER_STEPS) {
+      finderCurrentStep++;
+      showFinderStep(finderCurrentStep);
+    } else {
+      showFinderResult();
+    }
+  }, 320);
+}
+
+function showFinderStep(n) {
+  document.querySelectorAll('.finder-step').forEach(s => s.classList.remove('active'));
+  document.querySelector(`.finder-step[data-step="${n}"]`).classList.add('active');
+  const pct = ((n - 1) / FINDER_STEPS) * 100;
+  document.getElementById('finderProgressFill').style.width = pct + '%';
+}
+
+function showFinderResult() {
+  document.getElementById('finderProgressFill').style.width = '100%';
+  setTimeout(() => {
+    document.querySelectorAll('.finder-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('finderResult').classList.add('active');
+
+    const pick = computeFinderPick();
+    const casino = CASINOS[pick];
+
+    document.getElementById('finderResultInner').innerHTML = `
+      <div class="finder-result-emoji">${casino.emoji}</div>
+      <div class="finder-result-title">Your best match: <strong>${casino.name}</strong></div>
+      <div class="finder-result-why">${casino.verdict}</div>
+      <div class="finder-result-runners">${casino.runnerUp}</div>
+      <a class="finder-cta gold" href="${casino.anchor}">Read the full ${casino.name} review ↓</a>
+    `;
+  }, 200);
+}
+
+function computeFinderPick() {
+  const { play, device, deposit } = finderAnswers;
+
+  // Scoring: add points to each casino based on answers
+  const scores = { jackpotcity: 0, draftkings: 0, betmgm: 0, bet365: 0, spincasino: 0 };
+
+  // Play style
+  if (play === 'slots')   { scores.jackpotcity += 3; scores.betmgm += 3; scores.spincasino += 1; }
+  if (play === 'sports')  { scores.draftkings += 3; scores.bet365 += 3; }
+  if (play === 'both')    { scores.betmgm += 3; scores.draftkings += 2; scores.bet365 += 2; }
+  if (play === 'live')    { scores.jackpotcity += 3; scores.spincasino += 3; scores.betmgm += 1; }
+
+  // Device
+  if (device === 'mobile') { scores.jackpotcity += 2; scores.draftkings += 2; scores.betmgm += 1; }
+  if (device === 'desktop'){ scores.betmgm += 2; scores.bet365 += 1; }
+  if (device === 'both')   { scores.betmgm += 1; scores.jackpotcity += 1; }
+
+  // Deposit
+  if (deposit === 'low')  { scores.draftkings += 3; scores.jackpotcity += 1; }
+  if (deposit === 'mid')  { scores.jackpotcity += 2; scores.bet365 += 1; scores.spincasino += 1; }
+  if (deposit === 'high') { scores.betmgm += 2; scores.bet365 += 1; }
+
+  return Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+}
+
+function finderReset() {
+  Object.keys(finderAnswers).forEach(k => delete finderAnswers[k]);
+  finderCurrentStep = 1;
+  document.querySelectorAll('.finder-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById('finderProgressFill').style.width = '0%';
+  showFinderStep(1);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CASINO MATCHUP
+══════════════════════════════════════════════════════════════════ */
+const MATCHUP_ROWS = [
+  { label: 'Expert Score',   key: 'score',      winner: (a, b) => parseFloat(a) >= parseFloat(b) ? 'a' : 'b' },
+  { label: 'Games',          key: 'games',      winner: (a, b) => parseInt(a.replace(/[^0-9]/g,'')) >= parseInt(b.replace(/[^0-9]/g,'')) ? 'a' : 'b' },
+  { label: 'Sportsbook',     key: 'sportsbook', winner: (a, b) => a.startsWith('Yes') && !b.startsWith('Yes') ? 'a' : b.startsWith('Yes') && !a.startsWith('Yes') ? 'b' : 'tie' },
+  { label: 'Min. Deposit',   key: 'minDeposit', winner: (a, b) => parseInt(a.replace(/[^0-9]/g,'')) <= parseInt(b.replace(/[^0-9]/g,'')) ? 'a' : 'b' },
+  { label: 'Payout Speed',   key: 'payout',     winner: (a, b) => parseInt(a) <= parseInt(b) ? 'a' : 'b' },
+  { label: 'Min. Bet',       key: 'minBet',     winner: (a, b) => a !== 'Varies' && b !== 'Varies' ? (parseFloat(a.replace('$','')) <= parseFloat(b.replace('$','')) ? 'a' : 'b') : 'tie' },
+  { label: 'Mobile',         key: 'mobile',     winner: (a, b) => (a.includes('App') && !b.includes('App')) ? 'a' : (!a.includes('App') && b.includes('App')) ? 'b' : 'tie' },
+  { label: 'Live Dealer',    key: 'liveDealer', winner: (a, b) => a.includes('75') ? 'a' : b.includes('75') ? 'b' : a.includes('Strong') ? 'a' : b.includes('Strong') ? 'b' : 'tie' },
+  { label: 'Support',        key: 'support',    winner: (a, b) => a.includes('24/7') && !b.includes('24/7') ? 'a' : b.includes('24/7') && !a.includes('24/7') ? 'b' : 'tie' },
+];
+
+function renderMatchup() {
+  const keyA = document.getElementById('matchupA').value;
+  const keyB = document.getElementById('matchupB').value;
+
+  if (keyA === keyB) {
+    document.getElementById('matchupTable').innerHTML = '<p style="font-family:Arial,sans-serif;color:var(--text-muted);padding:1rem;">Pick two different casinos to compare.</p>';
+    document.getElementById('matchupVerdict').innerHTML = '';
+    return;
+  }
+
+  const a = CASINOS[keyA];
+  const b = CASINOS[keyB];
+
+  let winsA = 0, winsB = 0;
+
+  const rows = MATCHUP_ROWS.map(row => {
+    const valA = a[row.key];
+    const valB = b[row.key];
+    const w = row.winner(valA, valB);
+    if (w === 'a') winsA++;
+    if (w === 'b') winsB++;
+    return `
+      <tr>
+        <td>${row.label}</td>
+        <td class="matchup-cell ${w === 'a' ? 'winner' : ''}">${valA}</td>
+        <td class="matchup-cell ${w === 'b' ? 'winner' : ''}">${valB}</td>
+      </tr>`;
+  }).join('');
+
+  document.getElementById('matchupTable').innerHTML = `
+    <table class="matchup-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>${a.emoji} ${a.name}</th>
+          <th>${b.emoji} ${b.name}</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+
+  const winner = winsA > winsB ? a : winsB > winsA ? b : null;
+  const loser  = winsA > winsB ? b : winsB > winsA ? a : null;
+
+  document.getElementById('matchupVerdict').innerHTML = winner
+    ? `<strong>🏆 Our pick: ${winner.name}</strong> wins ${Math.max(winsA,winsB)}–0 on the categories that matter. ${winner.verdict} That said, ${loser.name} is worth considering if ${loser.verdict.toLowerCase().replace('best','you prioritise').split('.')[0]}.`
+    : `<strong>It’s genuinely close.</strong> ${a.name} and ${b.name} are well-matched. Your choice will come down to personal preference — scroll up to read both full reviews.`;
+}
+
+// Init matchup on load
+document.addEventListener('DOMContentLoaded', renderMatchup);
+</script>
 
 </body>
 </html>
