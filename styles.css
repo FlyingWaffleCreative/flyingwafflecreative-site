@@ -297,8 +297,10 @@ a { text-decoration: none; color: inherit; }
 }
 .service-card--large {
   padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
 }
-.service-card--large .service-card__icon { font-size: 3rem; margin-bottom: 1rem; }
+.service-card--large .service-card__icon { font-size: 3rem; margin-bottom: 1rem; min-height: 3.5rem; display: flex; align-items: center; }
 .service-card--large .service-card__title { font-size: 1.6rem; margin-bottom: 0.5rem; }
 .service-card {
   background: var(--card-cream);
