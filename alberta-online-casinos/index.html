@@ -237,9 +237,47 @@
     }
 
     /* cowboy image removed */
+    /* ── Retro casino floating decorations ── */
+    .hero-deco {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-deco .deco-sym {
+      position: absolute;
+      opacity: 0.13;
+      font-style: normal;
+      font-weight: 900;
+      font-family: var(--font-display);
+      color: var(--yellow);
+      line-height: 1;
+      animation: heroDrift 18s ease-in-out infinite;
+    }
+    .hero-deco svg {
+      position: absolute;
+      opacity: 0.13;
+      animation: heroDrift 18s ease-in-out infinite;
+    }
+    .hero-deco > *:nth-child(1)  { animation-delay: 0s;    animation-duration: 19s; }
+    .hero-deco > *:nth-child(2)  { animation-delay: -4s;   animation-duration: 22s; }
+    .hero-deco > *:nth-child(3)  { animation-delay: -7s;   animation-duration: 17s; }
+    .hero-deco > *:nth-child(4)  { animation-delay: -10s;  animation-duration: 24s; }
+    .hero-deco > *:nth-child(5)  { animation-delay: -13s;  animation-duration: 20s; }
+    .hero-deco > *:nth-child(6)  { animation-delay: -2s;   animation-duration: 26s; }
+    .hero-deco > *:nth-child(7)  { animation-delay: -16s;  animation-duration: 18s; }
+    .hero-deco > *:nth-child(8)  { animation-delay: -5s;   animation-duration: 21s; }
+    @keyframes heroDrift {
+      0%   { transform: translateY(0px) rotate(0deg);   opacity: 0.13; }
+      40%  { transform: translateY(-10px) rotate(6deg); opacity: 0.18; }
+      70%  { transform: translateY(6px) rotate(-4deg);  opacity: 0.11; }
+      100% { transform: translateY(0px) rotate(0deg);   opacity: 0.13; }
+    }
 
     .hero-inner {
       position: relative;
+      z-index: 1;
       max-width: 720px;
       margin: 0 auto;
     }
@@ -286,6 +324,7 @@
       overflow-x: auto;
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
+      text-align: center;
     }
 
     .quick-jump-inner {
@@ -754,6 +793,87 @@
 
 <!-- ════ HERO ════════════════════════════════════════════════════════ -->
 <section class="hero">
+  <!-- Retro casino background decorations -->
+  <div class="hero-deco" aria-hidden="true">
+
+    <!-- Cherry cluster: left -->
+    <svg style="left:3%;top:18%;width:72px;height:72px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M28 60 C28 40 50 35 50 20" stroke="#88AA42" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M38 60 C38 42 52 38 52 20" stroke="#88AA42" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <circle cx="22" cy="64" r="10" fill="#c0392b"/>
+      <circle cx="19" cy="61" r="3" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="44" cy="64" r="10" fill="#c0392b"/>
+      <circle cx="41" cy="61" r="3" fill="rgba(255,255,255,0.25)"/>
+    </svg>
+
+    <!-- Lucky 7: top-right -->
+    <span class="deco-sym" style="right:6%;top:10%;font-size:88px;">7</span>
+
+    <!-- BAR tile: bottom-left -->
+    <svg style="left:8%;bottom:12%;width:80px;height:36px;" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="96" height="36" rx="8" fill="#F9E8A8" stroke="#c9942a" stroke-width="3"/>
+      <text x="50" y="28" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="22" fill="#1F3C1B" letter-spacing="3">BAR</text>
+    </svg>
+
+    <!-- Roulette wheel: right -->
+    <svg style="right:2%;top:30%;width:96px;height:96px;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#F9E8A8" stroke-width="4" fill="none"/>
+      <circle cx="50" cy="50" r="34" stroke="#F9E8A8" stroke-width="2" fill="none"/>
+      <g stroke="#F9E8A8" stroke-width="1.5" opacity="0.8">
+        <line x1="50" y1="4" x2="50" y2="16"/><line x1="50" y1="84" x2="50" y2="96"/>
+        <line x1="4" y1="50" x2="16" y2="50"/><line x1="84" y1="50" x2="96" y2="50"/>
+        <line x1="18" y1="18" x2="26" y2="26"/><line x1="74" y1="74" x2="82" y2="82"/>
+        <line x1="82" y1="18" x2="74" y2="26"/><line x1="26" y1="74" x2="18" y2="82"/>
+        <line x1="32" y1="8" x2="35" y2="19"/><line x1="68" y1="81" x2="65" y2="92"/>
+        <line x1="8" y1="32" x2="19" y2="35"/><line x1="81" y1="65" x2="92" y2="68"/>
+        <line x1="8" y1="68" x2="19" y2="65"/><line x1="81" y1="35" x2="92" y2="32"/>
+        <line x1="32" y1="92" x2="35" y2="81"/><line x1="68" y1="8" x2="65" y2="19"/>
+      </g>
+      <path d="M50 16 A34 34 0 0 1 79 29 L68 35 A22 22 0 0 0 50 28 Z" fill="#A21E22" opacity="0.7"/>
+      <path d="M50 84 A34 34 0 0 1 21 71 L32 65 A22 22 0 0 0 50 72 Z" fill="#A21E22" opacity="0.7"/>
+      <circle cx="50" cy="50" r="8" fill="#F9E8A8"/>
+      <circle cx="50" cy="50" r="4" fill="#1F3C1B"/>
+      <circle cx="50" cy="20" r="3" fill="#fff"/>
+    </svg>
+
+    <!-- Dice (5-face): bottom-right -->
+    <svg style="right:9%;bottom:8%;width:64px;height:64px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="6" width="68" height="68" rx="14" fill="#F9E8A8" stroke="#c9942a" stroke-width="3"/>
+      <circle cx="24" cy="24" r="6" fill="#1F3C1B"/>
+      <circle cx="56" cy="24" r="6" fill="#1F3C1B"/>
+      <circle cx="40" cy="40" r="6" fill="#1F3C1B"/>
+      <circle cx="24" cy="56" r="6" fill="#1F3C1B"/>
+      <circle cx="56" cy="56" r="6" fill="#1F3C1B"/>
+    </svg>
+
+    <!-- Plum cluster: left mid -->
+    <svg style="left:2%;top:55%;width:60px;height:60px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="50" r="14" fill="#7b3fa0"/>
+      <circle cx="50" cy="50" r="14" fill="#6d2d96"/>
+      <circle cx="40" cy="34" r="14" fill="#9b4fc5"/>
+      <circle cx="36" cy="42" r="4" fill="rgba(255,255,255,0.22)"/>
+      <path d="M40 20 C40 14 48 10 52 6" stroke="#88AA42" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>
+
+    <!-- Poker chip: left edge -->
+    <svg style="left:0%;top:38%;width:54px;height:54px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="36" fill="#A21E22" stroke="#F9E8A8" stroke-width="4"/>
+      <circle cx="40" cy="40" r="24" fill="none" stroke="#F9E8A8" stroke-width="2" stroke-dasharray="5 4"/>
+      <circle cx="40" cy="40" r="13" fill="#F9E8A8"/>
+      <text x="40" y="45" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="12" fill="#A21E22">25</text>
+    </svg>
+
+    <!-- Lemon: right lower -->
+    <svg style="right:0%;top:65%;width:52px;height:52px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="40" cy="40" rx="24" ry="30" fill="#F9E8A8" stroke="#c9942a" stroke-width="3" transform="rotate(-20 40 40)"/>
+      <path d="M40 14 C44 8 50 6 52 10" stroke="#88AA42" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    </svg>
+
+    <!-- Triple 7 hint: top-left -->
+    <span class="deco-sym" style="left:4%;top:5%;font-size:52px;opacity:0.10;">777</span>
+
+  </div>
+
   <div class="hero-inner">
     <h1>Alberta Online Casinos <em>2026</em></h1>
     <p class="hero-sub">Alberta's iGaming market launched July 13, 2026. Find our top ranked legal casinos to play in AB - ranked by your gambling peers.</p>
