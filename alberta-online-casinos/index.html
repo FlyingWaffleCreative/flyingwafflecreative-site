@@ -218,48 +218,70 @@
     }
 
     /* ══ HERO ══════════════════════════════════════════════════════ */
-    .hero {
-      background:
-        repeating-linear-gradient(
-          -45deg,
-          transparent,
-          transparent 28px,
-          rgba(136,170,66,0.07) 28px,
-          rgba(136,170,66,0.07) 30px
-        ),
-        linear-gradient(160deg, #0e2210 0%, var(--green) 45%, var(--green-light) 100%);
+    /* ══ TRUST STRIP ══════════════════════════════════════════════ */
+    .trust-strip {
+      background: var(--green-pasture);
       color: #fff;
-      padding: 2.5rem 1.25rem 2.25rem;
-      text-align: center;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.55rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      letter-spacing: 0.01em;
+    }
+    .trust-strip span { display: flex; align-items: center; gap: 0.4rem; white-space: nowrap; }
+    @media (max-width: 600px) { .trust-strip { gap: 0.75rem; font-size: 0.74rem; } }
+
+    .hero {
+      background: #0d1a0f;
+      color: #fff;
+      padding: 3rem 1.5rem 2.5rem;
       position: relative;
       overflow: hidden;
-      border-bottom: 4px solid var(--green-pasture);
+      border-bottom: 3px solid var(--green-pasture);
     }
 
-    /* cowboy image — hero background */
+    /* cowboy — right-anchored ghost */
     .hero::after {
       content: '';
       position: absolute;
-      inset: 0;
-      background: url('hero-cowboy.png') center/contain no-repeat;
-      opacity: 0.22;
+      right: -2%;
+      top: 0;
+      width: 55%;
+      height: 100%;
+      background: url('hero-cowboy.png') right center/contain no-repeat;
+      opacity: 0.28;
       pointer-events: none;
       z-index: 0;
+    }
+    /* subtle left fade so text stays readable */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #0d1a0f 42%, transparent 72%);
+      z-index: 1;
+      pointer-events: none;
     }
 
     .hero-inner {
       position: relative;
-      z-index: 1;
-      max-width: 720px;
+      z-index: 2;
+      max-width: 820px;
       margin: 0 auto;
     }
 
     .hero h1 {
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
-      line-height: 1.2;
-      margin-bottom: 0.4rem;
+      font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 0.65rem;
       font-family: var(--font-display);
       color: #fff;
+      max-width: 600px;
     }
 
     .hero h1 em {
@@ -268,25 +290,56 @@
     }
 
     .hero-sub {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.8);
-      max-width: 580px;
-      margin: 0 auto 1rem;
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 520px;
+      margin: 0 0 1.5rem;
       font-family: var(--font-body);
-      line-height: 1.5;
+      line-height: 1.65;
     }
+
+    /* hero CTA pill buttons */
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .hero-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--green-pasture);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.65rem 1.3rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.18s, transform 0.12s;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .hero-cta-btn:hover { background: #3a7d44; transform: translateY(-1px); }
+    .hero-cta-btn .arr { font-size: 1rem; }
 
     .hero-stats {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 0.5rem 1.25rem;
+      gap: 0.4rem 1.5rem;
       flex-wrap: wrap;
     }
 
     .hero-stat { display: flex; align-items: center; gap: 0.3rem; }
-    .hero-stat strong { font-size: 0.95rem; color: var(--yellow); font-family: var(--font-body); font-weight: 700; }
-    .hero-stat span { font-size: 0.82rem; color: rgba(255,255,255,0.65); font-family: var(--font-body); }
+    .hero-stat strong { font-size: 0.92rem; color: var(--yellow); font-family: var(--font-body); font-weight: 700; }
+    .hero-stat span { font-size: 0.8rem; color: rgba(255,255,255,0.55); font-family: var(--font-body); }
+    .hero-stat-sep { color: rgba(255,255,255,0.2); font-size: 0.9rem; }
+
+    @media (max-width: 620px) {
+      .hero::after { width: 100%; opacity: 0.12; right: 0; }
+      .hero::before { background: linear-gradient(180deg, #0d1a0f 30%, transparent 80%); }
+    }
 
     /* ══ QUICK JUMP ════════════════════════════════════════════════ */
     .quick-jump {
@@ -806,15 +859,29 @@
   </div>
 </nav>
 
-<!-- ════ HERO ════════════════════════════════════════════════════════ -->
-<section class="hero">
+<!-- ════ TRUST STRIP ════════════════════════════════════════════════ -->
+<div class="trust-strip">
+  <span>🏆 P2P — Player to Player reviews</span>
+  <span>✅ AiGC licensed operators only</span>
+  <span>💰 $0 tax on winnings in Alberta</span>
+</div>
 
+<!-- ════ HERO ════════════════════════════════════════════════════ -->
+<section class="hero">
   <div class="hero-inner">
-    <h1>Alberta Online Casinos <em>2026</em></h1>
-    <p class="hero-sub">Alberta's iGaming market launched July 13, 2026. Find our top ranked legal casinos to play in AB - ranked by your gambling peers.</p>
+    <h1>Best Alberta Online Casinos <em>2026</em></h1>
+    <p class="hero-sub">Alberta's iGaming market launched July 13, 2026. We've played, deposited, and cashed out at every operator on this list — so you know exactly where to put your first dollar.</p>
+    <div class="hero-ctas">
+      <a href="#jackpot-city" class="hero-cta-btn">#1 Pick →</a>
+      <a href="#casino-finder" class="hero-cta-btn">Find My Casino →</a>
+      <a href="#matchup" class="hero-cta-btn">Compare Two →</a>
+      <a href="#top5-table" class="hero-cta-btn">Full Rankings →</a>
+    </div>
     <div class="hero-stats">
       <div class="hero-stat"><strong>19+</strong><span>Legal Age</span></div>
+      <span class="hero-stat-sep">·</span>
       <div class="hero-stat"><strong>24</strong><span>Live AB Operators</span></div>
+      <span class="hero-stat-sep">·</span>
       <div class="hero-stat"><strong>$0</strong><span>Tax on Winnings</span></div>
     </div>
   </div>
@@ -832,34 +899,6 @@
   <!-- ════ INTRO ════════════════════════════════════════════════════ -->
   <div class="page-intro">
     <p>We're players recommending Alberta's best licensed online casinos — and we call it <strong>P2P: Player to Player.</strong> No operator talking points, no affiliate spin. Every rating on this page was earned through real deposits, real spins, and real withdrawals in Alberta's newly regulated iGaming market. When you're deciding where your first deposit goes, trust the people who've already made that bet.</p>
-  </div>
-
-  <!-- ════ QUICK ACTION BOXES ════════════════════════════════════ -->
-  <div class="quick-action-grid">
-    <div class="qa-box qa-box--gold">
-      <div class="qa-box__icon">🏆</div>
-      <div class="qa-box__label">Our #1 Pick</div>
-      <div class="qa-box__value">Jackpot City</div>
-      <a href="#jackpot-city" class="qa-box__btn">See Review</a>
-    </div>
-    <div class="qa-box qa-box--green">
-      <div class="qa-box__icon">🎁</div>
-      <div class="qa-box__label">Best Bonus Right Now</div>
-      <div class="qa-box__value">BetMGM — $200 Welcome</div>
-      <a href="#betmgm" class="qa-box__btn">See Offer</a>
-    </div>
-    <div class="qa-box qa-box--orange">
-      <div class="qa-box__icon">🧠</div>
-      <div class="qa-box__label">Not Sure Where to Play?</div>
-      <div class="qa-box__value">Find My Casino</div>
-      <a href="#casino-finder" class="qa-box__btn">Take the Quiz</a>
-    </div>
-    <div class="qa-box qa-box--slate">
-      <div class="qa-box__icon">⚖️</div>
-      <div class="qa-box__label">Torn Between Two?</div>
-      <div class="qa-box__value">Compare Side by Side</div>
-      <a href="#matchup" class="qa-box__btn">Compare Now</a>
-    </div>
   </div>
 
   <!-- ════ SHOUTOUT BOX - HOW WE PICK ═════════════════════════════ -->
