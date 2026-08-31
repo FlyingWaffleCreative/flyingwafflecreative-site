@@ -247,42 +247,46 @@
       z-index: 0;
     }
 
-    /* ── Retro casino floating decorations ── */
+    /* ══ CASINO HERO DECORATIONS ══════════════════════════════════ */
     .hero-deco {
       position: absolute;
       inset: 0;
       overflow: hidden;
       pointer-events: none;
-      z-index: 0;
+      z-index: 1;
     }
-    .hero-deco .deco-sym {
+    .hero-deco > * {
       position: absolute;
-      opacity: 0.13;
-      font-style: normal;
-      font-weight: 900;
-      font-family: var(--font-display);
-      color: var(--yellow);
-      line-height: 1;
-      animation: heroDrift 18s ease-in-out infinite;
+      animation: heroDrift 20s ease-in-out infinite;
     }
-    .hero-deco svg {
-      position: absolute;
-      opacity: 0.13;
-      animation: heroDrift 18s ease-in-out infinite;
-    }
-    .hero-deco > *:nth-child(1)  { animation-delay: 0s;    animation-duration: 19s; }
-    .hero-deco > *:nth-child(2)  { animation-delay: -4s;   animation-duration: 22s; }
-    .hero-deco > *:nth-child(3)  { animation-delay: -7s;   animation-duration: 17s; }
-    .hero-deco > *:nth-child(4)  { animation-delay: -10s;  animation-duration: 24s; }
-    .hero-deco > *:nth-child(5)  { animation-delay: -13s;  animation-duration: 20s; }
-    .hero-deco > *:nth-child(6)  { animation-delay: -2s;   animation-duration: 26s; }
-    .hero-deco > *:nth-child(7)  { animation-delay: -16s;  animation-duration: 18s; }
-    .hero-deco > *:nth-child(8)  { animation-delay: -5s;   animation-duration: 21s; }
+    .hero-deco > *:nth-child(1)  { animation-delay: 0s;   animation-duration: 19s; }
+    .hero-deco > *:nth-child(2)  { animation-delay: -5s;  animation-duration: 23s; }
+    .hero-deco > *:nth-child(3)  { animation-delay: -9s;  animation-duration: 17s; }
+    .hero-deco > *:nth-child(4)  { animation-delay: -3s;  animation-duration: 25s; }
+    .hero-deco > *:nth-child(5)  { animation-delay: -14s; animation-duration: 21s; }
+    .hero-deco > *:nth-child(6)  { animation-delay: -7s;  animation-duration: 27s; }
+    .hero-deco > *:nth-child(7)  { animation-delay: -11s; animation-duration: 18s; }
+    .hero-deco > *:nth-child(8)  { animation-delay: -2s;  animation-duration: 22s; }
+    .hero-deco > *:nth-child(9)  { animation-delay: -16s; animation-duration: 20s; }
+    .hero-deco > *:nth-child(10) { animation-delay: -8s;  animation-duration: 24s; }
+    .hero-deco > *:nth-child(11) { animation-delay: -4s;  animation-duration: 16s; }
+    .hero-deco > *:nth-child(12) { animation-delay: -18s; animation-duration: 28s; }
     @keyframes heroDrift {
-      0%   { transform: translateY(0px) rotate(0deg);   opacity: 0.13; }
-      40%  { transform: translateY(-10px) rotate(6deg); opacity: 0.18; }
-      70%  { transform: translateY(6px) rotate(-4deg);  opacity: 0.11; }
-      100% { transform: translateY(0px) rotate(0deg);   opacity: 0.13; }
+      0%   { transform: translateY(0px)   rotate(0deg);  }
+      33%  { transform: translateY(-12px) rotate(5deg);  }
+      66%  { transform: translateY(7px)   rotate(-4deg); }
+      100% { transform: translateY(0px)   rotate(0deg);  }
+    }
+    @keyframes coinSpin {
+      0%   { transform: rotateY(0deg);   }
+      100% { transform: rotateY(360deg); }
+    }
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50%       { opacity: 1;    transform: scale(1.3); }
+    }
+    .deco-glow {
+      filter: drop-shadow(0 0 8px rgba(249,232,168,0.7));
     }
 
     .hero-inner {
@@ -803,84 +807,188 @@
 
 <!-- ════ HERO ════════════════════════════════════════════════════════ -->
 <section class="hero">
-  <!-- Retro casino background decorations -->
+  <!-- ══ CASINO HERO DECORATIONS ══ -->
   <div class="hero-deco" aria-hidden="true">
 
-    <!-- Cherry cluster: left -->
-    <svg style="left:3%;top:18%;width:72px;height:72px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M28 60 C28 40 50 35 50 20" stroke="#88AA42" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M38 60 C38 42 52 38 52 20" stroke="#88AA42" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <circle cx="22" cy="64" r="10" fill="#c0392b"/>
-      <circle cx="19" cy="61" r="3" fill="rgba(255,255,255,0.25)"/>
-      <circle cx="44" cy="64" r="10" fill="#c0392b"/>
-      <circle cx="41" cy="61" r="3" fill="rgba(255,255,255,0.25)"/>
+    <!-- ─── SLOT MACHINE FRAME: left side ─── -->
+    <svg style="left:-10px;top:50%;transform:translateY(-50%);width:130px;height:160px;opacity:0.28;" viewBox="0 0 130 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- machine body -->
+      <rect x="4" y="20" width="122" height="132" rx="14" fill="#1a3a18" stroke="#F9E8A8" stroke-width="3"/>
+      <!-- top dome -->
+      <ellipse cx="65" cy="22" rx="44" ry="18" fill="#F9E8A8" opacity="0.9"/>
+      <text x="65" y="27" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="900" fill="#A21E22">SLOTS</text>
+      <!-- reel window frame -->
+      <rect x="14" y="44" width="102" height="68" rx="6" fill="#0e2210" stroke="#c9942a" stroke-width="2.5"/>
+      <!-- reel dividers -->
+      <line x1="48" y1="44" x2="48" y2="112" stroke="#c9942a" stroke-width="1.5"/>
+      <line x1="82" y1="44" x2="82" y2="112" stroke="#c9942a" stroke-width="1.5"/>
+      <!-- REEL 1: cherry -->
+      <circle cx="31" cy="70" r="10" fill="#c0392b"/>
+      <circle cx="28" cy="66" r="3" fill="rgba(255,255,255,0.3)"/>
+      <path d="M31 60 C31 52 42 48 42 40" stroke="#88AA42" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <circle cx="44" cy="70" r="10" fill="#c0392b"/>
+      <circle cx="41" cy="66" r="3" fill="rgba(255,255,255,0.3)"/>
+      <path d="M44 60 C44 52 42 48 42 40" stroke="#88AA42" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <!-- REEL 2: 7 -->
+      <rect x="54" y="52" width="22" height="28" rx="4" fill="#F9E8A8"/>
+      <text x="65" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="900" fill="#A21E22">7</text>
+      <!-- REEL 3: BAR -->
+      <rect x="88" y="55" width="22" height="20" rx="4" fill="#F9E8A8"/>
+      <text x="99" y="69" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="900" fill="#1F3C1B" letter-spacing="1">BAR</text>
+      <!-- payline -->
+      <line x1="14" y1="78" x2="116" y2="78" stroke="#A21E22" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7"/>
+      <!-- lever arm -->
+      <rect x="116" y="52" width="10" height="40" rx="5" fill="#c9942a"/>
+      <circle cx="121" cy="48" r="8" fill="#A21E22" stroke="#F9E8A8" stroke-width="2"/>
+      <!-- coins slot -->
+      <rect x="42" y="122" width="46" height="8" rx="4" fill="#c9942a" opacity="0.8"/>
+      <!-- base -->
+      <rect x="20" y="140" width="90" height="12" rx="6" fill="#c9942a" opacity="0.6"/>
     </svg>
 
-    <!-- Lucky 7: top-right -->
-    <span class="deco-sym" style="right:6%;top:10%;font-size:88px;">7</span>
-
-    <!-- BAR tile: bottom-left -->
-    <svg style="left:8%;bottom:12%;width:80px;height:36px;" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2" y="2" width="96" height="36" rx="8" fill="#F9E8A8" stroke="#c9942a" stroke-width="3"/>
-      <text x="50" y="28" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="22" fill="#1F3C1B" letter-spacing="3">BAR</text>
+    <!-- ─── LARGE CHERRY: top-left ─── -->
+    <svg style="left:14%;top:6%;width:90px;height:90px;opacity:0.32;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- stems -->
+      <path d="M35 75 C35 55 58 45 58 25" stroke="#5a9e2f" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M55 75 C55 58 60 50 60 25" stroke="#5a9e2f" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <!-- leaf -->
+      <ellipse cx="50" cy="22" rx="9" ry="5" fill="#5a9e2f" transform="rotate(-20 50 22)"/>
+      <!-- cherry L -->
+      <circle cx="28" cy="80" r="15" fill="#d63031"/>
+      <circle cx="24" cy="75" r="5" fill="rgba(255,255,255,0.28)"/>
+      <!-- cherry R -->
+      <circle cx="58" cy="80" r="15" fill="#c0392b"/>
+      <circle cx="54" cy="75" r="5" fill="rgba(255,255,255,0.28)"/>
     </svg>
 
-    <!-- Roulette wheel: right -->
-    <svg style="right:2%;top:30%;width:96px;height:96px;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="46" stroke="#F9E8A8" stroke-width="4" fill="none"/>
-      <circle cx="50" cy="50" r="34" stroke="#F9E8A8" stroke-width="2" fill="none"/>
-      <g stroke="#F9E8A8" stroke-width="1.5" opacity="0.8">
-        <line x1="50" y1="4" x2="50" y2="16"/><line x1="50" y1="84" x2="50" y2="96"/>
-        <line x1="4" y1="50" x2="16" y2="50"/><line x1="84" y1="50" x2="96" y2="50"/>
-        <line x1="18" y1="18" x2="26" y2="26"/><line x1="74" y1="74" x2="82" y2="82"/>
-        <line x1="82" y1="18" x2="74" y2="26"/><line x1="26" y1="74" x2="18" y2="82"/>
-        <line x1="32" y1="8" x2="35" y2="19"/><line x1="68" y1="81" x2="65" y2="92"/>
-        <line x1="8" y1="32" x2="19" y2="35"/><line x1="81" y1="65" x2="92" y2="68"/>
-        <line x1="8" y1="68" x2="19" y2="65"/><line x1="81" y1="35" x2="92" y2="32"/>
-        <line x1="32" y1="92" x2="35" y2="81"/><line x1="68" y1="8" x2="65" y2="19"/>
+    <!-- ─── BOLD LUCKY 7: right side ─── -->
+    <svg style="right:3%;top:8%;width:90px;height:110px;opacity:0.30;" viewBox="0 0 90 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="3" width="84" height="104" rx="12" fill="#1a3a18" stroke="#F9E8A8" stroke-width="3"/>
+      <text x="45" y="82" text-anchor="middle" font-family="Georgia,serif" font-size="80" font-weight="900" fill="#F9E8A8">7</text>
+      <text x="45" y="82" text-anchor="middle" font-family="Georgia,serif" font-size="80" font-weight="900" fill="#A21E22" opacity="0.5">7</text>
+    </svg>
+
+    <!-- ─── ROULETTE WHEEL: bottom-right ─── -->
+    <svg style="right:1%;bottom:-20px;width:120px;height:120px;opacity:0.25;animation:heroDrift 25s ease-in-out infinite;" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="56" fill="#1a3a18" stroke="#F9E8A8" stroke-width="3"/>
+      <circle cx="60" cy="60" r="44" fill="none" stroke="#F9E8A8" stroke-width="1.5"/>
+      <!-- alternating red/black pockets -->
+      <path d="M60 16 A44 44 0 0 1 98 38 L84 46 A28 28 0 0 0 60 32 Z" fill="#A21E22"/>
+      <path d="M98 38 A44 44 0 0 1 104 60 L88 60 A28 28 0 0 0 84 46 Z" fill="#222"/>
+      <path d="M104 60 A44 44 0 0 1 98 82 L84 74 A28 28 0 0 0 88 60 Z" fill="#A21E22"/>
+      <path d="M98 82 A44 44 0 0 1 76 104 L68 90 A28 28 0 0 0 84 74 Z" fill="#222"/>
+      <path d="M76 104 A44 44 0 0 1 44 104 L52 90 A28 28 0 0 0 68 90 Z" fill="#A21E22"/>
+      <path d="M44 104 A44 44 0 0 1 22 82 L36 74 A28 28 0 0 0 52 90 Z" fill="#222"/>
+      <path d="M22 82 A44 44 0 0 1 16 60 L32 60 A28 28 0 0 0 36 74 Z" fill="#A21E22"/>
+      <path d="M16 60 A44 44 0 0 1 22 38 L36 46 A28 28 0 0 0 32 60 Z" fill="#222"/>
+      <path d="M22 38 A44 44 0 0 1 44 16 L52 30 A28 28 0 0 0 36 46 Z" fill="#A21E22"/>
+      <path d="M44 16 A44 44 0 0 1 76 16 L68 30 A28 28 0 0 0 52 30 Z" fill="#222"/>
+      <path d="M76 16 A44 44 0 0 1 98 38 L84 46 A28 28 0 0 0 68 30 Z" fill="#A21E22"/>
+      <!-- inner ring -->
+      <circle cx="60" cy="60" r="18" fill="#0e2210" stroke="#c9942a" stroke-width="2"/>
+      <circle cx="60" cy="60" r="8" fill="#F9E8A8"/>
+      <!-- spokes -->
+      <g stroke="#F9E8A8" stroke-width="1" opacity="0.6">
+        <line x1="60" y1="16" x2="60" y2="32"/><line x1="60" y1="88" x2="60" y2="104"/>
+        <line x1="16" y1="60" x2="32" y2="60"/><line x1="88" y1="60" x2="104" y2="60"/>
+        <line x1="27" y1="27" x2="38" y2="38"/><line x1="82" y1="82" x2="93" y2="93"/>
+        <line x1="93" y1="27" x2="82" y2="38"/><line x1="38" y1="82" x2="27" y2="93"/>
       </g>
-      <path d="M50 16 A34 34 0 0 1 79 29 L68 35 A22 22 0 0 0 50 28 Z" fill="#A21E22" opacity="0.7"/>
-      <path d="M50 84 A34 34 0 0 1 21 71 L32 65 A22 22 0 0 0 50 72 Z" fill="#A21E22" opacity="0.7"/>
-      <circle cx="50" cy="50" r="8" fill="#F9E8A8"/>
-      <circle cx="50" cy="50" r="4" fill="#1F3C1B"/>
-      <circle cx="50" cy="20" r="3" fill="#fff"/>
+      <!-- ball -->
+      <circle cx="60" cy="22" r="5" fill="#fff" stroke="#ccc" stroke-width="1"/>
     </svg>
 
-    <!-- Dice (5-face): bottom-right -->
-    <svg style="right:9%;bottom:8%;width:64px;height:64px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="6" y="6" width="68" height="68" rx="14" fill="#F9E8A8" stroke="#c9942a" stroke-width="3"/>
-      <circle cx="24" cy="24" r="6" fill="#1F3C1B"/>
-      <circle cx="56" cy="24" r="6" fill="#1F3C1B"/>
-      <circle cx="40" cy="40" r="6" fill="#1F3C1B"/>
-      <circle cx="24" cy="56" r="6" fill="#1F3C1B"/>
-      <circle cx="56" cy="56" r="6" fill="#1F3C1B"/>
+    <!-- ─── GOLDEN BELL: top-right area ─── -->
+    <svg style="right:20%;top:5%;width:72px;height:80px;opacity:0.30;" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- bell body -->
+      <path d="M40 8 C22 8 12 24 12 44 L12 62 Q12 70 20 70 L60 70 Q68 70 68 62 L68 44 C68 24 58 8 40 8Z" fill="#F9C200" stroke="#c9942a" stroke-width="2.5"/>
+      <!-- shine -->
+      <path d="M26 20 C26 20 28 30 34 34" stroke="rgba(255,255,255,0.4)" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <!-- bell mouth -->
+      <ellipse cx="40" cy="70" rx="28" ry="8" fill="#c9942a"/>
+      <!-- clapper -->
+      <line x1="40" y1="70" x2="40" y2="82" stroke="#c9942a" stroke-width="3"/>
+      <circle cx="40" cy="84" r="5" fill="#c9942a"/>
+      <!-- crown/hanger -->
+      <rect x="35" y="2" width="10" height="10" rx="3" fill="#c9942a"/>
     </svg>
 
-    <!-- Plum cluster: left mid -->
-    <svg style="left:2%;top:55%;width:60px;height:60px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="30" cy="50" r="14" fill="#7b3fa0"/>
-      <circle cx="50" cy="50" r="14" fill="#6d2d96"/>
-      <circle cx="40" cy="34" r="14" fill="#9b4fc5"/>
-      <circle cx="36" cy="42" r="4" fill="rgba(255,255,255,0.22)"/>
-      <path d="M40 20 C40 14 48 10 52 6" stroke="#88AA42" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- ─── STAR BURST: left mid ─── -->
+    <svg style="left:5%;top:42%;width:64px;height:64px;opacity:0.30;animation:sparkle 3s ease-in-out infinite;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="40,4 47,30 74,30 52,47 60,73 40,57 20,73 28,47 6,30 33,30" fill="#F9C200" stroke="#c9942a" stroke-width="1.5"/>
+      <polygon points="40,18 44,32 58,32 47,41 51,55 40,46 29,55 33,41 22,32 36,32" fill="rgba(255,255,255,0.3)"/>
     </svg>
 
-    <!-- Poker chip: left edge -->
-    <svg style="left:0%;top:38%;width:54px;height:54px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="40" cy="40" r="36" fill="#A21E22" stroke="#F9E8A8" stroke-width="4"/>
-      <circle cx="40" cy="40" r="24" fill="none" stroke="#F9E8A8" stroke-width="2" stroke-dasharray="5 4"/>
-      <circle cx="40" cy="40" r="13" fill="#F9E8A8"/>
-      <text x="40" y="45" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="12" fill="#A21E22">25</text>
+    <!-- ─── PLUM / GRAPE: bottom-left ─── -->
+    <svg style="left:12%;bottom:5%;width:80px;height:80px;opacity:0.28;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- grapes -->
+      <circle cx="30" cy="65" r="16" fill="#8e44ad"/>
+      <circle cx="58" cy="65" r="16" fill="#7d3c98"/>
+      <circle cx="44" cy="46" r="16" fill="#a569bd"/>
+      <circle cx="44" cy="24" r="10" fill="#6c3483"/>
+      <!-- highlights -->
+      <circle cx="37" cy="59" r="5" fill="rgba(255,255,255,0.22)"/>
+      <circle cx="51" cy="40" r="4" fill="rgba(255,255,255,0.22)"/>
+      <!-- stem -->
+      <path d="M44 14 C44 7 54 4 58 0" stroke="#5a9e2f" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <!-- leaf -->
+      <ellipse cx="52" cy="5" rx="9" ry="5" fill="#5a9e2f" transform="rotate(20 52 5)"/>
     </svg>
 
-    <!-- Lemon: right lower -->
-    <svg style="right:0%;top:65%;width:52px;height:52px;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="40" cy="40" rx="24" ry="30" fill="#F9E8A8" stroke="#c9942a" stroke-width="3" transform="rotate(-20 40 40)"/>
-      <path d="M40 14 C44 8 50 6 52 10" stroke="#88AA42" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- ─── POKER CHIP STACK: right lower ─── -->
+    <svg style="right:12%;bottom:6%;width:70px;height:86px;opacity:0.28;" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- chip 1 (bottom) -->
+      <ellipse cx="40" cy="82" rx="34" ry="10" fill="#2980b9" stroke="#F9E8A8" stroke-width="2"/>
+      <rect x="6" y="70" width="68" height="12" rx="2" fill="#2980b9"/>
+      <ellipse cx="40" cy="70" rx="34" ry="10" fill="#2980b9" stroke="#F9E8A8" stroke-width="2"/>
+      <!-- chip 2 (middle) -->
+      <ellipse cx="40" cy="60" rx="34" ry="10" fill="#27ae60" stroke="#F9E8A8" stroke-width="2"/>
+      <rect x="6" y="48" width="68" height="12" rx="2" fill="#27ae60"/>
+      <ellipse cx="40" cy="48" rx="34" ry="10" fill="#27ae60" stroke="#F9E8A8" stroke-width="2"/>
+      <!-- chip 3 (top) -->
+      <ellipse cx="40" cy="38" rx="34" ry="10" fill="#A21E22" stroke="#F9E8A8" stroke-width="2"/>
+      <rect x="6" y="26" width="68" height="12" rx="2" fill="#A21E22"/>
+      <ellipse cx="40" cy="26" rx="34" ry="10" fill="#A21E22" stroke="#F9E8A8" stroke-width="2"/>
+      <!-- top chip face detail -->
+      <circle cx="40" cy="26" r="18" fill="none" stroke="#F9E8A8" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="40" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="900" fill="#F9E8A8">100</text>
     </svg>
 
-    <!-- Triple 7 hint: top-left -->
-    <span class="deco-sym" style="left:4%;top:5%;font-size:52px;opacity:0.10;">777</span>
+    <!-- ─── WATERMELON: top-left corner ─── -->
+    <svg style="left:0%;top:5%;width:70px;height:56px;opacity:0.25;" viewBox="0 0 90 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- rind -->
+      <path d="M8 68 Q45 4 82 68 Z" fill="#5a9e2f"/>
+      <!-- flesh -->
+      <path d="M16 68 Q45 14 74 68 Z" fill="#e74c3c"/>
+      <!-- seeds -->
+      <ellipse cx="32" cy="56" rx="3" ry="5" fill="#222" transform="rotate(-15 32 56)"/>
+      <ellipse cx="45" cy="48" rx="3" ry="5" fill="#222"/>
+      <ellipse cx="58" cy="56" rx="3" ry="5" fill="#222" transform="rotate(15 58 56)"/>
+      <!-- rind stripe -->
+      <path d="M8 68 Q45 4 82 68" stroke="#3d7a22" stroke-width="2" fill="none"/>
+    </svg>
+
+    <!-- ─── SCATTER COINS: top area ─── -->
+    <svg style="left:35%;top:2%;width:160px;height:32px;opacity:0.22;" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="14" fill="#F9C200" stroke="#c9942a" stroke-width="2"/><text x="20" y="25" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="900" fill="#8B6914">$</text>
+      <circle cx="60" cy="12" r="10" fill="#F9C200" stroke="#c9942a" stroke-width="2"/><text x="60" y="17" text-anchor="middle" font-family="Georgia,serif" font-size="8" font-weight="900" fill="#8B6914">$</text>
+      <circle cx="100" cy="22" r="12" fill="#F9C200" stroke="#c9942a" stroke-width="2"/><text x="100" y="27" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="900" fill="#8B6914">$</text>
+      <circle cx="140" cy="10" r="9" fill="#F9C200" stroke="#c9942a" stroke-width="2"/><text x="140" y="15" text-anchor="middle" font-family="Georgia,serif" font-size="7" font-weight="900" fill="#8B6914">$</text>
+      <circle cx="178" cy="20" r="13" fill="#F9C200" stroke="#c9942a" stroke-width="2"/><text x="178" y="25" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="900" fill="#8B6914">$</text>
+    </svg>
+
+    <!-- ─── SPARKLE STARS: scattered ─── -->
+    <svg style="right:28%;top:10%;width:24px;height:24px;opacity:0.45;animation:sparkle 2.2s ease-in-out infinite;" viewBox="0 0 30 30" fill="none"><path d="M15 2 L17 12 L27 15 L17 18 L15 28 L13 18 L3 15 L13 12 Z" fill="#F9C200"/></svg>
+    <svg style="left:28%;bottom:20%;width:18px;height:18px;opacity:0.40;animation:sparkle 2.8s ease-in-out infinite 1s;" viewBox="0 0 30 30" fill="none"><path d="M15 2 L17 12 L27 15 L17 18 L15 28 L13 18 L3 15 L13 12 Z" fill="#F9C200"/></svg>
+    <svg style="right:35%;bottom:15%;width:20px;height:20px;opacity:0.38;animation:sparkle 3.4s ease-in-out infinite 0.5s;" viewBox="0 0 30 30" fill="none"><path d="M15 2 L17 12 L27 15 L17 18 L15 28 L13 18 L3 15 L13 12 Z" fill="#F9C200"/></svg>
+
+    <!-- ─── DICE (6-face): mid-right ─── -->
+    <svg style="right:22%;top:55%;width:58px;height:58px;opacity:0.26;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="72" height="72" rx="14" fill="#F9E8A8" stroke="#c9942a" stroke-width="3"/>
+      <circle cx="22" cy="22" r="6" fill="#1F3C1B"/><circle cx="58" cy="22" r="6" fill="#1F3C1B"/>
+      <circle cx="22" cy="40" r="6" fill="#1F3C1B"/><circle cx="58" cy="40" r="6" fill="#1F3C1B"/>
+      <circle cx="22" cy="58" r="6" fill="#1F3C1B"/><circle cx="58" cy="58" r="6" fill="#1F3C1B"/>
+    </svg>
 
   </div>
 
