@@ -637,6 +637,51 @@
     .g2g-avg { font-family: var(--font-body); font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem; }
     .g2g-avg strong { color: var(--green); }
 
+    /* ══ QUICK ACTION BOXES ════════════════════════════════════════ */
+    .quick-action-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+    @media (max-width: 900px) { .quick-action-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .quick-action-grid { grid-template-columns: 1fr 1fr; gap: 0.65rem; } }
+    .qa-box {
+      border-radius: 12px;
+      padding: 1.1rem 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.25rem;
+      border: 1.5px solid transparent;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .qa-box:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.10); }
+    .qa-box--gold  { background: #FDF6E3; border-color: #D4A844; }
+    .qa-box--green { background: #EBF5EB; border-color: var(--green-pasture); }
+    .qa-box--orange{ background: #FEF2EA; border-color: #E8722A; }
+    .qa-box--slate { background: #EDEAE4; border-color: #9E9E8F; }
+    .qa-box__icon  { font-size: 1.6rem; line-height: 1; margin-bottom: 0.1rem; }
+    .qa-box__label { font-family: var(--font-body); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+    .qa-box__value { font-family: var(--font-head); font-size: 0.95rem; font-weight: 600; color: var(--text); line-height: 1.3; margin: 0.15rem 0 0.5rem; }
+    .qa-box__btn {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: opacity 0.15s;
+    }
+    .qa-box__btn:hover { opacity: 0.82; }
+    .qa-box--gold  .qa-box__btn { background: #D4A844; color: #fff; }
+    .qa-box--green .qa-box__btn { background: var(--green-pasture); color: #fff; }
+    .qa-box--orange .qa-box__btn { background: #E8722A; color: #fff; }
+    .qa-box--slate .qa-box__btn { background: #9E9E8F; color: #fff; }
+
     /* ══ INFO BOXES ════════════════════════════════════════════════ */
     .info-box { background: var(--yellow-dim); border: 1px solid rgba(249,232,168,0.8); border-left: 4px solid var(--green-pasture); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
     .info-box.warning { background: var(--red-dim); border-color: rgba(162,30,34,0.3); }
@@ -798,8 +843,6 @@
     <a href="#betmgm">#3 BetMGM</a>
     <a href="#bet365">#4 bet365</a>
     <a href="#spin-casino">#5 Spin Casino</a>
-    <a href="#casino-finder">🧠 Find My Casino</a>
-    <a href="#matchup">⚖️ Compare Two</a>
     <a href="#alberta-guide">AB Guide</a>
     <a href="#faq">FAQ</a>
   </div>
@@ -1014,8 +1057,35 @@
 
   <!-- ════ INTRO ════════════════════════════════════════════════════ -->
   <div class="page-intro">
-    <p>We're players first - before we rank a single site, we've deposited real money, chased real payouts, and tested real customer support at 1&nbsp;AM when our Interac fails and the reels get stuck during a Huff&nbsp;'n'&nbsp;Puff bonus. Alberta's iGaming market only opened this year, and it's flooded with operators claiming to be "Alberta's best." Let us show you who's earned your first deposit.</p>
-    <p>The business world has B2B - business to business. We're something different: <strong>G2G. Gambler to gambler.</strong> No PR fluff, no operator talking points - just honest reviews from people who've actually played, lost, won, and cashed out. That's the only kind worth reading.</p>
+    <p>We're players recommending Alberta's best licensed online casinos — and we call it <strong>P2P: Player to Player.</strong> No operator talking points, no affiliate spin. Every rating on this page was earned through real deposits, real spins, and real withdrawals in Alberta's newly regulated iGaming market. When you're deciding where your first deposit goes, trust the people who've already made that bet.</p>
+  </div>
+
+  <!-- ════ QUICK ACTION BOXES ════════════════════════════════════ -->
+  <div class="quick-action-grid">
+    <div class="qa-box qa-box--gold">
+      <div class="qa-box__icon">🏆</div>
+      <div class="qa-box__label">Our #1 Pick</div>
+      <div class="qa-box__value">Jackpot City</div>
+      <a href="#jackpot-city" class="qa-box__btn">See Review</a>
+    </div>
+    <div class="qa-box qa-box--green">
+      <div class="qa-box__icon">🎁</div>
+      <div class="qa-box__label">Best Bonus Right Now</div>
+      <div class="qa-box__value">BetMGM — $200 Welcome</div>
+      <a href="#betmgm" class="qa-box__btn">See Offer</a>
+    </div>
+    <div class="qa-box qa-box--orange">
+      <div class="qa-box__icon">🧠</div>
+      <div class="qa-box__label">Not Sure Where to Play?</div>
+      <div class="qa-box__value">Find My Casino</div>
+      <a href="#casino-finder" class="qa-box__btn">Take the Quiz</a>
+    </div>
+    <div class="qa-box qa-box--slate">
+      <div class="qa-box__icon">⚖️</div>
+      <div class="qa-box__label">Torn Between Two?</div>
+      <div class="qa-box__value">Compare Side by Side</div>
+      <a href="#matchup" class="qa-box__btn">Compare Now</a>
+    </div>
   </div>
 
   <!-- ════ SHOUTOUT BOX - HOW WE PICK ═════════════════════════════ -->
