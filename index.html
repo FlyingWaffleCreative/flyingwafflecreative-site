@@ -126,7 +126,16 @@
     <div class="service-strip service-strip--reverse">
       <div class="service-strip__carousel" id="carousel-2">
         <div class="carousel__track">
-          <img src="igaming-placeholder.jpg" alt="iGaming content" class="carousel__slide active" />
+          <img src="igaming-1.jpg" alt="iGaming content" class="carousel__slide active" />
+          <img src="igaming-2.jpg" alt="iGaming content" class="carousel__slide" />
+          <img src="igaming-3.jpg" alt="iGaming content" class="carousel__slide" />
+        </div>
+        <button class="carousel__btn carousel__btn--prev" onclick="moveCarousel('carousel-2', -1)">&#8592;</button>
+        <button class="carousel__btn carousel__btn--next" onclick="moveCarousel('carousel-2', 1)">&#8594;</button>
+        <div class="carousel__dots" id="dots-carousel-2">
+          <span class="carousel__dot active" onclick="goToSlide('carousel-2', 0)"></span>
+          <span class="carousel__dot" onclick="goToSlide('carousel-2', 1)"></span>
+          <span class="carousel__dot" onclick="goToSlide('carousel-2', 2)"></span>
         </div>
       </div>
       <div class="service-strip__content">
