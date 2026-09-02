@@ -154,6 +154,13 @@
       <div class="service-strip__carousel" id="carousel-3">
         <div class="carousel__track">
           <img src="seo-1.jpg" alt="SEO and affiliate copy" class="carousel__slide active" />
+          <img src="seo-2.jpg" alt="SEO and affiliate copy" class="carousel__slide" />
+        </div>
+        <button class="carousel__btn carousel__btn--prev" onclick="moveCarousel('carousel-3', -1)">&#8592;</button>
+        <button class="carousel__btn carousel__btn--next" onclick="moveCarousel('carousel-3', 1)">&#8594;</button>
+        <div class="carousel__dots" id="dots-carousel-3">
+          <span class="carousel__dot active" onclick="goToSlide('carousel-3', 0)"></span>
+          <span class="carousel__dot" onclick="goToSlide('carousel-3', 1)"></span>
         </div>
       </div>
       <div class="service-strip__content">
