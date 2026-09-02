@@ -147,7 +147,7 @@ a { text-decoration: none; color: inherit; }
   justify-content: space-between;
   height: 68px;
 }
-.nav__logo img { height: 160px; width: auto; max-width: 400px; }
+.nav__logo img { height: 60px; width: 60px; object-fit: cover; border-radius: 50%; }
 .home-page .nav__logo img { animation: waffleFlyIn 2.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .nav__right {
   display: flex;
@@ -256,6 +256,21 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 2.25rem;
   color: var(--cream);
   max-width: 560px;
+}
+.hero__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.hero__bullets li {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .hero__ctas {
   display: flex;
