@@ -1232,7 +1232,7 @@ a.contact-page__detail-value:hover { color: var(--orange); }
 }
 .service-link-tile img {
   width: 100%;
-  height: 100%;
+  height: 160px;
   object-fit: cover;
   display: block;
 }
