@@ -1217,7 +1217,7 @@ a.contact-page__detail-value:hover { color: var(--orange); }
 /* ── SERVICE LINK TILES ── */
 .why__service-links {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 2rem;
 }
