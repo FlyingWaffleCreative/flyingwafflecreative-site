@@ -1220,22 +1220,21 @@ a.contact-page__detail-value:hover { color: var(--orange); }
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 2rem;
-  max-width: 540px;
 }
 .service-link-tile {
   display: block;
+  height: 56px;
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .service-link-tile:hover {
   opacity: 0.85;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 .service-link-tile img {
-  width: 100%;
-  height: 60px;
-  object-fit: cover;
-  display: block;
+  display: none;
 }
 @media (max-width: 600px) {
   .why__service-links { grid-template-columns: 1fr; }
