@@ -1158,3 +1158,54 @@ a.contact-page__detail-value:hover { color: var(--orange); }
 @media (max-width: 500px) {
   .ways__grid { grid-template-columns: 1fr; }
 }
+
+/* ── PRICING ── */
+.pricing {
+  background: var(--card-cream);
+  padding: 5rem 0;
+  border-top: 2px solid var(--orange);
+}
+.pricing__intro {
+  max-width: 640px;
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+.pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.pricing-item {
+  background: var(--bg-cream);
+  border-top: 3px solid var(--secondary);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pricing-item--featured {
+  border-top-color: var(--orange);
+}
+.pricing-item__title {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+.pricing-item__body {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+@media (max-width: 800px) {
+  .pricing__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 500px) {
+  .pricing__grid { grid-template-columns: 1fr; }
+}
