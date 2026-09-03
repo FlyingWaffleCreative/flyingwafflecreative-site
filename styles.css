@@ -360,7 +360,7 @@ a { text-decoration: none; color: inherit; }
 .service-strip {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 420px;
+  min-height: 300px;
 }
 .service-strip--reverse .service-strip__image { order: 2; }
 .service-strip--reverse .service-strip__content { order: 1; }
@@ -375,7 +375,7 @@ a { text-decoration: none; color: inherit; }
 }
 .service-strip__content {
   background: var(--card-cream);
-  padding: 3.5rem;
+  padding: 2.5rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
