@@ -1223,9 +1223,6 @@ a.contact-page__detail-value:hover { color: var(--orange); }
 }
 .service-link-tile {
   display: block;
-  height: 56px;
-  background-size: cover;
-  background-position: center;
   overflow: hidden;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -1234,7 +1231,11 @@ a.contact-page__detail-value:hover { color: var(--orange); }
   transform: translateY(-2px);
 }
 .service-link-tile img {
-  display: none;
+  display: block;
+  width: 100%;
+  height: 56px;
+  object-fit: cover;
+  object-position: center;
 }
 @media (max-width: 600px) {
   .why__service-links { grid-template-columns: 1fr; }
