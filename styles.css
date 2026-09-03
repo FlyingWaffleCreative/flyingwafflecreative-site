@@ -1213,3 +1213,29 @@ a.contact-page__detail-value:hover { color: var(--orange); }
 @media (max-width: 500px) {
   .pricing__grid { grid-template-columns: 1fr; }
 }
+
+/* ── SERVICE LINK TILES ── */
+.why__service-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.service-link-tile {
+  display: block;
+  overflow: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.service-link-tile:hover {
+  opacity: 0.85;
+  transform: translateY(-3px);
+}
+.service-link-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 600px) {
+  .why__service-links { grid-template-columns: 1fr; }
+}
