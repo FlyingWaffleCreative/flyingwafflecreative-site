@@ -360,7 +360,7 @@ a { text-decoration: none; color: inherit; }
 .service-strip {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 300px;
+  min-height: 220px;
 }
 .service-strip--reverse .service-strip__image { order: 2; }
 .service-strip--reverse .service-strip__content { order: 1; }
@@ -375,29 +375,29 @@ a { text-decoration: none; color: inherit; }
 }
 .service-strip__content {
   background: var(--card-cream);
-  padding: 2.5rem 3rem;
+  padding: 2rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .service-strip__title {
   font-family: var(--font-head);
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
   font-weight: 900;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--text-dark);
   letter-spacing: -0.01em;
 }
 .service-strip__bullets {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem;
+  margin: 0 0 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 .service-strip__bullets li {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--text-body);
   padding-left: 1.25rem;
   position: relative;
