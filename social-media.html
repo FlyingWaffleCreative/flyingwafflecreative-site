@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Social Media Management | Flying Waffle Creative</title>
-  <meta name="description" content="Human-led social media management for iGaming brands and small businesses. Strategy, content, captions, Reels and community — done properly." />
+  <meta name="description" content="Human-led social media management for iGaming brands and small businesses. Strategy, content, captions and community — done properly. Starts at $499/month + GST." />
   <meta name="keywords" content="social media management, igaming social media, content calendar, caption writing, community management, Alberta, Canada" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,99 +13,75 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* ── PAGE-SPECIFIC OVERRIDES ─────────────────────────────── */
-    .social-intro {
+    /* ── SOCIAL PAGE STYLES ───────────────────────────────────── */
+
+    /* Intro / lede */
+    .social-lede {
       padding: 5rem 0 4rem;
     }
-    .social-intro__inner {
+    .social-lede__inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 5rem;
       align-items: center;
     }
-    .social-intro__img {
+    .social-lede__text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .social-lede__text p {
+      font-family: 'Inter', sans-serif;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: 0.97rem;
+    }
+    .social-lede__price {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1.5px solid var(--orange);
+      border-radius: 999px;
+      padding: 0.45rem 1.2rem;
+    }
+    .social-lede__img {
       width: 100%;
       border-radius: 12px;
       object-fit: cover;
       aspect-ratio: 4/3;
       display: block;
     }
-    .social-intro__text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-    .social-intro__text p {
-      color: #555;
-      line-height: 1.75;
-      margin-bottom: 1rem;
-      font-family: 'Inter', sans-serif;
-    }
-    .social-intro__text .tagline {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--orange);
-      margin-bottom: 1.2rem;
-    }
 
-    /* What We Do grid */
-    .what-we-do {
+    /* How it works */
+    .hiw {
       background: #F5F2EE;
       padding: 5rem 0;
     }
-    .what-we-do__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+    .hiw__steps {
       margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
-    .wwd-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 2rem 1.75rem;
-      border-top: 3px solid var(--orange);
-    }
-    .wwd-card__icon {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    .wwd-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 0.6rem;
-    }
-    .wwd-card p {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
-      color: #666;
-      line-height: 1.65;
-    }
-
-    /* How it works */
-    .how-it-works {
-      padding: 5rem 0;
-    }
-    .hiw-steps {
+    .hiw__step {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 64px 1fr;
       gap: 2rem;
-      margin-top: 3rem;
-      counter-reset: steps;
+      align-items: flex-start;
+      padding: 2rem 0;
+      border-bottom: 1px solid #E0DDD8;
     }
-    .hiw-step {
-      text-align: center;
-      position: relative;
-    }
-    .hiw-step::before {
-      counter-increment: steps;
-      content: counter(steps);
-      display: block;
+    .hiw__step:last-child { border-bottom: none; }
+    .hiw__num {
       width: 48px;
       height: 48px;
       border-radius: 50%;
@@ -114,137 +90,175 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
       font-weight: 700;
-      line-height: 48px;
-      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
-    .hiw-step h3 {
+    .hiw__content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    .hiw__content p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Right for you */
+    .right-for-you {
+      padding: 5rem 0;
+    }
+    .rfy__list {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .rfy__item {
+      background: #F5F2EE;
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem 1.4rem 1.2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    .rfy__check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* What's included */
+    .whats-included {
+      background: #F5F2EE;
+      padding: 5rem 0;
+    }
+    .wi__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .wi__card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.75rem 1.5rem;
+      border-top: 3px solid var(--orange);
+    }
+    .wi__card__icon {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .wi__card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
       font-weight: 700;
       color: var(--dark);
       margin-bottom: 0.5rem;
     }
-    .hiw-step p {
+    .wi__card p {
       font-family: 'Inter', sans-serif;
       font-size: 0.83rem;
       color: #777;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     /* Platforms */
     .platforms {
-      background: #F5F2EE;
       padding: 4rem 0;
     }
-    .platforms__grid {
+    .platforms__pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.8rem;
       justify-content: center;
       margin-top: 2.5rem;
     }
     .platform-pill {
-      background: #fff;
-      border: 1px solid #E0DDD8;
+      background: #F5F2EE;
+      border: 1.5px solid #E0DDD8;
       border-radius: 999px;
-      padding: 0.55rem 1.4rem;
+      padding: 0.5rem 1.3rem;
       font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--dark);
     }
 
-    /* Packages */
-    .packages {
+    /* FAQ */
+    .faq-section {
+      background: #F5F2EE;
       padding: 5rem 0;
     }
-    .packages__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+    .faq-list {
       margin-top: 3rem;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .package-card {
-      border: 1px solid #E0DDD8;
-      border-radius: 14px;
-      padding: 2rem 1.75rem;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
+    .faq-item {
+      border-bottom: 1px solid #DEDAD4;
     }
-    .package-card--featured {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 2px var(--orange);
-      position: relative;
-    }
-    .package-card--featured::before {
-      content: 'Most popular';
-      position: absolute;
-      top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--orange);
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.9rem;
-      border-radius: 999px;
-    }
-    .package-card__name {
+    .faq-item:first-child { border-top: 1px solid #DEDAD4; }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.4rem 0;
+      text-align: left;
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--dark);
-      margin-bottom: 0.4rem;
-    }
-    .package-card__price {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--orange);
-      margin-bottom: 0.3rem;
-    }
-    .package-card__price span {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: #999;
-    }
-    .package-card__desc {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: #777;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-    .package-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem;
-      flex: 1;
-    }
-    .package-card ul li {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: #555;
-      padding: 0.4rem 0;
-      border-bottom: 1px solid #F0EDE8;
+      cursor: pointer;
       display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
     }
-    .package-card ul li::before {
-      content: '✓';
+    .faq-q::after {
+      content: '+';
+      font-family: 'Inter', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 300;
       color: var(--orange);
-      font-weight: 700;
       flex-shrink: 0;
+      transition: transform 0.2s;
     }
+    .faq-item.open .faq-q::after {
+      transform: rotate(45deg);
+    }
+    .faq-a {
+      display: none;
+      padding: 0 0 1.4rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-a { display: block; }
 
     /* Sample work */
     .sample-work {
-      background: #F5F2EE;
       padding: 5rem 0;
     }
     .sample-grid {
@@ -254,7 +268,7 @@
       margin-top: 3rem;
     }
     .sample-card {
-      background: #fff;
+      background: #F5F2EE;
       border-radius: 12px;
       overflow: hidden;
     }
@@ -269,16 +283,16 @@
     }
     .sample-card__client {
       font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--orange);
       margin-bottom: 0.4rem;
     }
     .sample-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--dark);
       margin-bottom: 0.4rem;
@@ -292,15 +306,15 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .social-intro__inner { grid-template-columns: 1fr; gap: 2rem; }
-      .what-we-do__grid { grid-template-columns: repeat(2, 1fr); }
-      .hiw-steps { grid-template-columns: repeat(2, 1fr); }
-      .packages__grid { grid-template-columns: 1fr; }
+      .social-lede__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .wi__grid { grid-template-columns: repeat(2, 1fr); }
+      .rfy__list { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .what-we-do__grid { grid-template-columns: 1fr; }
-      .hiw-steps { grid-template-columns: 1fr; }
+      .wi__grid { grid-template-columns: 1fr; }
+      .hiw__step { grid-template-columns: 48px 1fr; gap: 1.2rem; }
       .sample-grid { grid-template-columns: 1fr; }
+      .social-lede__text h2 { font-size: 1.9rem; }
     }
   </style>
 </head>
@@ -333,93 +347,145 @@
   <!-- PAGE HERO -->
   <section class="hero">
     <div class="container hero__inner">
-      <h1 class="hero__title">Social Media</h1>
-      <p class="hero__body">More than a content calendar.</p>
+      <h1 class="hero__title">Social Media Management</h1>
+      <p class="hero__body">We create, engage and grow your online presence.</p>
     </div>
   </section>
 
-  <!-- INTRO -->
-  <section class="social-intro">
+  <!-- LEDE -->
+  <section class="social-lede">
     <div class="container">
-      <div class="social-intro__inner">
-        <img src="header-social.jpg" alt="Social media content" class="social-intro__img" />
-        <div class="social-intro__text">
-          <p class="tagline">Good social feels current. Ours actually is.</p>
-          <h2>Social that sounds like your brand — not a bot.</h2>
-          <p>There's a version of social media management where an algorithm decides what to post, a template gets filled in, and the whole thing feels about as human as a terms and conditions page. That's not what we do.</p>
-          <p>We manage the strategy, content and day-to-day thinking behind a social presence that sounds like your brand, responds to what's happening, and gives people an actual reason to stick around.</p>
-          <p>Available as ongoing monthly management or flexible content-only support — for iGaming brands, small businesses, and anyone who's tired of their Instagram looking like everyone else's.</p>
-          <a href="contact.html" class="btn btn--primary" style="margin-top:1.5rem;">Let's talk social &rarr;</a>
+      <div class="social-lede__inner">
+        <div class="social-lede__text">
+          <h2>Fully managed social — so you can focus on running your business.</h2>
+          <p>Good social media feels current. It sounds like the brand, responds to what&rsquo;s happening, and gives people a reason to stick around. We manage the strategy, content and day-to-day thinking behind a social presence that feels active rather than automated.</p>
+          <p>We handle everything — from planning and content creation to engaging with your audience — so you don&rsquo;t have to think about it. Available as ongoing monthly management or flexible content-only support.</p>
+          <span class="social-lede__price">Starts at $499/month + GST</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT WE DO -->
-  <section class="what-we-do">
-    <div class="container">
-      <div class="section-header section-header--light">
-        <h2 class="section-title">What we handle</h2>
-        <p class="section-sub">Everything that makes a social presence actually work.</p>
-      </div>
-      <div class="what-we-do__grid">
-        <div class="wwd-card">
-          <span class="wwd-card__icon">🗓</span>
-          <h3>Strategy &amp; Planning</h3>
-          <p>Content strategy rooted in your brand voice, audience and goals. Monthly calendar planning so nothing slips through the cracks.</p>
-        </div>
-        <div class="wwd-card">
-          <span class="wwd-card__icon">✍️</span>
-          <h3>Copy &amp; Captions</h3>
-          <p>Human-written captions that sound like you — not a caption generator. Short-form, long-form, and everything in between.</p>
-        </div>
-        <div class="wwd-card">
-          <span class="wwd-card__icon">🎬</span>
-          <h3>Reels &amp; Short-Form</h3>
-          <p>Concepts, scripts and copy for Reels, TikToks and Shorts. We don't film — but we'll make sure the words are worth watching.</p>
-        </div>
-        <div class="wwd-card">
-          <span class="wwd-card__icon">📣</span>
-          <h3>Campaigns &amp; Promotions</h3>
-          <p>Seasonal campaigns, product launches and promotional content — planned in advance and built to actually drive action.</p>
-        </div>
-        <div class="wwd-card">
-          <span class="wwd-card__icon">♻️</span>
-          <h3>Content Repurposing</h3>
-          <p>Turn a blog post into five posts. A video into a carousel. A quote into a graphic. We make your existing content work harder.</p>
-        </div>
-        <div class="wwd-card">
-          <span class="wwd-card__icon">💬</span>
-          <h3>Community Management</h3>
-          <p>Thoughtful engagement, not copy-paste replies. Available as an add-on for brands that want a presence in the comments too.</p>
-        </div>
+        <img src="header-social.jpg" alt="Social media management" class="social-lede__img" />
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="how-it-works">
+  <section class="hiw">
     <div class="container">
       <div class="section-header section-header--light">
-        <h2 class="section-title">How it works</h2>
-        <p class="section-sub">Simple process. Consistent output.</p>
+        <h2 class="section-title">Here&rsquo;s how it works</h2>
+        <p class="section-sub">A clear process from day one.</p>
       </div>
-      <div class="hiw-steps">
-        <div class="hiw-step">
-          <h3>Discovery call</h3>
-          <p>We learn your brand, your audience, your tone — and what's not working right now.</p>
+      <div class="hiw__steps">
+        <div class="hiw__step">
+          <div class="hiw__num">1</div>
+          <div class="hiw__content">
+            <h3>Discovery call</h3>
+            <p>We start by getting to know your business, your audience and your goals. We&rsquo;ll look at where you&rsquo;re at with social, what&rsquo;s working, and what isn&rsquo;t — then build a picture of what a strong presence actually looks like for your brand.</p>
+          </div>
         </div>
-        <div class="hiw-step">
-          <h3>Strategy &amp; onboarding</h3>
-          <p>We build a content strategy and brand voice guide. You sign off before anything goes near a feed.</p>
+        <div class="hiw__step">
+          <div class="hiw__num">2</div>
+          <div class="hiw__content">
+            <h3>Strategy &amp; brand voice</h3>
+            <p>We define your content pillars — the foundation for everything we post — and develop a brand voice guide so every caption, comment and caption sounds unmistakably like you. You sign off before anything goes near a feed.</p>
+          </div>
         </div>
-        <div class="hiw-step">
-          <h3>Monthly content</h3>
-          <p>Content delivered on a rolling calendar. You review, approve, and we publish — or you do.</p>
+        <div class="hiw__step">
+          <div class="hiw__num">3</div>
+          <div class="hiw__content">
+            <h3>Content creation &amp; scheduling</h3>
+            <p>We handle writing, planning and scheduling across your platforms. Monthly calendars keep everything organised. You review and approve — or hand it off entirely. Your call.</p>
+          </div>
         </div>
-        <div class="hiw-step">
-          <h3>Review &amp; refine</h3>
-          <p>Monthly reporting and a standing check-in to keep things sharp and on-strategy.</p>
+        <div class="hiw__step">
+          <div class="hiw__num">4</div>
+          <div class="hiw__content">
+            <h3>Engagement &amp; community</h3>
+            <p>We engage with your audience through comments and conversation — strengthening relationships, building loyalty and keeping your presence feeling alive, not abandoned.</p>
+          </div>
+        </div>
+        <div class="hiw__step">
+          <div class="hiw__num">5</div>
+          <div class="hiw__content">
+            <h3>Monthly reporting &amp; refinement</h3>
+            <p>A standing check-in each month to review performance, adjust the strategy and make sure your content keeps improving. Nothing set-and-forget about it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIGHT FOR YOU -->
+  <section class="right-for-you">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <h2 class="section-title">Social media management may be right for you if&hellip;</h2>
+      </div>
+      <div class="rfy__list">
+        <div class="rfy__item">
+          <span class="rfy__check">✓</span>
+          You want a hands-off solution — someone who handles it all so your feed stays active without you lifting a finger.
+        </div>
+        <div class="rfy__item">
+          <span class="rfy__check">✓</span>
+          You&rsquo;re too busy running your business to consistently create content and show up online.
+        </div>
+        <div class="rfy__item">
+          <span class="rfy__check">✓</span>
+          You&rsquo;ve been posting sporadically — or not at all — and you know it&rsquo;s hurting your brand.
+        </div>
+        <div class="rfy__item">
+          <span class="rfy__check">✓</span>
+          You struggle to create content that sounds like you and resonates with your audience.
+        </div>
+        <div class="rfy__item">
+          <span class="rfy__check">✓</span>
+          You need a content partner who understands your industry — especially iGaming, regulated markets or niche verticals.
+        </div>
+        <div class="rfy__item">
+          <span class="rfy__check">✓</span>
+          You want consistent, strategic output — not a one-off burst followed by weeks of silence.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="whats-included">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <h2 class="section-title">What&rsquo;s included</h2>
+        <p class="section-sub">Everything that makes a social presence actually work.</p>
+      </div>
+      <div class="wi__grid">
+        <div class="wi__card">
+          <span class="wi__card__icon">🗓</span>
+          <h3>Content strategy &amp; planning</h3>
+          <p>Monthly content calendars built around your goals, audience and brand voice — planned in advance, not scrambled at the last minute.</p>
+        </div>
+        <div class="wi__card">
+          <span class="wi__card__icon">✍️</span>
+          <h3>Copy &amp; captions</h3>
+          <p>Human-written captions that sound like your brand — not a generator. Short-form, long-form, hashtags, CTAs. All of it.</p>
+        </div>
+        <div class="wi__card">
+          <span class="wi__card__icon">🎬</span>
+          <h3>Reels &amp; short-form concepts</h3>
+          <p>Scripts and copy for Reels, TikToks and Shorts. We&rsquo;ll make sure the words — and the concept — are worth watching.</p>
+        </div>
+        <div class="wi__card">
+          <span class="wi__card__icon">📣</span>
+          <h3>Campaigns &amp; seasonal content</h3>
+          <p>Promotional content, product launches and seasonal campaigns — built ahead of time so nothing feels rushed or reactive.</p>
+        </div>
+        <div class="wi__card">
+          <span class="wi__card__icon">♻️</span>
+          <h3>Content repurposing</h3>
+          <p>Turn a blog post into five posts. A quote into a graphic concept. A video into a carousel. We make your existing content work harder.</p>
+        </div>
+        <div class="wi__card">
+          <span class="wi__card__icon">💬</span>
+          <h3>Community management</h3>
+          <p>Thoughtful engagement — not copy-paste replies. We show up in the comments so your audience feels heard and your brand feels human.</p>
         </div>
       </div>
     </div>
@@ -432,7 +498,7 @@
         <h2 class="section-title">Platforms we work on</h2>
         <p class="section-sub">We go where your audience is.</p>
       </div>
-      <div class="platforms__grid">
+      <div class="platforms__pills">
         <span class="platform-pill">Instagram</span>
         <span class="platform-pill">Facebook</span>
         <span class="platform-pill">LinkedIn</span>
@@ -445,70 +511,12 @@
     </div>
   </section>
 
-  <!-- PACKAGES -->
-  <section class="packages">
-    <div class="container">
-      <div class="section-header section-header--light">
-        <h2 class="section-title">Packages</h2>
-        <p class="section-sub">Starting points. Every package is customisable.</p>
-      </div>
-      <div class="packages__grid">
-
-        <div class="package-card">
-          <div class="package-card__name">Content Only</div>
-          <div class="package-card__price">$499<span>/month + GST</span></div>
-          <div class="package-card__desc">Copy and captions delivered. You handle scheduling and publishing.</div>
-          <ul>
-            <li>12 posts per month</li>
-            <li>Written captions for each post</li>
-            <li>Content calendar</li>
-            <li>2 revision rounds</li>
-            <li>Monthly strategy review</li>
-          </ul>
-          <a href="contact.html" class="btn btn--primary">Get started &rarr;</a>
-        </div>
-
-        <div class="package-card package-card--featured">
-          <div class="package-card__name">Full Management</div>
-          <div class="package-card__price">$899<span>/month + GST</span></div>
-          <div class="package-card__desc">We handle strategy, content, scheduling and community — end to end.</div>
-          <ul>
-            <li>20 posts per month</li>
-            <li>Written captions + hashtag strategy</li>
-            <li>Content calendar + scheduling</li>
-            <li>Reel concepts (2/month)</li>
-            <li>Community management</li>
-            <li>Monthly performance report</li>
-            <li>Unlimited revisions</li>
-          </ul>
-          <a href="contact.html" class="btn btn--primary">Get started &rarr;</a>
-        </div>
-
-        <div class="package-card">
-          <div class="package-card__name">iGaming Social</div>
-          <div class="package-card__price">Custom</div>
-          <div class="package-card__desc">For regulated operators, affiliates and iGaming brands with compliance requirements.</div>
-          <ul>
-            <li>Compliance-aware content</li>
-            <li>Responsible gambling messaging</li>
-            <li>iGaming brand voice expertise</li>
-            <li>Ontario iGO &amp; Alberta AiGC aligned</li>
-            <li>Custom post volume</li>
-            <li>Reporting &amp; analytics</li>
-          </ul>
-          <a href="contact.html" class="btn btn--primary">Let's talk &rarr;</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- SAMPLE WORK -->
   <section class="sample-work">
     <div class="container">
       <div class="section-header section-header--light">
         <h2 class="section-title">Sample work</h2>
-        <p class="section-sub">A taste of what we've made.</p>
+        <p class="section-sub">A taste of what we&rsquo;ve made.</p>
       </div>
       <div class="sample-grid">
         <div class="sample-card">
@@ -532,11 +540,43 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <h2 class="section-title">Have questions?</h2>
+        <p class="section-sub">We&rsquo;ve got answers.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">What does the onboarding process look like?</button>
+          <div class="faq-a">We start with a discovery call to get to know your business, goals and audience. From there we define your content pillars — the foundation for everything we create — and put together a brand voice guide so every post sounds unmistakably like you. You review and approve before we touch a single platform.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do I need to be involved day-to-day?</button>
+          <div class="faq-a">No — that&rsquo;s the point. Most clients do a monthly check-in to review the content calendar and give feedback, and that&rsquo;s it. You can be as hands-on or hands-off as you like. Some clients want to approve every post; others prefer to let us run it entirely. We work both ways.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you do the photography and video too?</button>
+          <div class="faq-a">We handle the strategy, copy, captions, concepts and scheduling. Photography and video production aren&rsquo;t something we offer directly, but we can brief a photographer or work with assets you already have. For Reels and short-form, we provide scripts and concepts — you or your team handle the filming.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How does pricing work?</button>
+          <div class="faq-a">We offer monthly packages starting at $499/month + GST for content-only support, and full management packages from there. Pricing depends on platforms, post volume and whether community management is included. Get in touch and we&rsquo;ll put together a quote based on what you actually need.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you work with iGaming brands?</button>
+          <div class="faq-a">Yes — it&rsquo;s one of our specialities. We understand the compliance requirements, the restrictions around promotional language in regulated markets like Ontario and Alberta, and the nuances of writing for a gambling audience. If you need social media content that&rsquo;s on-brand, responsible and regulation-aware, we&rsquo;re the right fit.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA BAND -->
   <section class="cta-band">
     <div class="container cta-band__inner">
       <h2 class="cta-band__title">Ready for social that actually sounds like you?</h2>
-      <p class="cta-band__body">Let's build something worth following.</p>
+      <p class="cta-band__body">Let&rsquo;s build something worth following.</p>
       <a href="contact.html" class="btn btn--white">Get in touch &rarr;</a>
     </div>
   </section>
@@ -548,7 +588,7 @@
         <img src="logo-white-text.png" alt="Flying Waffle Creative" class="footer__logo" />
         <p class="footer__name">Flying Waffle Creative</p>
         <p class="footer__tagline">Human content. Freshly made.</p>
-        <p class="footer__copy">© 2026 Flying Waffle Creative. All rights reserved.</p>
+        <p class="footer__copy">&copy; 2026 Flying Waffle Creative. All rights reserved.</p>
       </div>
       <nav class="footer__nav">
         <a href="index.html">Home</a>
@@ -570,6 +610,15 @@
     hamburger.addEventListener('click', () => {
       const open = navLinks.classList.toggle('nav__links--open');
       hamburger.setAttribute('aria-expanded', open);
+    });
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
     });
   </script>
 
