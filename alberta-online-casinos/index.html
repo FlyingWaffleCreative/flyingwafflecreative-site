@@ -280,101 +280,265 @@
     .hero-stat span   { font-size: 0.8rem;  color: rgba(255,255,255,0.5); font-family: var(--font-body); }
     .hero-stat-sep    { color: rgba(255,255,255,0.2); }
 
-    /* CARDS: 4-in-a-row below headline */
-    /* ══ SLOT MACHINE NAV ═══════════════════════════════════ */
-    .slot-machine {
+    /* ══ CLASSIC SLOT MACHINE ════════════════════════════════════ */
+    .slot-cabinet {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
+      max-width: 620px;
+      margin: 0 auto;
     }
-    .slot-machine-frame {
+    /* Marquee top */
+    .slot-marquee {
+      width: 90%;
+      background: linear-gradient(135deg, #1a0a00 0%, #3b1f00 40%, #1a0a00 100%);
+      border: 3px solid #c9a84c;
+      border-bottom: none;
+      border-radius: 14px 14px 0 0;
+      padding: 0.45rem 1.5rem;
+      text-align: center;
+      font-family: var(--font-body);
+      font-weight: 900;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      color: #c9a84c;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(201,168,76,0.6);
+      box-shadow: 0 -4px 16px rgba(201,168,76,0.15);
+    }
+    /* Main cabinet body */
+    .slot-body {
       display: flex;
       align-items: stretch;
-      background: #0a0a0a;
-      border: 3px solid #c9a84c;
-      border-radius: 16px;
-      box-shadow: 0 0 0 1px #000, 0 0 28px rgba(201,168,76,0.4), inset 0 2px 8px rgba(0,0,0,0.8);
-      overflow: hidden;
       width: 100%;
-      max-width: 560px;
+      background: linear-gradient(180deg, #1c0d00 0%, #120800 100%);
+      border: 3px solid #c9a84c;
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0 0 0 1px #000, 0 0 32px rgba(201,168,76,0.3), inset 0 0 40px rgba(0,0,0,0.6);
+      position: relative;
     }
-    .slot-reel {
+    /* Reel bay — the windowed area */
+    .slot-reels-bay {
+      flex: 1;
+      display: flex;
+      padding: 1rem 1rem;
+      gap: 0;
+      position: relative;
+    }
+    /* Payline overlay lines */
+    .slot-reels-bay::before,
+    .slot-reels-bay::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 56px;
+      height: 2px;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .slot-reels-bay::before {
+      top: calc(50% - 28px);
+      background: rgba(201,168,76,0.25);
+    }
+    .slot-reels-bay::after {
+      top: calc(50% + 28px);
+      background: rgba(201,168,76,0.25);
+    }
+    /* Individual reel window */
+    .slot-reel-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .slot-reel-wrap + .slot-reel-wrap {
+      border-left: 2px solid #000;
+      box-shadow: inset 2px 0 6px rgba(0,0,0,0.5);
+    }
+    /* The inner reel strip — shows 3 rows */
+    .slot-reel-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 15%, #222 50%, #1a1a1a 85%, #0d0d0d 100%);
+      border: 2px solid #2a2a2a;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      /* Top/bottom vignette to simulate reel depth */
+      box-shadow: inset 0 0 0 1px #111, inset 0 12px 18px rgba(0,0,0,0.8), inset 0 -12px 18px rgba(0,0,0,0.8);
+    }
+    /* Ghost row — symbol above (faded, top of reel) */
+    .reel-row {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 1.4rem 1.5rem;
-      cursor: pointer;
-      background: linear-gradient(180deg, #111 0%, #1a1a1a 50%, #111 100%);
-      flex: 1;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      transition: background 0.15s, transform 0.1s;
-      user-select: none;
+      width: 100%;
+      padding: 0.5rem 0.8rem;
+      position: relative;
     }
-    .slot-reel + .slot-reel { border-left: 2px solid #000; }
-    .slot-divider {
-      width: 2px;
-      background: repeating-linear-gradient(to bottom, #333 0px, #333 4px, #000 4px, #000 8px);
-      flex-shrink: 0;
+    .reel-row.ghost-top {
+      opacity: 0.18;
+      filter: blur(1px);
+      transform: scaleY(0.85);
+      transform-origin: bottom;
     }
-    .slot-reel:hover {
-      background: linear-gradient(180deg, #1c1c1c 0%, #252525 50%, #1c1c1c 100%);
+    .reel-row.ghost-bottom {
+      opacity: 0.18;
+      filter: blur(1px);
+      transform: scaleY(0.85);
+      transform-origin: top;
     }
-    .slot-reel:active { transform: scaleY(0.97); }
-    .slot-reel.spinning .slot-symbol {
-      animation: reelSpin 0.6s ease-out;
+    .reel-row.active {
+      opacity: 1;
+      position: relative;
     }
-    @keyframes reelSpin {
-      0%   { transform: translateY(-50px) scale(0.5); opacity: 0; }
-      60%  { transform: translateY(6px) scale(1.15); opacity: 1; }
-      100% { transform: translateY(0) scale(1); opacity: 1; }
+    /* Payline highlight on active row */
+    .reel-row.active::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(201,168,76,0.06);
+      border-top: 1px solid rgba(201,168,76,0.3);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      pointer-events: none;
     }
-    .slot-symbol {
-      font-size: 2.2rem;
+    .reel-symbol {
+      font-size: 2rem;
       line-height: 1;
-      margin-bottom: 0.5rem;
       display: block;
     }
-    .slot-label {
+    .reel-label {
       font-family: var(--font-body);
-      font-size: 0.88rem;
-      font-weight: 700;
+      font-size: 0.75rem;
+      font-weight: 800;
       color: #c9a84c;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
+      margin-top: 0.3rem;
+      white-space: nowrap;
     }
-    .slot-sub {
+    .reel-sub {
       font-family: var(--font-body);
-      font-size: 0.71rem;
-      color: rgba(255,255,255,0.45);
-      margin-top: 0.2rem;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.15rem;
     }
-    .slot-lever {
+    /* Ghost row symbols */
+    .ghost-symbol {
+      font-size: 1.6rem;
+      line-height: 1;
+      display: block;
+    }
+    /* Reel dividers (chrome strips) */
+    .reel-separator {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #3a3a3a, transparent);
+    }
+    /* Payline marker arrows on left side */
+    .slot-payline-marker {
+      position: absolute;
+      left: -2px;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
+      flex-direction: column;
+      gap: 2px;
+      z-index: 11;
+      pointer-events: none;
+    }
+    .payline-arrow {
+      width: 0; height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 9px solid #c9a84c;
+      filter: drop-shadow(0 0 4px rgba(201,168,76,0.7));
+    }
+    /* Pull lever */
+    .slot-lever-wrap {
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      background: linear-gradient(180deg, #1f1f1f 0%, #0d0d0d 100%);
+      width: 52px;
+      background: linear-gradient(180deg, #1a0d00 0%, #0d0800 100%);
       border-left: 2px solid #c9a84c;
-      color: #c9a84c;
-      font-size: 1.1rem;
+      padding: 0.8rem 0;
+      flex-shrink: 0;
       cursor: pointer;
-      transition: background 0.15s, color 0.15s;
+      position: relative;
+    }
+    .slot-lever-wrap:hover .lever-shaft { background: linear-gradient(180deg, #e0b84e 0%, #a07820 100%); }
+    .slot-lever-wrap:hover .lever-ball { background: radial-gradient(circle at 35% 35%, #ffe278, #c9a84c 60%, #7a5c10); box-shadow: 0 0 12px rgba(201,168,76,0.8); }
+    .slot-lever-wrap:active .lever-shaft { transform: rotate(25deg); }
+    .lever-ball {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fff0a0, #c9a84c 60%, #5a3c00);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 6px rgba(201,168,76,0.4);
       flex-shrink: 0;
     }
-    .slot-lever:hover { background: #c9a84c; color: #000; }
-    .slot-payline {
-      width: calc(100% - 44px);
-      max-width: calc(560px - 44px);
-      height: 3px;
-      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.7), rgba(201,168,76,0.95), rgba(201,168,76,0.7), transparent);
-      box-shadow: 0 0 8px rgba(201,168,76,0.5);
+    .lever-shaft {
+      width: 6px;
+      flex: 1;
+      min-height: 60px;
+      background: linear-gradient(180deg, #b8942a 0%, #7a5c10 50%, #b8942a 100%);
+      border-radius: 3px;
+      margin: 4px 0;
+      transition: transform 0.15s;
+      transform-origin: top center;
     }
-    @media (max-width: 500px) {
-      .slot-reel { padding: 1rem 0.8rem; }
-      .slot-symbol { font-size: 1.7rem; }
-      .slot-label { font-size: 0.76rem; }
+    .lever-base {
+      width: 28px; height: 10px;
+      background: linear-gradient(180deg, #c9a84c, #7a5c10);
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      flex-shrink: 0;
+    }
+    .lever-label {
+      font-family: var(--font-body);
+      font-size: 0.52rem;
+      color: rgba(201,168,76,0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+      writing-mode: vertical-rl;
+    }
+    /* Cabinet bottom strip */
+    .slot-base {
+      width: 92%;
+      height: 12px;
+      background: linear-gradient(180deg, #c9a84c 0%, #7a5c10 60%, #3a2a00 100%);
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    /* Reel spin animation */
+    .slot-reel-wrap.spinning .slot-reel-inner {
+      animation: reelScroll 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    @keyframes reelScroll {
+      0%   { transform: translateY(-80px); }
+      70%  { transform: translateY(8px); }
+      85%  { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
+    }
+    /* Clickable reel link wrapper */
+    .reel-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .slot-reel-wrap:hover .reel-row.active::before {
+      background: rgba(201,168,76,0.12);
+    }
+    @media (max-width: 540px) {
+      .reel-symbol { font-size: 1.5rem; }
+      .reel-label { font-size: 0.65rem; }
+      .ghost-symbol { font-size: 1.2rem; }
+      .slot-marquee { font-size: 0.65rem; letter-spacing: 0.15em; }
+      .lever-shaft { min-height: 40px; }
     }
 
     @media (max-width: 600px) { .hero::after { opacity: 0.08; } }
@@ -896,30 +1060,99 @@
       </div>
     </div>
 
-    <!-- SLOT MACHINE NAV -->
-    <div class="slot-machine">
-      <div class="slot-machine-frame">
-        <a href="#top5-table" class="slot-reel" id="reel1">
-          <span class="slot-symbol">🥇</span>
-          <span class="slot-label">Casinos Ranked</span>
-          <span class="slot-sub">Top 5 side-by-side</span>
-        </a>
-        <div class="slot-divider"></div>
-        <a href="#casino-finder" class="slot-reel" id="reel2">
-          <span class="slot-symbol">🍒</span>
-          <span class="slot-label">Find My Casino</span>
-          <span class="slot-sub">Quick quiz</span>
-        </a>
-        <div class="slot-divider"></div>
-        <a href="#matchup" class="slot-reel" id="reel3">
-          <span class="slot-symbol">⚖️</span>
-          <span class="slot-label">Compare Two</span>
-          <span class="slot-sub">Head-to-head</span>
-        </a>
-        <div class="slot-lever" onclick="spinSlots()" title="Spin!">&#9654;</div>
-      </div>
-      <div class="slot-payline"></div>
-    </div>
+    <!-- CLASSIC SLOT MACHINE NAV -->
+    <div class="slot-cabinet">
+      <!-- Marquee header -->
+      <div class="slot-marquee">★ iGaming Alberta ★ Find Your Game ★</div>
+
+      <!-- Cabinet body -->
+      <div class="slot-body">
+        <!-- Payline arrow marker -->
+        <div class="slot-payline-marker">
+          <div class="payline-arrow"></div>
+        </div>
+
+        <!-- Reel bay -->
+        <div class="slot-reels-bay">
+
+          <!-- Reel 1: Casinos Ranked -->
+          <div class="slot-reel-wrap" id="reel1">
+            <a href="#top5-table" class="reel-link">
+              <div class="slot-reel-inner">
+                <div class="reel-row ghost-top">
+                  <span class="ghost-symbol">🍒</span>
+                </div>
+                <div class="reel-separator"></div>
+                <div class="reel-row active">
+                  <span class="reel-symbol">🥇</span>
+                  <span class="reel-label">Casinos Ranked</span>
+                  <span class="reel-sub">Top 5 side-by-side</span>
+                </div>
+                <div class="reel-separator"></div>
+                <div class="reel-row ghost-bottom">
+                  <span class="ghost-symbol">⭐</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Reel 2: Find My Casino -->
+          <div class="slot-reel-wrap" id="reel2">
+            <a href="#casino-finder" class="reel-link">
+              <div class="slot-reel-inner">
+                <div class="reel-row ghost-top">
+                  <span class="ghost-symbol">🥇</span>
+                </div>
+                <div class="reel-separator"></div>
+                <div class="reel-row active">
+                  <span class="reel-symbol">🍒</span>
+                  <span class="reel-label">Find My Casino</span>
+                  <span class="reel-sub">Quick quiz</span>
+                </div>
+                <div class="reel-separator"></div>
+                <div class="reel-row ghost-bottom">
+                  <span class="ghost-symbol">🎰</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Reel 3: Compare Two -->
+          <div class="slot-reel-wrap" id="reel3">
+            <a href="#matchup" class="reel-link">
+              <div class="slot-reel-inner">
+                <div class="reel-row ghost-top">
+                  <span class="ghost-symbol">🍒</span>
+                </div>
+                <div class="reel-separator"></div>
+                <div class="reel-row active">
+                  <span class="reel-symbol">⚖️</span>
+                  <span class="reel-label">Compare Two</span>
+                  <span class="reel-sub">Head-to-head</span>
+                </div>
+                <div class="reel-separator"></div>
+                <div class="reel-row ghost-bottom">
+                  <span class="ghost-symbol">⭐</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div><!-- /slot-reels-bay -->
+
+        <!-- Pull lever -->
+        <div class="slot-lever-wrap" onclick="spinSlots()" title="Pull to spin!">
+          <div class="lever-ball"></div>
+          <div class="lever-shaft"></div>
+          <div class="lever-base"></div>
+          <span class="lever-label">Pull</span>
+        </div>
+
+      </div><!-- /slot-body -->
+
+      <!-- Cabinet base -->
+      <div class="slot-base"></div>
+    </div><!-- /slot-cabinet -->
 
   </div>
 </section>
@@ -1983,10 +2216,10 @@ function spinSlots() {
     void el.offsetWidth;
     setTimeout(() => {
       el.classList.add('spinning');
-      setTimeout(() => el.classList.remove('spinning'), 700);
-    }, i * 130);
+      setTimeout(() => el.classList.remove('spinning'), 800);
+    }, i * 180);
   });
-  setTimeout(() => { window.location = '#top5-table'; }, 700);
+  setTimeout(() => { window.location = '#top5-table'; }, 900);
 }
 </script>
 
