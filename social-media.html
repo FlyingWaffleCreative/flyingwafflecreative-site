@@ -147,39 +147,104 @@
     }
 
     /* What's included */
-    .whats-included {
+    /* STACK & SERVE */
+    .stack-serve {
       background: #F5F2EE;
       padding: 5rem 0;
     }
-    .wi__grid {
+    .stack-serve__inner {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: flex-start;
       margin-top: 3rem;
     }
-    .wi__card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 1.75rem 1.5rem;
-      border-top: 3px solid var(--orange);
+    .stack-serve__img-wrap {
+      position: relative;
     }
-    .wi__card__icon {
-      font-size: 1.6rem;
+    .stack-serve__img {
+      width: 100%;
+      border-radius: 12px;
       display: block;
-      margin-bottom: 0.8rem;
+      object-fit: cover;
+      aspect-ratio: 1/1;
     }
-    .wi__card h3 {
+    .stack-serve__badge {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      background: var(--orange);
+      color: #fff;
       font-family: 'Playfair Display', serif;
-      font-size: 1rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.9rem 1.2rem;
+      border-radius: 10px;
+      line-height: 1.3;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(232,114,42,0.3);
+    }
+    .stack-serve__menu h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--dark);
-      margin-bottom: 0.5rem;
+      margin: 0 0 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--orange);
+      display: inline-block;
     }
-    .wi__card p {
+    .stack-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #E0DDD8;
+    }
+    .stack-item:last-child { border-bottom: none; }
+    .stack-item__icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .stack-item__text strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .stack-item__text p {
       font-family: 'Inter', sans-serif;
       font-size: 0.83rem;
       color: #777;
-      line-height: 1.65;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .sides-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin: 2rem 0 0.8rem;
+    }
+    .sides-label::before, .sides-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #E0DDD8;
+      display: block;
+      width: 24px;
+    }
+    @media (max-width: 900px) {
+      .stack-serve__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .stack-serve__img { aspect-ratio: 4/3; }
     }
 
     /* Platforms */
@@ -453,6 +518,86 @@
 
 
 
+
+  <!-- STACK & SERVE -->
+  <section class="stack-serve">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <h2 class="section-title">Stack &amp; Serve</h2>
+        <p class="section-sub">Build your order. We'll handle the rest.</p>
+      </div>
+      <div class="stack-serve__inner">
+
+        <!-- Image -->
+        <div class="stack-serve__img-wrap">
+          <img src="waffle-stack.png" alt="Stack and serve" class="stack-serve__img" />
+          <div class="stack-serve__badge">Starts at<br />$499/mo + GST</div>
+        </div>
+
+        <!-- Menu -->
+        <div class="stack-serve__menu">
+          <h3>The Stack</h3>
+          <p style="font-family:'Inter',sans-serif;font-size:0.85rem;color:#777;margin-bottom:1rem;">Every order comes with the full stack - strategy, content and scheduling, done right.</p>
+
+          <div class="stack-item">
+            <span class="stack-item__icon">🧇</span>
+            <div class="stack-item__text">
+              <strong>The Recipe</strong>
+              <p>Monthly content strategy and calendar - planned in advance, built around your brand voice and goals.</p>
+            </div>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item__icon">🍯</span>
+            <div class="stack-item__text">
+              <strong>The Pour</strong>
+              <p>Human-written captions, hashtags and CTAs. Every word sounds like you - not a generator.</p>
+            </div>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item__icon">📅</span>
+            <div class="stack-item__text">
+              <strong>The Schedule</strong>
+              <p>Consistent posting across your platforms. Nothing slips, nothing goes up half-baked.</p>
+            </div>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item__icon">📊</span>
+            <div class="stack-item__text">
+              <strong>Monthly Reporting</strong>
+              <p>A standing check-in each month to review performance and keep things sharp.</p>
+            </div>
+          </div>
+
+          <div class="sides-label">Add to your order</div>
+
+          <div class="stack-item">
+            <span class="stack-item__icon">🔥</span>
+            <div class="stack-item__text">
+              <strong>Fresh Off the Iron</strong>
+              <p>Reel scripts and short-form concepts for TikTok, Instagram and YouTube Shorts.</p>
+            </div>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item__icon">♻️</span>
+            <div class="stack-item__text">
+              <strong>Leftovers (the good kind)</strong>
+              <p>We repurpose your existing content - blogs, videos, quotes - into fresh social posts.</p>
+            </div>
+          </div>
+          <div class="stack-item">
+            <span class="stack-item__icon">💬</span>
+            <div class="stack-item__text">
+              <strong>Table Service</strong>
+              <p>Community management - we show up in the comments so your audience feels heard.</p>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn--primary" style="margin-top:2rem;display:inline-block;">Build your stack &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ -->
   <section class="faq-section">
