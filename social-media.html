@@ -190,11 +190,30 @@
       padding: 3rem 0;
     }
     .stack-serve__inner {
+      margin-top: 1.5rem;
+    }
+    .stack-serve__mains {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
       align-items: flex-start;
-      margin-top: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .stack-serve__sides-row {
+      border-top: 2px solid #E0DDD8;
+      padding-top: 2rem;
+    }
+    .stack-serve__sides-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .stack-serve__sides-grid .stack-item {
+      border-bottom: none;
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.2rem;
     }
     .stack-serve__img-wrap {
       position: relative;
@@ -289,8 +308,9 @@
       margin-bottom: 0.4rem;
     }
     @media (max-width: 900px) {
-      .stack-serve__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .stack-serve__mains { grid-template-columns: 1fr; gap: 2rem; }
       .stack-serve__img { aspect-ratio: 4/3; }
+      .stack-serve__sides-grid { grid-template-columns: 1fr 1fr; }
     }
 
     /* Platforms */
@@ -625,70 +645,72 @@
       </div>
       <div class="stack-serve__inner">
 
-        <!-- Image -->
-        <div class="stack-serve__img-wrap">
-          <img src="waffle-stack.png" alt="Stack and serve" class="stack-serve__img" />
-          <div class="stack-serve__badge">Starts at<br />$699/mo + GST</div>
+        <!-- MAINS: image + menu side by side -->
+        <div class="stack-serve__mains">
+          <div class="stack-serve__img-wrap">
+            <img src="waffle-stack.png" alt="Stack and serve" class="stack-serve__img" />
+            <div class="stack-serve__badge">Starts at<br />$699/mo + GST</div>
+          </div>
+          <div class="stack-serve__menu">
+            <h3>Mains</h3>
+            <p style="font-family:'Inter',sans-serif;font-size:0.95rem;color:#777;margin-bottom:1.2rem;">Every order comes with the full stack — strategy, content and scheduling, done right.</p>
+            <div class="stack-item">
+              <span class="stack-item__icon">🧇</span>
+              <div class="stack-item__text">
+                <strong>The Recipe</strong>
+                <p>Monthly content strategy and calendar - planned in advance, built around your brand voice and goals.</p>
+              </div>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">🍯</span>
+              <div class="stack-item__text">
+                <strong>The Pour</strong>
+                <p>Human-written captions, hashtags and CTAs. Every word sounds like you - not a generator.</p>
+              </div>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">📅</span>
+              <div class="stack-item__text">
+                <strong>The Schedule</strong>
+                <p>Consistent posting across your platforms. Nothing slips, nothing goes up half-baked.</p>
+              </div>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">📊</span>
+              <div class="stack-item__text">
+                <strong>Monthly Reporting</strong>
+                <p>A standing check-in each month to review performance and keep things sharp.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Menu -->
-        <div class="stack-serve__menu">
-          <h3>Mains</h3>
-          <p style="font-family:'Inter',sans-serif;font-size:0.95rem;color:#777;margin-bottom:1.2rem;">Every order comes with the full stack — strategy, content and scheduling, done right.</p>
-
-          <div class="stack-item">
-            <span class="stack-item__icon">🧇</span>
-            <div class="stack-item__text">
-              <strong>The Recipe</strong>
-              <p>Monthly content strategy and calendar - planned in advance, built around your brand voice and goals.</p>
-            </div>
-          </div>
-          <div class="stack-item">
-            <span class="stack-item__icon">🍯</span>
-            <div class="stack-item__text">
-              <strong>The Pour</strong>
-              <p>Human-written captions, hashtags and CTAs. Every word sounds like you - not a generator.</p>
-            </div>
-          </div>
-          <div class="stack-item">
-            <span class="stack-item__icon">📅</span>
-            <div class="stack-item__text">
-              <strong>The Schedule</strong>
-              <p>Consistent posting across your platforms. Nothing slips, nothing goes up half-baked.</p>
-            </div>
-          </div>
-          <div class="stack-item">
-            <span class="stack-item__icon">📊</span>
-            <div class="stack-item__text">
-              <strong>Monthly Reporting</strong>
-              <p>A standing check-in each month to review performance and keep things sharp.</p>
-            </div>
-          </div>
-
+        <!-- SIDES: full width, 3-col grid -->
+        <div class="stack-serve__sides-row">
           <div class="sides-label">Sides</div>
-
-          <div class="stack-item">
-            <span class="stack-item__icon">🔥</span>
-            <div class="stack-item__text">
-              <strong>Fresh Off the Iron</strong>
-              <p>Reel scripts and short-form concepts for TikTok, Instagram and YouTube Shorts.</p>
+          <div class="stack-serve__sides-grid">
+            <div class="stack-item">
+              <span class="stack-item__icon">🔥</span>
+              <div class="stack-item__text">
+                <strong>Fresh Off the Iron</strong>
+                <p>Reel scripts and short-form concepts for TikTok, Instagram and YouTube Shorts.</p>
+              </div>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">♻️</span>
+              <div class="stack-item__text">
+                <strong>Leftovers (the good kind)</strong>
+                <p>We repurpose your existing content - blogs, videos, quotes - into fresh social posts.</p>
+              </div>
+            </div>
+            <div class="stack-item">
+              <span class="stack-item__icon">💬</span>
+              <div class="stack-item__text">
+                <strong>Table Service</strong>
+                <p>Community management - we show up in the comments so your audience feels heard.</p>
+              </div>
             </div>
           </div>
-          <div class="stack-item">
-            <span class="stack-item__icon">♻️</span>
-            <div class="stack-item__text">
-              <strong>Leftovers (the good kind)</strong>
-              <p>We repurpose your existing content - blogs, videos, quotes - into fresh social posts.</p>
-            </div>
-          </div>
-          <div class="stack-item">
-            <span class="stack-item__icon">💬</span>
-            <div class="stack-item__text">
-              <strong>Table Service</strong>
-              <p>Community management - we show up in the comments so your audience feels heard.</p>
-            </div>
-          </div>
-
           <a href="contact.html" class="btn btn--primary" style="margin-top:2rem;display:inline-block;">Build your stack &rarr;</a>
         </div>
 
