@@ -15,15 +15,22 @@
   <style>
     /* ── SOCIAL PAGE STYLES ───────────────────────────────────── */
 
-    /* Intro / lede */
+    /* Intro / lede - banner layout */
     .social-lede {
-      padding: 3rem 0;
+      padding: 0 0 3rem;
+    }
+    .social-lede__banner {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
     }
     .social-lede__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem 1rem 0;
+      text-align: center;
     }
     .social-lede__text h2 {
       font-family: 'Playfair Display', serif;
@@ -42,7 +49,7 @@
     }
     .social-lede__price {
       display: inline-block;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
       font-weight: 700;
@@ -52,13 +59,6 @@
       border: 1.5px solid var(--orange);
       border-radius: 999px;
       padding: 0.45rem 1.2rem;
-    }
-    .social-lede__img {
-      width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-      aspect-ratio: 4/3;
-      display: block;
     }
 
     /* How it works */
@@ -419,15 +419,13 @@
 
   <!-- LEDE -->
   <section class="social-lede">
-    <div class="container">
-      <div class="social-lede__inner">
-        <div class="social-lede__text">
-          <h2>Fully stacked social - so you can focus on running your business.</h2>
-          <p>Good social media feels current. It sounds like the brand, responds to what&rsquo;s happening, and gives people a reason to stick around. We manage the strategy, content and day-to-day thinking behind a social presence that feels active rather than automated.</p>
-          <p>We handle everything - from planning and content creation to engaging with your audience - so you don&rsquo;t have to think about it. Available as ongoing monthly management or flexible content-only support.</p>
-          <span class="social-lede__price">Starts at $699/month + GST</span>
-        </div>
-        <img src="waffle-stack-photo.jpg" alt="Fully stacked social media management" class="social-lede__img" />
+    <img src="waffle-stack-photo.jpg" alt="Fully stacked social media management" class="social-lede__banner" />
+    <div class="social-lede__inner">
+      <div class="social-lede__text">
+        <h2>Fully stacked social - so you can focus on running your business.</h2>
+        <p>Good social media feels current. It sounds like the brand, responds to what&rsquo;s happening, and gives people a reason to stick around. We manage the strategy, content and day-to-day thinking behind a social presence that feels active rather than automated.</p>
+        <p>We handle everything - from planning and content creation to engaging with your audience - so you don&rsquo;t have to think about it. Available as ongoing monthly management or flexible content-only support.</p>
+        <span class="social-lede__price">Starts at $699/month + GST</span>
       </div>
     </div>
   </section>
