@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills & Tools | Flying Waffle Creative</title>
+  <meta name="description" content="Tools and platforms used by Flying Waffle Creative for SEO, content, copywriting, and social media management." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ── Page hero ── */
+    .skills-hero {
+      background: var(--card-bg, #EDEAE4);
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+    }
+    .skills-hero__eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange, #E8722A);
+      margin-bottom: 0.75rem;
+    }
+    .skills-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--text, #2C2C2C);
+      margin: 0 0 1rem;
+    }
+    .skills-hero__sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      color: var(--muted, #9E9E8F);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── Skills grid ── */
+    .skills-section {
+      padding: 4rem 0 5rem;
+      background: var(--bg, #F5F2EE);
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Individual skill card ── */
+    .skill-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.4rem 1rem 1.1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.11);
+    }
+    .skill-card__icon {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .skill-card__label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text, #2C2C2C);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 500px) {
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .skill-card {
+        padding: 1rem 0.5rem 0.8rem;
+      }
+      .skill-card__icon {
+        width: 38px;
+        height: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav (loaded from styles.css context) ── -->
+  <div id="nav-placeholder"></div>
+
+  <!-- ── Hero ── -->
+  <section class="skills-hero">
+    <div class="container">
+      <p class="skills-hero__eyebrow">Tools of the Trade</p>
+      <h1 class="skills-hero__title">Skills</h1>
+      <p class="skills-hero__sub">The platforms and tools behind the content — from strategy and research to creation and distribution.</p>
+    </div>
+  </section>
+
+  <!-- ── Grid ── -->
+  <section class="skills-section">
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/notion/000000" alt="Notion" />
+        <span class="skill-card__label">Notion</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/mailchimp/FFE01B" alt="Mailchimp" />
+        <span class="skill-card__label">Mailchimp</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" />
+        <span class="skill-card__label">Instagram</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" />
+        <span class="skill-card__label">Facebook</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn" />
+        <span class="skill-card__label">LinkedIn</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/meta/0081FB" alt="Meta Business Suite" />
+        <span class="skill-card__label">Meta Business Suite</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/ahrefs/FF6400" alt="Ahrefs" />
+        <span class="skill-card__label">Ahrefs</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="Google Analytics" />
+        <span class="skill-card__label">Google Analytics</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/microsoftpowerpoint/B7472A" alt="PowerPoint" />
+        <span class="skill-card__label">PowerPoint</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/capcut/000000" alt="CapCut" />
+        <span class="skill-card__label">CapCut</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva" />
+        <span class="skill-card__label">Canva</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack" />
+        <span class="skill-card__label">Slack</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/claude/D97757" alt="Claude AI" />
+        <span class="skill-card__label">Claude AI</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/openai/000000" alt="ChatGPT" />
+        <span class="skill-card__label">ChatGPT</span>
+      </div>
+
+      <div class="skill-card">
+        <img class="skill-card__icon" src="https://cdn.simpleicons.org/microsoftoffice/D83B01" alt="Microsoft Office" />
+        <span class="skill-card__label">Microsoft Office</span>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
